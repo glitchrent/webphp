@@ -4,50 +4,114 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!--Get your own code at fontawesome.com-->
 
     <title>Hello, world!</title>
 
 <style>
     body {
-
-        margin-top: 50px;
-        margin-left: 50px;
-        margin-right: 50px;
+        background-color: rgb(245, 245, 245);
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
+    .buttontype{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.buttontype2{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.container{
+  background-color: rgb(255, 255, 255);
+}
 
 
+.container7{
+  display: inline-block;
+}
+
+div.c {
+  font-size: 200%;
+}
+
+.header {
+  padding: 0px;
+  text-align: center;
+  background: #ffffff;
+  color: white;
+  font-size: 20px;
+}
 </style>
 
 
 
   </head>
+  
   <body>
-    <h1>Hello, world!</h1>
 
+    <div class="header">
+<center>
+    <table class="border-white">
+      <thead>
+        <tr>
+          <th><img src="pic\logo.jpg" alt=""></th>
+          <th bgcolor="white">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>EN</option>
+              <option value="1">TH</option>
+            </select>
+
+          </th>
+        </tr>
+      </thead>
+    </table>
+  </center>
+  
+  </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      
+        <div class="container-md">
+          <a class="navbar-brand" href="#">
+            &ensp;Evidence Search</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#">Evidence list</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Approval</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#">User Management</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="#">Role-Permissions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Statistics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ContractUs</a>
               </li>
             </ul>
           </div>
@@ -56,13 +120,15 @@
 
           <div class="dropdown">
             <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
+              Username_Test
             </a>
           
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#"><i class='fas fa-address-book' style='font-size:24px'></i> Documents</a></li>
+              <li><a class="dropdown-item" href="#"><i class='fas fa-eraser' style='font-size:24px'></i> Change Password</a></li>
+              <li><a class="dropdown-item" href="#"><i class='fas fa-history' style='font-size:24px'></i> Account Setting</a></li>
+              <li><a class="dropdown-item" href="#"><i class='fas fa-magic' style='font-size:24px'></i> Country Setting</a></li>
+              <li><a class="dropdown-item" href="#"><i class='fas fa-minus-circle' style='font-size:24px'></i> Sign Out</a></li>
             </ul>
           </div>
     
@@ -72,63 +138,115 @@
 
 <!-- Drop down  -->
 
+<br>
+
+
+<div class="container">
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Search </a>
+      
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Advance Search</a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+
+</div>
+
+
+
 
       <div class="container">
 
 
-<h1> Search </h1>
-
-หลอยๆ
-      <div class="row g-2">
-        <div class="col-md">
-          <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="mdo@example.com">
-            <label for="floatingInputGrid">Email address</label>
-          </div>
-        </div>
-
         
-        <div class="col-md">
-          <div class="form-floating">
-            <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-            <label for="floatingSelectGrid">Works with selects</label>
-          </div>
-        </div>
-      </div>
-หลอยๆ 
+<br>
+<b> States of Matter </b>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&ensp;
 
-
-
+<b> Compound </b>
 <div class="row g-2">
   <div class="col-md">
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="mdo@example.com">
-      <label for="floatingInputGrid">Email address</label>
-    </div>
-  </div>
-  <div class="col-md">
-    <div class="form-floating">
-      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-        <option selected>Open this select menu</option>
+    <div class="form" >
+      
+      <select  class="form-select" aria-label="Default select example"  >
+        <option selected>States of Matter</option>
         <option value="1">One</option>
         <option value="2">Two</option>
         <option value="3">Three</option>
       </select>
-      <label for="floatingSelectGrid">Works with selects</label>
+    </div>
+  </div>
+  <div class="col-md">
+    <div class="form">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Compound</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+  </div>
+</div>
+<br>
+<b> Country </b>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;
+<b> Physical Appearance </b>
+<div class="row g-2">
+  <div class="col-md">
+    <div class="form">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Country</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md">
+    <div class="form">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Physical Appearance</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
     </div>
   </div>
 </div>
 
-<button type="button" class="btn btn-primary btn-lg">Large button</button>
-<button type="button" class="btn btn-secondary btn-lg">Large button</button>
+<br>
 
-
+<div class="buttontype">
+<button type="button" class="btn btn-outline-primary">Clear</button>
+&ensp;
+<button type="button" class="btn btn-primary">Search</button>
 </div>
+<br>
+</div>
+
+
 
 
 
@@ -136,39 +254,160 @@
 <br>
 
 <div class="container">
+  <br>
+  <table>
+  <th>
 
-<table class="table">
+result 
+(200 items found) 
+</th>
+<th>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+</th>
+<th>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="btn btn-primary me-md-2" type="button"><i class='fas fa-upload' style='font-size:24px'></i> Export</button>
+  <button class="btn btn-primary" type="button"><i class='fas fa-paper-plane' style='font-size:24px'></i> Print</button>
+</div>
+</th>
+</table>
 
-    หลอยๆ
+<div class="table-responsive">
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Found Date</th>
+        <th scope="col">Explosice No.</th>
+        <th scope="col">Country</th>
+        <th scope="col">States</th>
+        <th scope="col">Classification</th>
+        <th scope="col">Compound</th>
+        <th scope="col">Physical Appearance</th>
+        <th scope="col">Detail</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td>18/01/2019</td>
+        <td>TH01012019001</td>
+        <td>Thailand</td>
+        <td>Powder</td>
+        <td>Low Explosives</td>
+        <td>Nitrate ion</td>
+        <td>Green</td>
+        <td><i class='far fa-file-alt' style='font-size:24px'></i></td>
       </tr>
       <tr>
         <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
+        <td>18/01/2019</td>
+        <td>TH01012019001</td>
+        <td>Thailand</td>
+        <td>Powder</td>
+        <td>Low Explosives</td>
+        <td>Nitrate ion</td>
+        <td>Green</td>
+        <td><i class='far fa-file-alt' style='font-size:24px'></i></td>
       </tr>
       <tr>
         <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
+        <td>18/01/2019</td>
+        <td>TH01012019001</td>
+        <td>Thailand</td>
+        <td>Powder</td>
+        <td>Low Explosives</td>
+        <td>Nitrate ion</td>
+        <td>Green</td>
+        <td><i class='far fa-file-alt' style='font-size:24px'></i></td>
       </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>18/01/2019</td>
+        <td>TH01012019001</td>
+        <td>Thailand</td>
+        <td>Powder</td>
+        <td>Low Explosives</td>
+        <td>Nitrate ion</td>
+        <td>Green</td>
+        <td><i class='far fa-file-alt' style='font-size:24px'></i></td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>18/01/2019</td>
+        <td>TH01012019001</td>
+        <td>Thailand</td>
+        <td>Powder</td>
+        <td>Low Explosives</td>
+        <td>Nitrate ion</td>
+        <td>Green</td>
+        <td><i class='far fa-file-alt' style='font-size:24px'></i></td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>18/01/2019</td>
+        <td>TH01012019001</td>
+        <td>Thailand</td>
+        <td>Powder</td>
+        <td>Low Explosives</td>
+        <td>Nitrate ion</td>
+        <td>Green</td>
+        <td><i class='far fa-file-alt' style='font-size:24px'></i></td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>18/01/2019</td>
+        <td>TH01012019001</td>
+        <td>Thailand</td>
+        <td>Powder</td>
+        <td>Low Explosives</td>
+        <td>Nitrate ion</td>
+        <td>Green</td>
+        <td><i class='far fa-file-alt' style='font-size:24px'></i></td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>18/01/2019</td>
+        <td>TH01012019001</td>
+        <td>Thailand</td>
+        <td>Powder</td>
+        <td>Low Explosives</td>
+        <td>Nitrate ion</td>
+        <td>Green</td>
+        <td><i class='far fa-file-alt' style='font-size:24px'></i></td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td>18/01/2019</td>
+        <td>TH01012019001</td>
+        <td>Thailand</td>
+        <td>Powder</td>
+        <td>Low Explosives</td>
+        <td>Nitrate ion</td>
+        <td>Green</td>
+        <td><i class='far fa-file-alt' style='font-size:24px'></i></td>
+      </tr>
+      
     </tbody>
   </table>
-
+<div class="buttontype2">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-outline-secondary">◄</button>
+    <button type="button" class="btn btn-outline-secondary">1</button>
+    <button type="button" class="btn btn-outline-secondary">2</button>
+    <button type="button" class="btn btn-outline-secondary">3</button>
+    <button type="button" class="btn btn-outline-secondary">...</button>
+    <button type="button" class="btn btn-outline-secondary">20</button>
+    <button type="button" class="btn btn-outline-secondary">►</button>
+  </div>
+</div>
+</div>
 
 </div>
 
@@ -184,6 +423,7 @@
 
 
 
+<br>
 
 
 
@@ -192,11 +432,87 @@
 
 
 
+<footer class="bg-primary text-white text-center text-lg-start">
+  <!-- Grid container -->
+  
+  <div class="p-4">
+    <!--Grid row-->
+  
+    <div class="row">
 
 
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Related Agencies</h5>
+        <ul class="list-unstyled mb-0">
+          <li>
+            
+          <li>
+            Forensic Science Operations Divsion
+          </li>
+          <li>
+            Chemical Verification Group
+          </li>
+          <li>
+            Bureau of Forensic Standards
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
 
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Contact Us</h5>
 
+        <ul class="list-unstyled mb-0">
+          <li>
+            Institute of Forensic Science,
+          <li>
+            Central Institute of Forensic Science Thailand
+          </li>
+          <li>
+            49 Sukkud Building, 16th Floor, Prachachuen Road,
+          </li>
+          <li>
+            Bang Sue District, Bangkok 10800
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+      
 
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-0"> </h5>
+
+        <ul class="list-unstyled">
+          <li>
+            &emsp;
+          <li>
+            02-1423491, 02-1423492, 02-1439068
+          </li>
+          <li>
+            www.cifs.moj.go.th
+          </li>
+          <li>
+            &emsp;
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+    </div>
+    
+    <!--Grid row-->
+  </div>
+
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    Copyright © 2019 Asian Forensic Sciences Network
+  </div>
+  <!-- Copyright -->
+</footer>
 
 
 
