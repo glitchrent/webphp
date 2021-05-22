@@ -8,14 +8,18 @@
     </head>
     <body>
         <?php
-        $age = 22;
+        $age = 10;
         if($age >= 60) {
-            echo "ผู้สูงอายุ"; {
+            echo "ผู้สูงอายุ"; }
         elseif ($age>=18 and $age <60){
             echo "คนทั่วไป";
         } else {
             echo "เยาวชน";
         }
+
+    
+
+
         ?>
     </body>
     
