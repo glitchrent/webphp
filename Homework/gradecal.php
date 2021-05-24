@@ -8,23 +8,23 @@
     </head>
     <body>
         <?php
-        $score = 80;
+        $score = 70;
         if($score <= 49) {
-            echo "F"; 
+            echo "เกรดที่ได้ : F"; 
         } elseif ($score>=50 and $score <=54) {
-            echo "D";
+            echo "เกรดที่ได้ : D";
         } elseif ($score>=55 and $score <=59) {
-            echo "D+";
+            echo "เกรดที่ได้ : D+";
         } elseif ($score>=60 and $score <=64) {
-            echo "C";
+            echo "เกรดที่ได้ : C";
         } elseif ($score>=65 and $score <=69) {
-            echo "C+";
+            echo "เกรดที่ได้ : C+";
         } elseif ($score>=70 and $score <=74) {
-            echo "B";
+            echo "เกรดที่ได้ : B";
         } elseif ($score>=75 and $score <=79) {
-            echo "B+";
+            echo "เกรดที่ได้ : B+";
         } else {
-            echo "A";
+            echo "เกรดที่ได้ : A";
         } 
 
 
