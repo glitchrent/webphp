@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="mystyle.css">
-    
+
         <title>Format</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -22,42 +22,47 @@
   
 <?php
 
-$id=$_GET["id"];
-$data="SELECT * FROM product WHERE productID=$id";
+$id=$_GET['id'];
+$data="SELECT * FROM user WHERE username='$id'";
 $dataQuery = mysqli_query($check,$data);
 $dataTranfer=mysqli_fetch_assoc($dataQuery)
 
 ?>
 
 
-<form action="processupdate.php" method="post" >
+<form action="user_processupdate.php" method="post" >
 
-<input type="hidden"  value="<?php echo $dataTranfer["productID"];?>"name ="productID">
+<input type="hidden"  value="<?php echo $dataTranfer["username"];?>"name ="username">
 
 <table>
 
 
    
 
+
         <tr> 
-        <td>ชื่อสินค้า</td>
-        <td><input type="text" name="productName" value="<?php echo $dataTranfer['productName']?>"></td>
-        </tr>
-        <tr> 
-        <td>ประเภทสินค้า</td>
-        <td><input type="text" name="productCategory" value="<?php echo $dataTranfer['productCategory']?>"></td>
+        <td>รหัสผ่าน</td>
+        <td><input type="text" name="password" value="<?php echo $dataTranfer['password']?>"></td>
          </tr>
         <tr> 
-        <td>จำนวนที่เหลือ</td>
-        <td><input type="text" name="remainUnit" value="<?php echo $dataTranfer['remainUnit']?>"></td>
+        <td>ชื่อ</td>
+        <td><input type="text" name="name" value="<?php echo $dataTranfer['name']?>"></td>
          </tr>
         <tr> 
-        <td>ราคาต้นทุน</td>
-        <td><input type="text" name="costprice" value="<?php echo $dataTranfer['costprice']?>"></td>
+        <td>นามสกุล</td>
+        <td><input type="text" name="surname" value="<?php echo $dataTranfer['surname']?>"></td>
          </tr>
         <tr> 
-        <td>ราคาขาย</td>
-        <td><input type="text" name="saleprice" value="<?php echo $dataTranfer['saleprice']?>"></td>
+        <td>เบอร์</td>
+        <td><input type="text" name="tel" value="<?php echo $dataTranfer['tel']?>"></td>
+         </tr>
+         <tr> 
+        <td>ที่อยู่</td>
+        <td><input type="text" name="address" value="<?php echo $dataTranfer['address']?>"></td>
+         </tr>
+         <tr> 
+        <td>สถานะ</td>
+        <td><input type="text" name="role" value="<?php echo $dataTranfer['role']?>"></td>
          </tr>
          
          

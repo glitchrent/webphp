@@ -1,8 +1,7 @@
-<?php require("connect.php");   ?> 
-
-
 <?php
+    require("connect.php");
 
+    //$productID = $_POST['productID'];
     $productName = $_POST['productName'];
     $productCategory = $_POST['productCategory'];
     $remainUnit = $_POST['remainUnit'];
@@ -15,10 +14,12 @@
 ?>
 
 <?php
+//คำสั่งกลับหน้าแรกเมื่อทำงานเสร็จ
 if($check){
     echo  "save <script>window.location='index.php'</script>";
     }else{
         echo "Fail";
     }
+
 ?>
 

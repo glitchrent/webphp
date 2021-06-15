@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +20,7 @@
     </head>
     <body>
   
-<form action="processinsert.php" method="post" >
+<form action="user_processinsert.php" method="post" >
 
 
 <table>
@@ -28,25 +29,34 @@
    
 
         <tr> 
-        <td>ชื่อสินค้า</td>
-        <td><input type="text" name="productName"></td>
+        <td>ชี่อผู้ใช้</td>
+        <td><input type="text" name="username"></td>
         </tr>
         <tr> 
-        <td>ประเภทสินค้า</td>
-        <td><input type="text" name="productCategory"></td>
+        <td>รหัสผ่าน</td>
+        <td><input type="text" name="password"></td>
          </tr>
         <tr> 
-        <td>จำนวนที่เหลือ</td>
-        <td><input type="text" name="remainUnit"></td>
+        <td>ชื่อ</td>
+        <td><input type="text" name="name"></td>
          </tr>
         <tr> 
-        <td>ราคาต้นทุน</td>
-        <td><input type="text" name="costprice"></td>
+        <td>นามสกุล</td>
+        <td><input type="text" name="surname"></td>
          </tr>
         <tr> 
-        <td>ราคาขาย</td>
-        <td><input type="text" name="saleprice"></td>
+        <td>เบอร์</td>
+        <td><input type="text" name="tel"></td>
          </tr>
+         <tr> 
+        <td>ที่อยู่</td>
+        <td><input type="text" name="address"></td>
+        </tr>
+        <tr> 
+        <td>สถานะ</td>
+        <td><input type="text" name="role"></td>
+        </tr>
+
          
          
 
