@@ -11,7 +11,7 @@
 
 //คำสั่งกลับหน้าแรกเมื่อทำงานเสร็จ
 if($check){
-    echo  "save <script>window.location='index.php'</script>";
+    echo  "save <script>window.location='product_info.php'</script>";
     }else{
         echo "Fail";
     }

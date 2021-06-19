@@ -1,29 +1,28 @@
-
 <?php require("connect.php");   ?> 
+
 
 <!DOCTYPE html>
 <html>
     <head>
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    
     
         <title>Format</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <link rel="stylesheet" type="text/css" href="Project\mystyle.css">
     </head>
     <body>
 
 
 
-
-
+    <a href="product_info.php?logout='1'">ออกจากระบบ</a>
+    <a href = "user_insert.php"> insert user </a>
 
 <?php
 
