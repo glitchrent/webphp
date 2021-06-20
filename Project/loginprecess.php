@@ -24,14 +24,14 @@ if(isset($_POST['username'])){
 
               if($_SESSION["role"]=="1"){ 
                 
-                Header("Location: product_info.php");
+                Header("Location: indexmenu_admin.php");
 
 
               }
 
               if ($_SESSION["role"]=="2"){
 
-                Header("Location: user_info.php");
+                Header("Location: index_user.php");
 
               }
 
@@ -53,13 +53,13 @@ if(isset($_POST['username'])){
 
 ?>
 
-<?php
+<?php /*
 //คำสั่งกลับหน้าแรกเมื่อทำงานเสร็จ
 if($check){
-    echo  "save <script>window.location='user_info.php'</script>";
+    echo  "save <script>window.location='index_user.php'</script>";
     }else{
         echo "Fail";
     }
-
+*/
 ?>
 

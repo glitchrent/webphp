@@ -3,20 +3,20 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="Project\mystyle.css">
+
+
+    <title>Format</title>
+    </head>
 
     
-        <title>Format</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="Project\mystyle.css">
-    </head>
     <body>
   
 <?php
@@ -27,49 +27,49 @@ $dataQuery = mysqli_query($check,$data);
 $dataTranfer=mysqli_fetch_assoc($dataQuery)
 
 ?>
+<header class="p-3 bg-dark text-white">
+    
+    <center><h1>อัพเดตข้อมูลสินค้า</h1></center>
+</header>
+
+
 
 
 <form action="product_processupdate.php" method="post" >
 
 <input type="hidden"  value="<?php echo $dataTranfer["productID"];?>"name ="productID">
-
-<table>
-
+<br>
+<table  align="center">
+<td>
 
    
 
-        <tr> 
-        <td>ชื่อสินค้า</td>
-        <td><input type="text" name="productName" value="<?php echo $dataTranfer['productName']?>"></td>
-        </tr>
-        <tr> 
-        <td>ประเภทสินค้า</td>
-        <td><input type="text" name="productCategory" value="<?php echo $dataTranfer['productCategory']?>"></td>
-         </tr>
-        <tr> 
-        <td>จำนวนที่เหลือ</td>
-        <td><input type="text" name="remainUnit" value="<?php echo $dataTranfer['remainUnit']?>"></td>
-         </tr>
-        <tr> 
-        <td>ราคาต้นทุน</td>
-        <td><input type="text" name="costprice" value="<?php echo $dataTranfer['costprice']?>"></td>
-         </tr>
-        <tr> 
-        <td>ราคาขาย</td>
-        <td><input type="text" name="saleprice" value="<?php echo $dataTranfer['saleprice']?>"></td>
-         </tr>
-         
-         
-
-       
-
-
-
-
+    <div class="mb-3">
+    <label for="exampleInput" class="form-label">ชื่อสินค้า</label>
+    <input class="form-control" type="text" name="productName" value="<?php echo $dataTranfer['productName']?>">
+    </div>
+    <div class="mb-3">
+    <label for="exampleInput" class="form-label">ประเภทสินค้า</label>
+    <input class="form-control" type="text" name="productCategory" value="<?php echo $dataTranfer['productCategory']?>">         
+    </div>
+    <div class="mb-3">
+    <label for="exampleInput" class="form-label">จำนวนที่เหลือ</label>
+    <input class="form-control" type="text" name="remainUnit" value="<?php echo $dataTranfer['remainUnit']?>">
+    </div>
+    <div class="mb-3">
+    <label for="exampleInput" class="form-label">ราคาต้นทุน</label>
+    <input class="form-control" type="text" name="costprice" value="<?php echo $dataTranfer['costprice']?>">
+    </div>
+    <div class="mb-3">
+    <label for="exampleInput" class="form-label">ราคาขาย</label>
+    <input class="form-control" type="text" name="saleprice" value="<?php echo $dataTranfer['saleprice']?>">
+    </div>
+    <div class="mb-3" align="center">
+  <button type="submit" class="btn btn-primary" value="Complete">ยืนยัน</button>
+  <a href="javascript:history.back()"><button type="button" class="btn btn-danger" >ยกเลิก</button></a>
+  </div>
+</td>
 </table>
-<input type="submit" value="Complete">
-
-</form>
 
 
     

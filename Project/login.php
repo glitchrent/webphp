@@ -3,47 +3,75 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="Project\mystyle.css">
+
+        <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
+
+
+<!-- Custom styles for this template -->
+<link href="signin.css" rel="stylesheet">
+
+
+    <title>เข้าสู่ระบบ</title>
+
+
+    </head>
 
     
-
-    <title>Format</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Project\mystyle.css">
-    </head>
     <body>
 
 
-admin 1234 / member 1234 <br>  <br>
-
-    <form action="loginprecess.php" method="post" >
-
-<table>
-
-
-   
-
-        <tr> 
-        <td>User</td>
-        <td><input type="text" name="username"></td>
-        </tr>
-        <tr> 
-        <td>Password</td>
-        <td><input type="text" name="password"></td>
-         </tr>
 
 
 
-</table>
-        <input type="submit" value="โลจิน" name="login_user">
 
-</form>
+
+
+
+<body class="text-center">
+    
+<main class="form-signin">
+  <form action="loginprecess.php" method="post" >
+    <img class="mb-4" src="warehouse.gif" alt="" width="100" height="85">
+    <h1 class="h3 mb-3 fw-normal">เข้าสู่ระบบ</h1>
+
+    <div class="form-floating">
+      <input name="username" type="text" class="form-control" id="floatingInput" placeholder="Username">
+      <label for="floatingInput">User</label>
+    </div>
+    <div class="form-floating">
+      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <button name="login_user" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">welcome</p>
+  </form>
+</main>
 
       
     </body>

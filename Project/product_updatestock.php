@@ -1,37 +1,80 @@
+
+<?php require("connect.php");  ?>
+
 <html>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="Project\mystyle.css">
+
+
+    <title>Format</title>
+    </head>
 
     
-    
-        <title>Format</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="Project\mystyle.css">
-    </head>
 <body>
 
-<?php require("connect.php");  ?>
+
+
+
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <img src="warehouse.gif" alt="" width="40" height="30" class="d-inline-block align-text-top"></a></li>
+          <li><a href="product_info.php" class="nav-link px-2 link-light">คลังสินค้า</a></li>
+          <li><a href="product_insert.php" class="nav-link px-2 link-light">เพิ่มสินค้า</a></li>
+          <li><a href="product_updatestock.php" class="nav-link px-2 link-light">เพิ่มสต๊อกสินค้า</a></li>
+          <li><a href="product_decreasestock.php" class="nav-link px-2 link-light">ตัดสต๊อกสินค้า</a></li>
+          
+
+        </ul>
+
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+          Menu
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="index_admin.php?logout='1'">ออกจากระบบ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <br>
+
+  <form class="d-flex" method="get" id="form" enctype="multipart/form-data" action="" >
+
+<input  class="form-control me-2"  placeholder="พิมพ์ชื่อสินค้าที่ต้องการค้นหา" type="text" name="search" value="">
+<input class="btn btn-outline-success" type="submit" value="ค้นหา">
+
+</form>
 
 <?php  
-$data = "SELECT * FROM product ";
+$search=isset($_GET['search']) ? $_GET['search']:'';
+
+$data = "SELECT *  FROM product WHERE productName Like '%$search%'";
 $dataQuery = mysqli_query($check, $data);
 ?>
-
-
 
 <form name="form" method="post" action="product_updatestockprocess.php?Action=Save">
 <table class="table table-striped">
   <tr>
-    <th> รหัสสินค้า </th>
-    <th> ชื่อสินค้า </th>
-    <th> ประเภทสินค้า </th>
-    <th> จำนวนที่เหลือ </th>
-    <th> เพิ่มสต๊อก </th>
+    <td  align="center"> รหัสสินค้า </td>
+    <td  align="center"> ชื่อสินค้า </td>
+    <td  align="center"> ประเภทสินค้า </td>
+    <td  align="center"> จำนวนที่เหลือ </td>
+    <td  align="center"> กรอกจำนวนสินค้าที่จะเพิ่ม </td>
+    <td  align="center"><input class="btn btn-primary" type="submit" name="submit" value="ยืนยัน"></td>
   </tr>
 
 <?php
@@ -41,20 +84,21 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 	$i = $i + 1;
 ?>
   <tr>
-    <td>
+    <td align="center">
 	<input type="hidden" name="hdnproductID<?php echo $i;?>"  value="<?php echo $dataResult["productID"];?>">
 	<?php echo $dataResult["productID"];?>
 	</td>
     <td><?php echo $dataResult["productName"];?></td>
-    <td><?php echo $dataResult["productCategory"];?></td>
-    <td><?php echo $dataResult["remainUnit"];?></td>
-    <td><input type="text" name="txtaddunit<?php echo $i;?>" value=""></td>
+    <td align="center"><?php echo $dataResult["productCategory"];?></td>
+    <td align="center"><?php echo $dataResult["remainUnit"];?></td>
+    <td align="center"><input class="form-control" type="text" name="txtaddunit<?php echo $i;?>" value=""></td>
+    <td></td>
   </tr>
 <?php
 }
 ?>
 </table>
-  <input type="submit" name="submit" value="submit">
+  
   <input type="hidden" name="hdnNo" value="<?php echo $i;?>">
 </form>
 
