@@ -35,7 +35,7 @@ $dataTranfer=mysqli_fetch_assoc($dataQuery)
 
 
 
-<form action="product_processupdate.php" method="post" >
+<form action="product_upd.php" method="post" >
 
 <input type="hidden"  value="<?php echo $dataTranfer["productID"];?>"name ="productID">
 <br>

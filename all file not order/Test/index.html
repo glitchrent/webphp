@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ตัวอย่าง bootstrap-modals-variables</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+  .container-fluid{
+      text-align: center;
+      margin-top: 10%;
+  }
+  </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <a class='btn btn-info btn-sm ' onclick="loadAndShowModal();">Show Modal</a>
+            </div>
+        </div>
+    </div>
+    <div id="contianer_modals"></div>
+    
+<script   src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+function loadAndShowModal(){
+    var post = new Object();
+    post.name = 'นาย เอบีซี นามสมมุติ'
+    post.description = 'ประสบการณ์การทำงาน 1 ปี';
+
+    $('#contianer_modals').load('modals.php',post,function(){
+        $("#modal").modal('show');
+    });
+}
+</script>
+</body>
+</html>
