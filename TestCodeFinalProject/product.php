@@ -118,15 +118,6 @@ $dataQuery = mysqli_query($check, $data);
 
 ?>
 
-<?php
-$remainUnit= $_REQUEST['remainUnit'];
-  if($remainUnit >= 2){
-    echo $remainUnit;
-    echo '<script language="javascript">';
-    echo 'alert("เติมก่อนไอ้ชิปหาย")';
-    echo '</script>';
-} 
-?>
 
 <div style="width:80%; margin:0px auto;"> 
 <table>

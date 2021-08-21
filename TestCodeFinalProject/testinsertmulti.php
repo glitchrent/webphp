@@ -3,10 +3,12 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+<!-- สคลิปเพิ่มช่องกรอกสินค้า  -->
 <script type="text/javascript">
     $(document).ready(function(){
 
-        var html = '<tr><td><input class="form-control" list="datalistOptions" name="testname[]" ><datalist id="datalistOptions"></datalist><input class="form-control" name="testamount[]" require=""><input type="button" name="remove" id="remove" value="remove"></td></tr>';
+        var html = '<tr><td><input class="form-control" type="text" name="productID[]" ></td><td><input class="form-control" list="datalistOptions" name="productName[]" ><datalist id="datalistOptions"> </datalist></td><td><input class="form-control" name="exportunit[]" ></td><td><input class="form-control" type="date" name="date[]" ></td><td><input class="form-control" type="text" name="" ></td><td><input class="form-control" type="text" name="" ></td><td><input type="button" name="remove" id="remove" value="remove"></td></tr>';
 
         var x = 1;
 
@@ -18,40 +20,52 @@
         });
     });
 </script>
+
+<!-- สคลิปเพิ่มช่องกรอกสินค้า  -->
+
 </head>
 
 <body>
+
+<!-- ฟอร์มกรอก  -->
+
 <form class="insert-form" id="insert_form" method="post" action="">
     <table id="table_field">
-
-<!--  -->
+        <tr>
+            <td>รหัสสินค้า</td>
+            <td>ชื่อสินค้า</td>
+            <td>จำนวน</td>
+            <td>วันที่</td>
+            <td>ราคา</td>
+            <td>ราคารวมต่อชิ้น</td>
+        <tr>
+<!-- คำสั่ง insert กับ update ข้อมูล  -->
     <?php
 
     if (isset($_POST['save'])) {
-        $testname = $_POST['testname'];
-        $testamount = $_POST['testamount'];
+        $productName = $_POST['productName'];
+        $exportunit = $_POST['exportunit'];
+        $productID = $_POST['productID'];
+        $date = $_POST['date'];
 
-        foreach ($testname as $key => $value){
-            $save = "INSERT INTO testmulti(testname,testamount)VALUES('".$value."','".$testamount[$key]."')";
+        foreach ($productName as $key => $value){
+            $save = "INSERT INTO report(productName,productID,exportunit,date)VALUES('".$value."','".$productID[$key]."','".$exportunit[$key]."','".$date[$key]."')";
             $query = mysqli_query($check,$save) or die(mysqli_error($check));
-            $save2 = "UPDATE product SET remainUnit = remainUnit-'".$testamount[$key]."' WHERE productName ='".$value."' ";
+            $save2 = "UPDATE product SET remainUnit = remainUnit-'".$exportunit[$key]."' WHERE productName ='".$value."' ";
             $query2 = mysqli_query($check,$save2) or die(mysqli_error($check));
         }
-            
-        }
-
-    
-    
-
+    }
     ?>
-        <tr>
-        <td>
+<!-- คำสั่ง insert กับ update ข้อมูล  -->
+
+        <tr>    
+<!-- ลิสรายการสินค้า  -->
 <?php
 $data = "SELECT *  FROM product";
 $dataQuery = mysqli_query($check, $data);
 ?>
-<input class="form-control" list="datalistOptions" name="testname[]" placeholder="">
-<input class="form-control" type="text" name="testamount[]" require="">
+<td><input class="form-control" type="text" name="productID[]" ></td>
+<td><input class="form-control" list="datalistOptions" name="productName[]" placeholder=""></td>
 <datalist id="datalistOptions">
 <?php
 while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
@@ -62,11 +76,104 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
   }   
 ?>
 </datalist>
-<input type="button" name="addd" id="add" value="Add">
+<!-- ลิสรายการสินค้า  -->
+<td><input class="form-control" type="text" name="exportunit[]" ></td>
+<td><input class="form-control" type="date" name="date[]" ></td>
+<td><input class="form-control" type="text" name="" ></td>
+<td><input class="form-control" type="text" name="" ></td>
+<td><input type="button" name="addd" id="add" value="Add"></td>
 </tr>
-</td>
 </tabel>
+<table>
+<tr>
+    <td>ราคารวม <input class="form-control" type="text" name="" ></td>
+</tr>
+</table>
 <input type="submit" name="save" id="save" value="Save Data">
 </form>
+
+<!-- ฟอร์มกรอก  -->
+
+<!-- table data  -->
+<?php
+
+$data = "SELECT *  FROM product";
+$dataQuery = mysqli_query($check, $data);
+
+?>
+
+<table border="1">
+
+<tr>
+<td  align="center" >รหัสสินค้า</td> 
+<td  align="center" >ชื่อสินค้า</td>
+<td  align="center" >ประเภทสินค้า</td>
+<td  align="center" >จำนวน</td>
+<td  align="center" >หน่วย</td>
+<td  align="center" >ราคา</td>
+</tr>
+
+<?php
+while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
+?>
+
+<tr>
+<td align="center"><?php echo $dataResult["productID"]; ?></td>
+<td align="center"><?php echo $dataResult["productName"]; ?></td>
+<td align="center"><?php echo $dataResult["productCategory"]; ?></td>
+<td align="center"><?php echo $dataResult["remainUnit"]; ?></td>
+<td align="center"><?php echo $dataResult["unit"]; ?></td>
+<td align="center"><?php echo $dataResult["price"]; ?></td>
+
+</tr>
+
+<?php
+  }   
+?>
+
+</table>
+
+<!-- table data  -->
+<br>
+<!-- table data  -->
+<?php
+
+$data = "SELECT *  FROM report";
+$dataQuery = mysqli_query($check, $data);
+
+?>
+<table border="1">
+
+<tr>
+<td>reportID</td> 
+<td>productID</td>
+<td>productName</td>
+<td>date</td>
+<td>exportunit</td>
+</tr>
+
+<?php
+while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
+?>
+
+<tr>
+<td><?php echo $dataResult["reportID"]; ?></td>
+<td><?php echo $dataResult["productID"]; ?></td>
+<td><?php echo $dataResult["productName"]; ?></td>
+<td><?php echo $dataResult["date"]; ?></td>
+<td><?php echo $dataResult["exportunit"]; ?></td>
+
+</tr>
+
+<?php
+  }   
+?>
+
+</table>
+
+<!-- table data  -->
+
+
+
 </body>
 </html>

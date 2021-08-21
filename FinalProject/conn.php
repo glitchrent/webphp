@@ -1,5 +1,5 @@
 <?php
-$check = mysqli_connect("localhost","root","","warehouse");
+$check = mysqli_connect("localhost","root","","mydatabase");
 if (!$check) {
 die("Fail" . mysqli_connect_error());
 }else {
