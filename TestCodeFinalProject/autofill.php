@@ -1,4 +1,3 @@
-<?php require("conn.php");   ?> 
 <html>
   
 <head>
@@ -7,25 +6,30 @@
 </head>
   
 <body>
-
     <div>
         <div>
-                    <label>User Id</label>
-                    <input type='text' list="datalistOptions" name="user_id" id='user_id' placeholder='id' onkeyup="GetDetail(this.value)" value="">
-                    <datalist id="datalistOptions">
-                    <option value="1">
-                    <option value="2">
-                    </datalist>
+                    <input type='text' name="productName" id='productName' onkeyup="GetDetail(this.value)" value="">
         </div>
         <div>
-                    <label>First Name:</label>
-                    <input type="text" name="first_name" id="first_name" placeholder='First Name' value="">
+                    <input type="text" name="price" id="price" value="">
         </div>
         <div>
-                    <label>Last Name:</label>
-                    <input type="text" name="last_name" id="last_name" placeholder='Last Name' value="">
+                    <input type="text" name="remainUnit" id="remainUnit" value="">
         </div>
     </div>
+    <div>
+        <div>
+                    <input type='text' name="productName" id='productName' onkeyup="GetDetail(this.value)" value="">
+        </div>
+        <div>
+                    <input type="text" name="price" id="price" value="">
+        </div>
+        <div>
+                    <input type="text" name="remainUnit" id="remainUnit" value="">
+        </div>
+    </div>
+
+
     <script>
   
         // onkeyup event will occur when the user 
@@ -33,8 +37,8 @@
         // assigned to this event
         function GetDetail(str) {
             if (str.length == 0) {
-                document.getElementById("first_name").value = "";
-                document.getElementById("last_name").value = "";
+                document.getElementById("price").value = "";
+                document.getElementById("remainUnit").value = "";
                 return;
             }
             else {
@@ -57,16 +61,16 @@
                         // a variable assign the value 
                         // received to first name input field
                           
-                        document.getElementById("first_name").value = myObj[0];
+                        document.getElementById("price").value = myObj[0];
                           
                         // Assign the value received to
                         // last name input field
-                        document.getElementById("last_name").value = myObj[1];
+                        document.getElementById("remainUnit").value = myObj[1];
                     }
                 };
   
                 // xhttp.open("GET", "filename", true);
-                xmlhttp.open("GET", "gfg.php?user_id=" + str, true);
+                xmlhttp.open("GET", "autofillpc.php?productName=" + str, true);
                   
                 // Sends the request to the server
                 xmlhttp.send();
