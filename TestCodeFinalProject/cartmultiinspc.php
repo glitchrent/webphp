@@ -13,7 +13,7 @@ if($_GET["Action"] == "Save")
 		$calsql .="WHERE productID = '".$_POST["hdnproductID$i"]."' ";
 		$dataQuery = mysqli_query($check, $calsql);  
 		
-		$calsql2 = "INSERT INTO report(productID,productName,exportunit)VALUES('".$_POST["txtproductID$i"]."','".$_POST["txtproductName$i"]."','".$_POST["txtaddunit$i"]."')";
+		$calsql2 = "INSERT INTO report(productID,productName,exportunit,totalunp)VALUES('".$_POST["txtproductID$i"]."','".$_POST["txtproductName$i"]."','".$_POST["txtaddunit$i"]."','".$_POST["totalunp$i"]."')";
 		$dataQuery2 = mysqli_query($check, $calsql2);
 
 		$del = "DELETE FROM cart ";

@@ -2,17 +2,28 @@
 
     <script type="text/javascript">
         function sumunp() {
-            var txtaddunit = document.getElementById('txtaddunit').value;
-            var txtprice = document.getElementById('txtprice').value;
+
+            for(i=1;i<=5;i++){
+
+            
+            var txtaddunit = document.getElementById('txtaddunit'+i).value;
+            var txtprice = document.getElementById('txtprice'+i).value;
             var result = parseInt(txtaddunit) * parseInt(txtprice);
             if (!isNaN(result)) {
-                document.getElementById('totalunp').value = result;
+                document.getElementById('totalunp'+i).value = result;
             }
+        }
         }
     </script>
 
 <div>
-        <input type="text" id="txtaddunit" onkeyup="sumunp()" />
-        <input type="text" id="txtprice" onkeyup="sumunp()" />
-        <input type="text" id="totalunp" />
+    <?php for($i=1;$i<=2;$i++)  { ?>
+        <input type="text" id="txtaddunit<?php echo $i;?>" onkeyup="sumunp()" />
+        <input type="text" id="txtprice<?php echo $i;?>" onkeyup="sumunp()" />
+        <input type="text" id="totalunp<?php echo $i;?>" /> <br>
+        
+
+        <?php } ?>
 <div>
+
+
