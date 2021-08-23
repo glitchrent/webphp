@@ -41,6 +41,9 @@ $dataQuery = mysqli_query($check, $data);
 <div class ="nav justify-content-end">
 <form class="d-flex" method="get" id="form" enctype="multipart/form-data" action="" >
 <div class="col-auto me-3">
+      <div>
+            <a href="cartmultiins.php">ตะกร้า</a>
+            <div>
       <input class="form-control"  placeholder="พิมพ์ชื่อสินค้าที่ต้องการค้นหา" type="text" name="search" value="">
 </div>
 <div class="col-sm">
