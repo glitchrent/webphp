@@ -21,6 +21,10 @@ if($_GET["Action"] == "Save")
 		
 	}
 
+
+	$calsql3 = "INSERT INTO orderbill(total)VALUES('".$_POST["totalresult"]."')";
+		$dataQuery3 = mysqli_query($check, $calsql3);
+
 }
 
 

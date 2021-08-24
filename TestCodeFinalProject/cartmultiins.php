@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
    <link rel="stylesheet" type="text/css" href="Project\mystyle.css">
-
+   <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
 
     <title>Format</title>
     </head>
@@ -49,10 +49,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 ?>
 
 <?php 
-/*
-$sum = $_POST["price"] * $_POST["txtaddunit"];
-$total += $sum;
-*/
+
 ?>
 
   <tr>
@@ -66,14 +63,15 @@ $total += $sum;
 	</td>
 
     <td><input type="text" name="txtproductName<?php echo $i;?>" value="<?php echo $dataResult["productName"];?>"></td>
-    <td><input type="text" name="txtaddunit<?php echo $i;?>" id="txtaddunit<?php echo $i;?>" onkeyup="sumunp()" ></td>
-    <td><input type="text" name="txtprice<?php echo $i;?>" id="txtprice<?php echo $i;?>" onkeyup="sumunp()" value="<?php echo $dataResult["price"];?>" ></td>
-    <td><input type="text" name="totalunp<?php echo $i;?>" id="totalunp<?php echo $i;?>" value=""></td>
+    <td><input type="text" name="txtaddunit<?php echo $i;?>" id="txtaddunit<?php echo $i;?>" onkeyup="sumunp()"></td>
+    <td><input type="text" name="txtprice<?php echo $i;?>" id="txtprice<?php echo $i;?>" onkeyup="sumunp()" value="<?php echo $dataResult["price"];?>"></td>
+    <td><input type="text" class="sumalltotal" name="totalunp<?php echo $i;?>" id="totalunp<?php echo $i;?>" value=""></td>
   </tr>
 <?php
 }
 ?>
 <tr>
+<td><input type="number" name="totalresult" id="totalresult" /></td>
 <td><input class="btn btn-primary" type="submit" name="submit" value="ยืนยัน"></td>
 </tr>
 </table>
@@ -89,8 +87,12 @@ $total += $sum;
 
 </body>
 
-<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src= "autocal.js" charset="utf-8"></script>
 
+
+
+
+<!-- 
     <script type="text/javascript">
         function sumunp() {
 
@@ -106,5 +108,25 @@ $total += $sum;
         }
     </script>
 
+<script type="text/javascript">
+
+var textboxes = document.querySelectorAll(".sumalltotal");
+textboxes.forEach(function(box) {
+  box.addEventListener("", sumAll);
+});
+
+function sumAll() {
+  var total = 0;
+  textboxes.forEach(function(box) {
+    var val;
+    if (box.value == "") val = 0;
+    else val = parseInt(box.value);
+    total += val;
+  });
+  document.getElementById("totalresult").value = total;
+}
+
+<input type="submit" name="" value="คำนวณเงิน" onclick="sumAll()" />
+</script> -->
 
 </html>
