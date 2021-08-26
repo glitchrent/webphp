@@ -17,7 +17,7 @@
 
 <body OnLoad="document.form1.submit();"> 
 
-  
+
 <?php
 
 $id=$_GET["id"];
@@ -26,14 +26,8 @@ $dataQuery = mysqli_query($check,$data);
 $dataTranfer=mysqli_fetch_assoc($dataQuery)
 
 ?>
-<header class="p-3 bg-dark text-white">
-    
-    <center><h1>แก้ไขข้อมูลสินค้า</h1></center>
-</header>
 
-
-
-
+<hidden >
 <form name="form1" action="cartpc.php" method="post" >
 
 <input type="hidden"  value="<?php echo $dataTranfer["productID"];?>"name ="productID">
@@ -44,29 +38,20 @@ $dataTranfer=mysqli_fetch_assoc($dataQuery)
    
 
     <div class="mb-3">
-    <label for="exampleInput" class="form-label">ชื่อสินค้า</label>
-    <input class="form-control" type="text" name="productName" value="<?php echo $dataTranfer['productName']?>">
+    <input class="form-control" type="hidden" name="productName" value="<?php echo $dataTranfer['productName']?>">
     </div>
     <div class="mb-3">
-    <label for="exampleInput" class="form-label">ประเภทสินค้า</label>
-    <input class="form-control" type="text" name="productCategory" value="<?php echo $dataTranfer['productCategory']?>">         
+    <input class="form-control" type="hidden" name="productCategory" value="<?php echo $dataTranfer['productCategory']?>">         
     </div>
     <div class="mb-3">
-    <label for="exampleInput" class="form-label">จำนวนที่เหลือ</label>
-    <input class="form-control" type="text" name="remainUnit" value="<?php echo $dataTranfer['remainUnit']?>">
+    <input class="form-control" type="hidden" name="remainUnit" value="<?php echo $dataTranfer['remainUnit']?>">
     </div>
     <div class="mb-3">
-    <label for="exampleInput" class="form-label">หน่วย</label>
-    <input class="form-control" type="text" name="unit" value="<?php echo $dataTranfer['unit']?>">
+    <input class="form-control" type="hidden" name="unit" value="<?php echo $dataTranfer['unit']?>">
     </div>
     <div class="mb-3">
-    <label for="exampleInput" class="form-label">ราคาขาย</label>
-    <input class="form-control" type="text" name="price" value="<?php echo $dataTranfer['price']?>">
+    <input class="form-control" type="hidden" name="price" value="<?php echo $dataTranfer['price']?>">
     </div>
-    <div class="mb-3" align="center">
-  <button type="submit" class="btn btn-primary" value="Complete">ยืนยัน</button>
-  <a href="javascript:history.back()"><button type="button" class="btn btn-danger" >ยกเลิก</button></a>
-  </div>
 </td>
 </table>
 

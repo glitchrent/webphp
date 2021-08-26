@@ -44,7 +44,7 @@ $dataQuery = mysqli_query($check, $data);
 
 <div class ="nav justify-content-end">
 <div>
-      <a href="cartmultiins.php">ตะกร้า</a>
+      <a href="cartmultiins.php">ออร์เดอร์สินค้า</a>
 <div>
 
       <input class="form-control"  placeholder="พิมพ์ชื่อสินค้าที่ต้องการค้นหา" type="text" name="search" value="">

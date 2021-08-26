@@ -13,7 +13,7 @@ if($_GET["Action"] == "Save")
 		$calsql .="WHERE productID = '".$_POST["hdnproductID$i"]."' ";
 		$dataQuery = mysqli_query($check, $calsql);  
 		
-		$calsql2 = "INSERT INTO report(productID,productName,exportunit,totalunp)VALUES('".$_POST["txtproductID$i"]."','".$_POST["txtproductName$i"]."','".$_POST["txtaddunit$i"]."','".$_POST["totalunp$i"]."')";
+		$calsql2 = "INSERT INTO report(productID,productName,date,imstatus,exportunit,totalunp)VALUES('".$_POST["txtproductID$i"]."','".$_POST["txtproductName$i"]."','".$_POST["txtdate$i"]."','".$_POST["txtimstatus$i"]."','".$_POST["txtaddunit$i"]."','".$_POST["totalunp$i"]."')";
 		$dataQuery2 = mysqli_query($check, $calsql2);
 
 		$del = "DELETE FROM cart ";
@@ -22,7 +22,7 @@ if($_GET["Action"] == "Save")
 	}
 
 
-	$calsql3 = "INSERT INTO orderbill(total)VALUES('".$_POST["totalresult"]."')";
+	$calsql3 = "INSERT INTO orderbill(date,total)VALUES('".$_POST["txtorderdate"]."','".$_POST["totalresult"]."')";
 		$dataQuery3 = mysqli_query($check, $calsql3);
 
 }
@@ -30,12 +30,12 @@ if($_GET["Action"] == "Save")
 
 
 
-/*
+
 if($check){
     echo  "save <script>window.location='cartmultiins.php'</script>";
     }else{
         echo "Fail";
     }
-*/
+
 
 ?>
