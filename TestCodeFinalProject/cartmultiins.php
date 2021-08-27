@@ -76,7 +76,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
     <input type="hidden" name="txtimstatus<?php echo $i;?>" value="ส่งออก">
     <input type="hidden" name="" value="<?php echo $dataResult["remainUnit"];?>">
     ( สินค้าคงเหลือ <?php echo $dataResult["remainUnit"];?> )
-    <td><input type="number" name="txtaddunit<?php echo $i;?>" id="txtaddunit<?php echo $i;?>" onkeyup="sumunp()" min="1" max="<?php echo $dataResult["remainUnit"];?>"></td>
+    <td><input type="number" name="txtaddunit<?php echo $i;?>" id="txtaddunit<?php echo $i;?>" onkeyup="sumunp()" min="1" max="<?php echo $dataResult["remainUnit"];?>" oninvalid="this.setCustomValidity('กรอกจำนวนไม่ถูกต้อง หรือ สินค้าไม่เพียงพอ จำนวนคงเหลือ <?php echo $dataResult['remainUnit'];?> ')" oninput="setCustomValidity('')" value="0"></td>
     <td><input type="text" readonly="readonly" name="txtprice<?php echo $i;?>" id="txtprice<?php echo $i;?>" onkeyup="sumunp()" value="<?php echo $dataResult["price"];?>"></td>
     <td><input type="text" readonly="readonly" class="sumalltotal" name="totalunp<?php echo $i;?>" id="totalunp<?php echo $i;?>" value=""></td>
   </tr>
