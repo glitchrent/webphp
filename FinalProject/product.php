@@ -17,7 +17,21 @@
 
 <body>
 
+<?php
 
+$outofstockcheck = " SELECT remainUnit FROM product WHERE remainUnit <= 10 ";
+
+$outofresult = mysqli_query($check, $outofstockcheck) or die(mysqli_error());
+$leavestock = mysqli_num_rows($outofresult);
+
+if($leavestock > 0){
+    echo "<script>";
+    echo "alert(' สินค้าใกล้หมด !!');";
+    echo "</script>";
+}
+
+
+?>
 
 
 
