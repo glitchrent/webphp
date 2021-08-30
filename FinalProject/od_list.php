@@ -1,5 +1,5 @@
-
-<?php require("conn.php");  ?>
+<?php require("conn.php");   ?> 
+<?php require("bootstrapscrip.php");   ?> 
 
 <html>
 <head>
@@ -7,18 +7,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
-
+  
    <link rel="stylesheet" type="text/css" href="Project\mystyle.css">
    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
 
-    <title>Format</title>
+    <title>ออร์เดอร์</title>
     </head>
 
     
 <body>
+
+
+<?php include 'header.php'; ?>
 
 <div style="width:80%; margin:0px auto;"> 
 
@@ -77,6 +77,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
     <td><input type="number" name="txtaddunit<?php echo $i;?>" id="txtaddunit<?php echo $i;?>" onkeyup="sumunp()" min="1" max="<?php echo $dataResult["remainUnit"];?>" oninvalid="this.setCustomValidity('กรอกจำนวนไม่ถูกต้อง หรือ สินค้าไม่เพียงพอ จำนวนคงเหลือ <?php echo $dataResult['remainUnit'];?> ')" oninput="setCustomValidity('')" value="0"></td>
     <td><input type="text" readonly="readonly" name="txtprice<?php echo $i;?>" id="txtprice<?php echo $i;?>" onkeyup="sumunp()" value="<?php echo $dataResult["price"];?>"></td>
     <td><input type="text" readonly="readonly" class="sumalltotal" name="totalunp<?php echo $i;?>" id="totalunp<?php echo $i;?>" value=""></td>
+    <td><a href = "od_del_pc.php?iddel=<?php echo $dataResult["productID"];?>"><button type="button" class="btn btn-outline-danger">ลบ</button></a></td>
   </tr>
   
 <?php
@@ -88,7 +89,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 <td><input class="btn btn-primary" type="submit" name="submit" value="ยืนยัน"></td>
 <td>ราคารวมทั้งหมด </td>
 <td><input type="number" readonly="readonly" name="totalresult" id="totalresult" /> บาท </td>
-
+<td></td>
 </tr>
 </table>
 

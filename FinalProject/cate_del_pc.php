@@ -3,7 +3,7 @@
 
     $id=$_GET['iddel']; 
     
-    mysqli_query($check,$sql = "DELETE FROM user WHERE username='$id'")
+    mysqli_query($check,$sql = "DELETE FROM pdcategory WHERE cateID='$id'")
 
 ?>
 
@@ -11,7 +11,7 @@
 
 //คำสั่งกลับหน้าแรกเมื่อทำงานเสร็จ
 if($check){
-    echo  "save <script>window.location='mb_index.php'</script>";
+    echo  "save <script>window.location='cate_index.php'</script>";
     }else{
         echo "Fail";
     }

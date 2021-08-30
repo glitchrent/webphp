@@ -1,6 +1,5 @@
 <?php require("conn.php");   ?> 
 <?php require("bootstrapscrip.php");   ?> 
-
 <html>
 
 <head>
@@ -10,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="theme.css">
 
-    <title>สินค้า</title>
+    <title>ประเภทสินค้า</title>
 
 </head>
 
@@ -19,6 +18,10 @@
 <?php include 'header.php'; ?>
 
 <br>
+
+
+
+
 
 <!-- alert outofstock -->
 
@@ -44,24 +47,21 @@ if($leavestock > 0){
 
 $search=isset($_GET['search']) ? $_GET['search']:'';
 
-$data = "SELECT *  FROM product WHERE productName Like '%$search%'";
+$data = "SELECT *  FROM pdcategory WHERE categoryName Like '%$search%'";
 $dataQuery = mysqli_query($check, $data);
 
 ?>
 
 
-<?php
 
-$data2 = "SELECT *  FROM pdcategory ";
-$dataQuery2 = mysqli_query($check, $data2);
+</datalist>
 
-?>
 
 <div style="width:80%; margin:0px auto;"> 
 
 <!-- insert popup ######################################################################################   -->
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#insPopup">
-  เพิ่มสินค้า
+เพิ่มประเภทสินค้า
 </button>
 
 <!-- insert popup ######################################################################################   -->
@@ -69,50 +69,23 @@ $dataQuery2 = mysqli_query($check, $data2);
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">เพิ่มสินค้า</h5>
+        <h5 class="modal-title" id="exampleModalLabel">เพิ่มประเภทสินค้า</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
 
-      <form action="pd_ins_pc.php" method="post"  >
+      <form action="cate_ins_pc.php" method="post"  >
 
   <div class="mb-3">
-    <label for="exampleInput" class="form-label">ชื่อสินค้า</label>
-    <input name="productName" type="text" class="form-control" id="" >
+    <label for="exampleInput" class="form-label">รหัสประเภทสินค้า</label>
+    <input name="cateID" type="text" class="form-control" id="" readonly >
   </div>
 
   <div class="mb-3">
-    <label for="exampleInput" class="form-label">ประเภทสินค้า</label>
-    
-  <input name="productCategory" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="เลือกประเภท...">
-<datalist id="datalistOptions">
-<?php
-while ($dataResult2 = mysqli_fetch_assoc($dataQuery2)) {
-?>
-  <option value="<?php echo $dataResult2["categoryName"]; ?>">
-
-<?php
-  }   
-?>
-
-</div>
-
-
-
-  <div class="mb-3">
-    <label for="exampleInput" class="form-label">จำนวน</label>
-    <input name="remainUnit" readonly="readonly"  type="text" class="form-control" id="" value="0">
+    <label for="exampleInput" class="form-label">ชื้อประเภทสินค้า</label>
+    <input name="categoryName" type="text" class="form-control" id="">
   </div>
 
-  <div class="mb-3">
-    <label for="exampleInput" class="form-label">หน่วย ( เช่น กล่อง,โหล,ชิ้น )</label>
-    <input name="unit" type="text" class="form-control" id="" >
-  </div>
-
-  <div class="mb-3">
-    <label for="exampleInput" class="form-label">ราคา</label>
-    <input name="price" type="text" class="form-control" id="">
-  </div>
       </div>
 
       <div class="modal-footer">
@@ -145,14 +118,10 @@ while ($dataResult2 = mysqli_fetch_assoc($dataQuery2)) {
 <table class="table table-striped">
 
 <tr>
-<td  align="center" width="10%">รหัสสินค้า</td> 
-<td  align="center" width="">ชื่อสินค้า</td>
-<td  align="center" width="">ประเภทสินค้า</td>
-<td  align="center" width="">จำนวน</td>
-<td  align="center" width="">หน่วย</td>
-<td  align="center" width="">ราคา</td>
-<td  align="center" width="10%"></td>
-<td  align="center" width="10%"></td>
+<td  align="center" width="10%">รหัสประเภทสินค้า</td> 
+<td  align="center" width="">ชื่อประเภทสินค้า</td>
+<td></td>
+
 </tr>
 
 <?php
@@ -160,20 +129,12 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 ?>
 
 <tr>
-<td align="center"><?php echo $dataResult["productID"]; ?></td>
-<td align="center"><?php echo $dataResult["productName"]; ?></td>
-<td align="center"><?php echo $dataResult["productCategory"]; ?></td>
-<td align="center"><?php echo $dataResult["remainUnit"]; ?></td>
-<td align="center"><?php echo $dataResult["unit"]; ?></td>
-<td align="center"><?php echo $dataResult["price"]; ?></td>
+<td align="center"><?php echo $dataResult["cateID"]; ?></td>
+<td align="center"><?php echo $dataResult["categoryName"]; ?></td>
+
 
 <td align="center">
-<a href = "pd_upd.php?id=<?php echo $dataResult["productID"];?>">
-<button type="button" class="btn btn-outline-info">แก้ไขข้อมูล</button></a>
-</td>
-
-<td align="center">
-<a href = "pd_del_pc.php?iddel=<?php echo $dataResult["productID"];?>">
+<a href = "cate_del_pc.php?iddel=<?php echo $dataResult["cateID"];?>">
 <button type="button" class="btn btn-outline-danger">ลบ</button></a>
 </td>
 
@@ -183,6 +144,9 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <?php
   }   
 ?>
+
+
+
 
 </table>
 

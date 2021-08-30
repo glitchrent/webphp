@@ -1,4 +1,5 @@
 <?php require("conn.php");   ?> 
+<?php require("bootstrapscrip.php");   ?> 
 <html>
 
 <head>
@@ -7,16 +8,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="theme.css">
+       <link rel="stylesheet" type="text/css" href="theme.css">
 
-    <title>Dashboard</title>
+    <title>สินค้าใกล้หมด</title>
 
 </head>
 
 <body>
 
+
+<?php include 'header.php'; ?>
 
 <br>
 
@@ -53,14 +54,13 @@ $dataQuery = mysqli_query($check, $data);
 <table class="table table-striped">
 
 <tr>
-<td  align="center" width="10%">รหัสสินค้า</td> 
-<td  align="center" width="40%">ชื่อสินค้า</td>
-<td  align="center" width="15%">ประเภทสินค้า</td>
-<td  align="center" width="10%">จำนวน</td>
-<td  align="center" width="10%">หน่วย</td>
-<td  align="center" width="5%">ราคา</td>
-<td  align="center" width="10%"></td>
-<td  align="center" width="5%"></td>
+<td>รหัสสินค้า</td> 
+<td>ชื่อสินค้า</td>
+<td>ประเภทสินค้า</td>
+<td>จำนวน</td>
+<td>หน่วย</td>
+<td>ราคา</td>
+
 </tr>
 
 <?php
@@ -75,16 +75,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <td><?php echo $dataResult["unit"]; ?></td>
 <td><?php echo $dataResult["price"]; ?></td>
 
-<td>
-<a href = "product_upd.php?id=<?php echo $dataResult["productID"];?>">
-<button type="button" class="btn btn-outline-info">แก้ไขข้อมูล</button></a>
-</td>
 
-
-<td>
-<a href = "product_processdel.php?iddel=<?php echo $dataResult["productID"];?>">
-<button type="button" class="btn btn-outline-danger">ลบ</button></a>
-</td>
 
 
 </tr>

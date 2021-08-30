@@ -10,11 +10,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="theme.css">
 
-    <title>Dashboard</title>
+    <title>ตัดสต๊อกสินค้า</title>
 
 </head>
 
 <body>
+
+
+<?php include 'header.php'; ?>
+
 
 <br>
 

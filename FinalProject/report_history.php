@@ -9,11 +9,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="theme.css">
 
-    <title>Dashboard</title>
+    <title>รายงานการนำเข้า-ส่งออก</title>
 </head>
 
 <body>
 
+
+<?php include 'header.php'; ?>
 
 <br>
 

@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="theme.css">
 
-    <title>Dashboard</title>
+    <title>พนักงาน</title>
 
 </head>
 
