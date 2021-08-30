@@ -1,25 +1,23 @@
 <?php
     require("conn.php");
 
-    //$productID = $_POST['productID'];
+    $productID = $_POST['productID'];
     $productName = $_POST['productName'];
     $productCategory = $_POST['productCategory'];
     $remainUnit = $_POST['remainUnit'];
     $unit = $_POST['unit'];
     $price = $_POST['price'];
     
-    mysqli_query($check, "INSERT INTO product (productName,productCategory,remainUnit,unit,price) VALUES ('$productName','$productCategory','$remainUnit','$unit','$price')");
-
-
+    mysqli_query($check, $data ="UPDATE product SET productName ='$productName',productCategory = '$productCategory',remainUnit = '$remainUnit',unit='$unit',price='$price' WHERE productID=$productID");
+    
 ?>
 
-<?php
+<?php 
 //คำสั่งกลับหน้าแรกเมื่อทำงานเสร็จ
 if($check){
-    echo  "save <script>window.location='product.php'</script>";
+    echo  "save <script>window.location='pd_index.php'</script>";
     }else{
         echo "Fail";
     }
 
 ?>
-

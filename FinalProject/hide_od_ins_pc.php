@@ -37,7 +37,7 @@
 <?php 
 //คำสั่งกลับหน้าแรกเมื่อทำงานเสร็จ
 if($check){
-    echo  "save <script>window.location='testcart.php'</script>";
+    echo  "save <script>window.location='subtract_stock.php'</script>";
     }else{
         echo "Fail";
     }

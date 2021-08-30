@@ -18,7 +18,7 @@
     
 <body>
 
-<div style="width:50%; margin:0px auto;"> 
+<div style="width:80%; margin:0px auto;"> 
 
 
 
@@ -38,7 +38,7 @@ $data = "SELECT *  FROM product WHERE productName Like '%$search%'";
 $dataQuery = mysqli_query($check, $data);
 ?>
 
-<form name="form" method="post" action="updstock_pc.php?Action=Save">
+<form name="form" method="post" action="incre_stock_pc.php?Action=Save">
 <table class="table table-striped">
   <tr>
     <td  align="center">  </td>

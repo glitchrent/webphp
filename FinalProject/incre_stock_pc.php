@@ -29,7 +29,7 @@ if($_GET["Action"] == "Save")
 
 
 if($check){
-    echo  "save <script>window.location='updatestock.php'</script>";
+    echo  "save <script>window.location='incre_stock.php'</script>";
     }else{
         echo "Fail";
     }

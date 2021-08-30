@@ -32,7 +32,7 @@ if($_GET["Action"] == "Save")
 
 
 if($check){
-    echo  "save <script>window.location='cartmultiins.php'</script>";
+    echo  "save <script>window.location='subtract_stock.php'</script>";
     }else{
         echo "Fail";
     }

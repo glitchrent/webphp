@@ -3,7 +3,6 @@
 
 <html>
 <head>
-  
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,19 +22,18 @@
 
 <div style="width:80%; margin:0px auto;"> 
 
-  <br>
-
+<br>
 
 <?php  
 $data = "SELECT *  FROM cart";
 $dataQuery = mysqli_query($check, $data);
 ?>
 
-<form name="form" method="post" action="cartmultiinspc.php?Action=Save">
+<form name="form" method="post" action="od_list_pc.php?Action=Save">
 <table class="table table-striped">
   <tr>
     
-    <a href = "clearcartpc.php?iddel=remove"><button type="button" class="btn btn-danger">ล้างสินค้าทั้งหมด</button></a>
+    <a href = "od_clear_all.php?iddel=remove"><button type="button" class="btn btn-danger">ล้างสินค้าทั้งหมด</button></a>
   </tr>
 <tr>
   <td>รหัสสินค้า</td>
@@ -100,7 +98,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 
 
 
-<a href ="testcart.php">กลับไปหน้าเลือกสินค้า</a>
+<a href ="subtract_stock.php">กลับไปหน้าเลือกสินค้า</a>
 
 </div> 
 

@@ -10,7 +10,7 @@
     $role = $_POST['role'];
 
     
-    mysqli_query($check, $data ="UPDATE user SET username ='$username',password = '$password',name = '$name',surname='$surname',tel='$tel',address='$address',role='$role' WHERE username='$username'");
+    mysqli_query($check, "INSERT INTO user (username,password,name,surname,tel,address,role) VALUES ('$username','$password','$name','$surname','$tel','$address','$role')");
 
 
 ?>
@@ -18,9 +18,10 @@
 <?php
 //คำสั่งกลับหน้าแรกเมื่อทำงานเสร็จ
 if($check){
-    echo  "save <script>window.location='user.php'</script>";
+    echo  "save <script>window.location='mb_index.php'</script>";
     }else{
         echo "Fail";
     }
 
 ?>
+

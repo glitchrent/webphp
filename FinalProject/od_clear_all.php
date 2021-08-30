@@ -11,7 +11,7 @@
 
 //คำสั่งกลับหน้าแรกเมื่อทำงานเสร็จ
 if($check){
-    echo  "save <script>window.location='cartmultiins.php'</script>";
+    echo  "save <script>window.location='od_list.php'</script>";
     }else{
         echo "Fail";
     }

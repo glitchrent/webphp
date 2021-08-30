@@ -27,35 +27,28 @@ $dataTranfer=mysqli_fetch_assoc($dataQuery)
 
 ?>
 
-<hidden >
-<form name="form1" action="cartpc.php" method="post" >
-
-<input type="hidden"  value="<?php echo $dataTranfer["productID"];?>"name ="productID">
+<form name="form1" action="hide_od_ins_pc.php" method="post" >
+    <input type="hidden"  value="<?php echo $dataTranfer["productID"];?>"name ="productID">
 <br>
-<table  align="center">
+<table>
 <td>
-
-   
-
     <div class="mb-3">
-    <input class="form-control" type="hidden" name="productName" value="<?php echo $dataTranfer['productName']?>">
+    <input  type="hidden" name="productName" value="<?php echo $dataTranfer['productName']?>">
     </div>
     <div class="mb-3">
-    <input class="form-control" type="hidden" name="productCategory" value="<?php echo $dataTranfer['productCategory']?>">         
+    <input  type="hidden" name="productCategory" value="<?php echo $dataTranfer['productCategory']?>">         
     </div>
     <div class="mb-3">
-    <input class="form-control" type="hidden" name="remainUnit" value="<?php echo $dataTranfer['remainUnit']?>">
+    <input  type="hidden" name="remainUnit" value="<?php echo $dataTranfer['remainUnit']?>">
     </div>
     <div class="mb-3">
-    <input class="form-control" type="hidden" name="unit" value="<?php echo $dataTranfer['unit']?>">
+    <input  type="hidden" name="unit" value="<?php echo $dataTranfer['unit']?>">
     </div>
     <div class="mb-3">
-    <input class="form-control" type="hidden" name="price" value="<?php echo $dataTranfer['price']?>">
+    <input  type="hidden" name="price" value="<?php echo $dataTranfer['price']?>">
     </div>
 </td>
 </table>
 
-
-    
-    </body>
+</body>
 </html>
