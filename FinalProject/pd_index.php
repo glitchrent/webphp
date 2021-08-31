@@ -1,6 +1,25 @@
 <?php require("conn.php");   ?> 
 <?php require("bootstrapscrip.php");   ?> 
 
+<?php 
+    session_start();
+
+    if (!isset($_SESSION['username'])) {
+        header('location: login.php');
+
+    }
+
+
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['username']);
+        header('location: login.php');
+    }
+
+
+?>
+
+
 <html>
 
 <head>
@@ -15,7 +34,7 @@
 </head>
 
 <body>
-
+<a href="pd_index.php?logout='1'">ออกจากระบบ</a>
 <?php include 'header.php'; ?>
 
 <br>

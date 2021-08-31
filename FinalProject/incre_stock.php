@@ -42,13 +42,13 @@ $dataQuery = mysqli_query($check, $data);
 <form name="form" method="post" action="incre_stock_pc.php?Action=Save">
 <table class="table table-striped">
   <tr>
-    <td  align="center">  </td>
-    <td  align="center">  </td>
-    <td  align="center">  </td>
-    <td  align="center">  </td>
-    <td  align="center">  </td>
-    <td  align="center">  </td>
-    <td  align="center">  </td>
+    <td  align="center">รหัสสินค้า</td>
+    <td  align="center">ชื่อสินค้า</td>
+    <td  align="center">ประเภท</td>
+    <td  align="center">วันที่</td>
+    <td  align="center"></td>
+    <td  align="center">จำนวนคงเหลือ</td>
+    <td  align="center">จำนวนที่เพิ่ม</td>
     <td  align="center"><input class="btn btn-primary" type="submit" name="submit" value="ยืนยัน"></td>
   </tr>
 
@@ -59,13 +59,13 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 	$i = $i + 1;
 ?>
   <tr>
-    <td align="center">
+  <td align="center">
 	<input type="hidden" name="hdnproductID<?php echo $i;?>"  value="<?php echo $dataResult["productID"];?>">
-    <input type="text" name="txtproductID<?php echo $i;?>" value="<?php echo $dataResult["productID"];?>">
+  <input type="text" name="txtproductID<?php echo $i;?>" value="<?php echo $dataResult["productID"];?>">
 	</td>
-    <td><input type="text" name="txtproductName<?php echo $i;?>" value="<?php echo $dataResult["productName"];?>"></td>
+    <td align="center"><input type="text" name="txtproductName<?php echo $i;?>" value="<?php echo $dataResult["productName"];?>"></td>
     <td align="center"><?php echo $dataResult["productCategory"];?></td>
-    <td><input type="text" readonly = "readonly" name="txtdate<?php echo $i;?>" value="<?php echo date('Y-m-d');?>"><td>
+    <td align="center"><input type="date" name="txtdate<?php echo $i;?>" value="<?php echo date('Y-m-d');?>"><td>
     <input type="hidden" name="txtimstatus<?php echo $i;?>" value="นำเข้า">
     <td align="center"><?php echo $dataResult["remainUnit"];?></td>
     <td align="center"><input class="form-control" type="text" name="txtaddunit<?php echo $i;?>" value=""></td>

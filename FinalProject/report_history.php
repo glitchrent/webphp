@@ -65,6 +65,7 @@ $dataQuery = mysqli_query($check, $data);
 <td  align="center" width="10%">วันที่</td>
 <td  align="center" width="10%">สถานะ</td>
 <td  align="center" width="5%">จำนวน</td>
+<td width="5%"></td>
 <!-- <td  align="center" width="10%">ราคารวม</td> -->
 
 </tr>
@@ -112,7 +113,16 @@ if ($testtext == "นำเข้า"){
 
  ?>
  </td>
+ 
+ <td>
+ <a href = "rp_his_del_pc.php?iddel=<?php echo $dataResult["reportID"];?>">
+<button type="button" class="btn btn-outline-danger">ลบ</button></a>
+ </td>
+
+
+
 <!-- <td align="center"><?php /* echo $dataResult["totalunp"]; */ ?></td> -->
+
 </tr>
 
 <?php

@@ -5,13 +5,15 @@
 <body>
 
 
+
+
 <?php include 'header.php'; ?>
 
 <br>
 <?php
 
 
-$data = "SELECT total,SUBSTR(date,1,7) AS date_test,SUM(total) total FROM orderbill WHERE date GROUP BY MONTH (date) ";
+$data = "SELECT totalunp,SUBSTR(date,1,7) AS date_test,SUM(totalunp) totalunp FROM report WHERE date GROUP BY MONTH (date) ORDER BY date ASC";
 $dataQuery=mysqli_query($check,$data);
 
 ?>
@@ -33,7 +35,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 
 <tr>
 <td align="center"><?php echo $dataResult["date_test"];?></td> 
-<td align="center"><?php echo $dataResult["total"]; ?></td>
+<td align="center"><?php echo $dataResult["totalunp"]; ?></td>
 </tr>
     
 
