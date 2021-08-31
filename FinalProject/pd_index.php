@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="theme.css">
+
 
     <title>สินค้า</title>
 
@@ -30,8 +30,9 @@ $leavestock = mysqli_num_rows($outofresult);
 
 if($leavestock > 0){
     echo "<script>";
-    echo "alert(' สินค้าใกล้หมด !!');";
+    echo "alert(' สินค้าใกล้หมด กรุณาเพิ่มสต๊อกสินค้า !!');";
     echo "</script>";
+    
 }
 
 ?>
@@ -46,6 +47,7 @@ $search=isset($_GET['search']) ? $_GET['search']:'';
 
 $data = "SELECT *  FROM product WHERE productName Like '%$search%'";
 $dataQuery = mysqli_query($check, $data);
+
 
 ?>
 
@@ -127,6 +129,7 @@ while ($dataResult2 = mysqli_fetch_assoc($dataQuery2)) {
 
 <!-- insert popup ######################################################################################   -->
 
+<a href="pd_outofstock.php"><button type="button" class="btn btn-danger">สินค้าใกล้หมด ( <?php echo $leavestock; ?> รายการ )</button></a>
 
 <div class ="nav justify-content-end">
 <form class="d-flex" method="get" id="form" enctype="multipart/form-data" action="" >

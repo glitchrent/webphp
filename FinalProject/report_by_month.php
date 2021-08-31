@@ -11,7 +11,7 @@
 <?php
 
 
-$data = "SELECT total,SUBSTR(date,1,7) AS date_test,SUM(total) total FROM orderbill WHERE date GROUP BY MONTH (date)";
+$data = "SELECT total,SUBSTR(date,1,7) AS date_test,SUM(total) total FROM orderbill WHERE date GROUP BY MONTH (date) ";
 $dataQuery=mysqli_query($check,$data);
 
 ?>

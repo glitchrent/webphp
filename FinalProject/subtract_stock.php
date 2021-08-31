@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="theme.css">
+
 
     <title>ตัดสต๊อกสินค้า</title>
 
@@ -40,9 +40,16 @@ $dataQuery = mysqli_query($check, $data);
 <form class="d-flex" method="get" id="form" enctype="multipart/form-data" action="" >
 
 <div>
+  <table>
+    <tr>
       <a href="od_list.php">ออร์เดอร์สินค้า</a>
-      <input class="form-control"  placeholder="พิมพ์ชื่อสินค้าที่ต้องการค้นหา" type="text" name="search" value="">
-      <input class="btn btn-success" type="submit" value="ค้นหา">
+</tr>
+<tr>
+  
+<td><input class="form-control"  placeholder="พิมพ์ชื่อสินค้าที่ต้องการค้นหา" type="text" name="search" value=""></td>
+<td><input class="btn btn-success" type="submit" value="ค้นหา"></td>
+      </tr>
+</table>
 </div>
 
 

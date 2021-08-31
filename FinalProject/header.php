@@ -1,8 +1,7 @@
-
 <div style="width:100%; margin:0px auto;"> 
 
-<header class="p-2 bg-info text-white ">
-<nav class="navbar navbar-expand-lg navbar-light bg-info " style="width:80%; margin:0px auto;">
+<header class="p-2" style="background-color: #7FD4FF;">
+<nav class="navbar navbar-expand-lg navbar-light" style="width:80%; margin:0px auto; background-color: #7FD4FF;">
   <div class="container-fluid ">
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
         
@@ -17,8 +16,7 @@
             </i>พนักงาน
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">เพิ่มพนักงาน</a></li>
-            <li><a class="dropdown-item" href="#">จัดการพนักงาน</a></li>
+            <li><a class="dropdown-item" href="mb_index.php">จัดการพนักงาน</a></li>
           </ul>
         </li>
 
@@ -27,23 +25,33 @@
             สินค้า
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">เพิ่มสินค้า</a></li>
-            <li><a class="dropdown-item" href="#">จัดการสินค้า</a></li>
+            <li><a class="dropdown-item" href="pd_index.php">จัดการสินค้า</a></li>
+            <li><a class="dropdown-item" href="cate_index.php">ประเภทสินค้า</a></li>
+            <li><a class="dropdown-item" href="pd_outofstock.php">สินค้าใกล้หมด</a></li>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ตัดสต๊อกสินค้า
+            จัดการสต๊อกสินค้า
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">ตัดสต๊อก</a></li>
-            <li><a class="dropdown-item" href="#">จัดการตัดสต๊อก</a></li>
+            <li><a class="dropdown-item" href="subtract_stock.php">ตัดสต็อกสินค้า</a></li>
+            <li><a class="dropdown-item" href="incre_stock.php">เพิ่มสต็อกสินค้า</a></li>
           </ul>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">รายงาน</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            รายงาน
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="report_history.php">รายงานนำเข้า-ส่งออก</a></li>
+            <li><a class="dropdown-item" href="report_export.php">รานงานสินค้าส่งออก</a></li>
+            <li><a class="dropdown-item" href="report_by_excount.php">รานงานตามยอดขาย</a></li>
+            <li><a class="dropdown-item" href="report_by_month.php">รานงานตามเดือน</a></li>
+            
+          </ul>
         </li>
 
       </ul>

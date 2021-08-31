@@ -18,7 +18,7 @@ $dataQuery = mysqli_query($check,$data);
 
 <div style="width:80%; margin:0px auto;"> 
 <?php 
-$data = "SELECT productName,imstatus,exportunit,SUM(IF(imstatus='ส่งออก',exportunit,NULL)) AS expsumall FROM report WHERE productID GROUP BY productName";
+$data = "SELECT productName,imstatus,exportunit,SUM(IF(imstatus='ส่งออก',exportunit,NULL)) AS expsumall FROM report WHERE productID GROUP BY productName ORDER BY expsumall DESC";
 $dataQuery = mysqli_query($check,$data);
 
 ?>

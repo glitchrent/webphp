@@ -7,8 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-  
-   <link rel="stylesheet" type="text/css" href="Project\mystyle.css">
+
    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
 
     <title>ออร์เดอร์</title>

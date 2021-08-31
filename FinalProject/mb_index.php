@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="theme.css">
+
 
     <title>พนักงาน</title>
 
@@ -17,7 +17,7 @@
 <body>
 
 <?php include 'header.php'; ?>
-
+<br>
 <div style="width:80%; margin:0px auto;"> 
  
 <?php
