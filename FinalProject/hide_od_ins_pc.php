@@ -20,7 +20,7 @@
         
         if ($remainUnit == 0){
             echo "<script>";
-            echo "alert(' สินค้าหมด !');";
+            echo "alert(' สินค้าหมดแล้ว กรุณาเพิ่มสต๊อกสินค้า !');";
             echo "window.history.back();";
             echo "</script>";
 

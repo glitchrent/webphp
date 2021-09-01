@@ -34,9 +34,10 @@
 </head>
 
 <body>
-<a href="pd_index.php?logout='1'">ออกจากระบบ</a>
+
 <?php include 'header.php'; ?>
 
+<div class="faidpage">
 <br>
 
 <!-- alert outofstock -->
@@ -49,7 +50,7 @@ $leavestock = mysqli_num_rows($outofresult);
 
 if($leavestock > 0){
     echo "<script>";
-    echo "alert(' สินค้าใกล้หมด กรุณาเพิ่มสต๊อกสินค้า !!');";
+    echo "alert(' มีสินค้าใกล้หมดแล้ว !! กรุณาตรวจสอบสินค้า !!');";
     echo "</script>";
     
 }
@@ -209,7 +210,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 </table>
 
 </div>
-
+</div>
 <!-- body -->
 </body>
 

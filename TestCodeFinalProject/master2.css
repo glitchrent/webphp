@@ -1,0 +1,17 @@
+body {
+    width: 100px;
+    height: 100px;
+    background: white;
+    animation: mymove 1.00s;
+  }
+  
+  @keyframes mymove {
+    from {
+        opacity: 0%;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+  }

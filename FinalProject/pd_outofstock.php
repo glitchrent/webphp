@@ -19,6 +19,8 @@
 
 <?php include 'header.php'; ?>
 
+<div class="faidpage">
+
 <br>
 
 <!-- body ######################################################################################   -->
@@ -87,7 +89,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 </table>
 
 </div>
-
+</div>      
 <!-- body -->
 </body>
 

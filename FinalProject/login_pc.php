@@ -36,7 +36,7 @@ if(isset($_POST['username'])){
 
           }else{
             echo "<script>";
-            echo "alert('username or password not correct');"; 
+            echo "alert('ชื่อผู้ใช้ หรือ รหัสผ่านไม่ถูกต้อง กรุณากรอกใหม่');"; 
             echo "window.history.back()";
             echo "</script>";
 

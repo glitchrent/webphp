@@ -13,6 +13,7 @@ $dataQuery = mysqli_query($check,$data);
 
 <?php include 'header.php'; ?>
 
+<div class="faidpage">
 
 <br>
 
@@ -42,6 +43,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <?php } ?>
 </table>
 
+</div>
 </div>
 </body>
 </html>

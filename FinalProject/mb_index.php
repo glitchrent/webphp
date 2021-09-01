@@ -16,7 +16,52 @@
 
 <body>
 
-<?php include 'header.php'; ?>
+<!-- header -->
+<div style="width:100%; margin:0px auto;"> 
+
+<header class="p-2" style="background-color: #7FD4FF;">
+<nav class="navbar navbar-expand-lg navbar-light" style="width:80%; margin:0px auto; background-color: #7FD4FF;">
+  <div class="container-fluid ">
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"> ระบบจัดการพนักงาน</a>
+        </li>
+
+ 
+
+   
+
+      </ul>
+
+
+      <ul class="navbar-nav ">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            เมนู
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="admin_menu.php">กลับไปหน้าเลือกเมนู</a></li>
+            <li><a class="dropdown-item" href="pd_index.php?logout='1'">ออกจากระบบ</a></li>
+          </ul>
+        </li>
+      </ul>
+     
+      
+
+     
+      
+    </div>
+  </div>
+</nav>
+
+</header>
+<!-- header -->
+
+</div>  
+
 <br>
 <div style="width:80%; margin:0px auto;"> 
  
@@ -31,7 +76,7 @@ $dataQuery = mysqli_query($check, $data);
 <td align="left">
 <!-- insert popup ######################################################################################   -->
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#insPopup">
-  เพิ่มสินค้า
+  เพิ่มพนักงาน
 </button>
 
 
@@ -72,7 +117,7 @@ $dataQuery = mysqli_query($check, $data);
     <input name="address" type="text" class="form-control" id="exampleInput">
   </div>
   <div class="mb-3">
-    <label for="exampleInput" class="form-label">สถานะ</label>
+    <label for="exampleInput" class="form-label">สถานะ (แอดมิน = 1 / พนักงาน = 2 )</label>
     <input name="role" type="text" class="form-control" id="exampleInput">
   </div>
       </div>

@@ -19,18 +19,29 @@
 
 <?php include 'header.php'; ?>
 
+<div class="faidpage">
+
 <div style="width:80%; margin:0px auto;"> 
 
 
 
-  <br>
+<br>
 
-  <form class="d-flex" method="get" id="form" enctype="multipart/form-data" action="" >
-
-<input  class="form-control me-2"  placeholder="พิมพ์ชื่อสินค้าที่ต้องการค้นหา" type="text" name="search" value="">
-<input class="btn btn-outline-success" type="submit" value="ค้นหา">
-
+<div class ="nav justify-content-end">
+<form class="d-flex" method="get" id="form" enctype="multipart/form-data" action="" >
+<div class="col-auto me-3">
+      <table>
+      <tr>
+      <td><input class="form-control"  placeholder="พิมพ์ชื่อที่ต้องการค้นหา" type="text" name="search" value=""></td>
+</tr>
+</table>
+</div>
+<div class="col-sm">
+      <input class="btn btn-success" type="submit" value="ค้นหา">
+</div>
 </form>
+</div>
+
 
 <?php  
 $search=isset($_GET['search']) ? $_GET['search']:'';
@@ -80,5 +91,6 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 </form>
 
 </div> 
+</div>
 </body>
 </html>

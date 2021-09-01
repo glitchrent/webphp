@@ -17,6 +17,8 @@
 
 <?php include 'header.php'; ?>
 
+<div class="faidpage">
+
 <br>
 
 <!-- body ######################################################################################   -->
@@ -24,8 +26,9 @@
 <?php
 
 $search=isset($_GET['search']) ? $_GET['search']:'';
+$searchdate=isset($_GET['searchdate']) ? $_GET['searchdate']:'';
 
-$data = "SELECT * FROM report WHERE (imstatus Like 'ส่งออก') AND productName LIKE '%$search%' ORDER BY reportID DESC";
+$data = "SELECT * FROM report WHERE (imstatus Like 'ส่งออก') AND productName LIKE '%$search%' AND date Like '%$searchdate%' ORDER BY reportID DESC";
 $dataQuery = mysqli_query($check, $data);
 
 
@@ -38,10 +41,16 @@ $dataQuery = mysqli_query($check, $data);
 
 
 
+
 <div class ="nav justify-content-end">
 <form class="d-flex" method="get" id="form" enctype="multipart/form-data" action="" >
 <div class="col-auto me-3">
-      <input class="form-control"  placeholder="" type="text" name="search" value="">
+      <table>
+      <tr>
+      <td><input class="form-control"  placeholder="พิมพ์ชื่อที่ต้องการค้นหา" type="text" name="search" value=""></td>
+      <td><input class="form-control"  placeholder="" type="date" name="searchdate" value=""></td>
+</tr>
+</table>
 </div>
 <div class="col-sm">
       <input class="btn btn-success" type="submit" value="ค้นหา">
@@ -94,7 +103,7 @@ echo $newdate; ?></td>
 </table>
 
 </div>
-
+</div>
 <!-- body -->
 </body>
 

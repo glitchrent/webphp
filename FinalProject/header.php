@@ -8,17 +8,10 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"> แดชบอร์ด</a>
+          <a class="nav-link active" aria-current="page" href="#">ระบบคลังสินค้า</a>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            </i>พนักงาน
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="mb_index.php">จัดการพนักงาน</a></li>
-          </ul>
-        </li>
+ 
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -60,13 +53,14 @@
       <ul class="navbar-nav ">
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Name
+            เมนู
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
+            <li><a class="dropdown-item" href="pd_index.php?logout='1'">ออกจากระบบ</a></li>
           </ul>
         </li>
       </ul>
+     
       
 
      
