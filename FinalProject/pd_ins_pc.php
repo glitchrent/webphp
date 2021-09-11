@@ -7,10 +7,13 @@
     $remainUnit = $_POST['remainUnit'];
     $unit = $_POST['unit'];
     $price = $_POST['price'];
-    
-    mysqli_query($check, "INSERT INTO product (productName,productCategory,remainUnit,unit,price) VALUES ('$productName','$productCategory','$remainUnit','$unit','$price')");
+    $productPic = $_FILES["productPic"]["name"];
+    move_uploaded_file($_FILES["productPic"]["tmp_name"],"Picture/".$_FILES["productPic"]["name"]);
+    mysqli_query($check, "INSERT INTO product (productName,productPic,productCategory,remainUnit,unit,price) VALUES ('$productName','$productPic','$productCategory','$remainUnit','$unit','$price')");
 
 ?>
+
+
 
 <?php
 //คำสั่งกลับหน้าแรกเมื่อทำงานเสร็จ

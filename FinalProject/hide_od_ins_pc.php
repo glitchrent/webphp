@@ -3,6 +3,7 @@
 
     $productID = $_POST['productID'];
     $productName = $_POST['productName'];
+    $productCategory = $_POST['productCategory'];
     $price = $_POST['price'];
     $remainUnit = $_POST['remainUnit'];
     
@@ -25,7 +26,7 @@
             echo "</script>";
 
         }else{
-            mysqli_query($check, "INSERT INTO cart (productID,productName,price,remainUnit) VALUES ('$productID','$productName','$price','$remainUnit')");
+            mysqli_query($check, "INSERT INTO cart (productID,productName,productCategory,price,remainUnit) VALUES ('$productID','$productName','$productCategory','$price','$remainUnit')");
         } 
 
     }

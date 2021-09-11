@@ -42,6 +42,7 @@
             <li><a class="dropdown-item" href="report_history.php">รายงานนำเข้า-ส่งออก</a></li>
             <li><a class="dropdown-item" href="report_export.php">รานงานสินค้าส่งออก</a></li>
             <li><a class="dropdown-item" href="report_by_excount.php">รานงานตามยอดขาย</a></li>
+            <li><a class="dropdown-item" href="report_by_cate.php">รานงานตามประเภทสินค้า</a></li>
             <li><a class="dropdown-item" href="report_by_month.php">รานงานตามเดือน</a></li>
             
           </ul>

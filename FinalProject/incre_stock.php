@@ -55,6 +55,7 @@ $dataQuery = mysqli_query($check, $data);
   <tr>
     <td  align="center">รหัสสินค้า</td>
     <td  align="center">ชื่อสินค้า</td>
+    <td  align="center"width="15%" >รูป</td>
     <td  align="center">ประเภท</td>
     <td  align="center">วันที่</td>
     <td  align="center"></td>
@@ -72,9 +73,10 @@ while($dataResult = mysqli_fetch_array($dataQuery))
   <tr>
   <td align="center">
 	<input type="hidden" name="hdnproductID<?php echo $i;?>"  value="<?php echo $dataResult["productID"];?>">
-  <input type="text" name="txtproductID<?php echo $i;?>" value="<?php echo $dataResult["productID"];?>">
+  <input type="text" name="txtproductID<?php echo $i;?>" value="<?php echo $dataResult["productID"];?>" readonly>
 	</td>
-    <td align="center"><input type="text" name="txtproductName<?php echo $i;?>" value="<?php echo $dataResult["productName"];?>"></td>
+    <td align="center"><input type="text" name="txtproductName<?php echo $i;?>" value="<?php echo $dataResult["productName"];?>" readonly></td>
+    <td><img src="Picture/<?php echo $dataResult["productPic"]; ?>" width="100%"></td>
     <td align="center"><?php echo $dataResult["productCategory"];?></td>
     <td align="center"><input type="date" name="txtdate<?php echo $i;?>" value="<?php echo date('Y-m-d');?>"><td>
     <input type="hidden" name="txtimstatus<?php echo $i;?>" value="นำเข้า">

@@ -7,9 +7,16 @@
     $remainUnit = $_POST['remainUnit'];
     $unit = $_POST['unit'];
     $price = $_POST['price'];
-    
+    $productPic = $_FILES["productPic"]["name"];
+
+    if($productPic != NULL){
+        move_uploaded_file($_FILES["productPic"]["tmp_name"],"Picture/".$_FILES["productPic"]["name"]);
+    mysqli_query($check, $data ="UPDATE product SET productName ='$productName',productPic ='$productPic',productCategory = '$productCategory',remainUnit = '$remainUnit',unit='$unit',price='$price' WHERE productID=$productID");
+    }else {
+        move_uploaded_file($_FILES["productPic"]["tmp_name"],"Picture/".$_FILES["productPic"]["name"]);
     mysqli_query($check, $data ="UPDATE product SET productName ='$productName',productCategory = '$productCategory',remainUnit = '$remainUnit',unit='$unit',price='$price' WHERE productID=$productID");
-    
+      
+    }
 ?>
 
 <?php 

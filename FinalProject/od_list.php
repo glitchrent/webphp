@@ -68,6 +68,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 	</td>
 
     <td><input type="text" readonly="readonly" name="txtproductName<?php echo $i;?>" value="<?php echo $dataResult["productName"];?>"></td>
+    <td><input type="text" readonly="readonly" name="txtproductCategory<?php echo $i;?>" value="<?php echo $dataResult["productCategory"];?>"></td>
     <td><input type="date"  name="txtdate<?php echo $i;?>" value="<?php echo date('Y-m-d');?>"><td>
     
     <input type="hidden" name="txtimstatus<?php echo $i;?>" value="ส่งออก">

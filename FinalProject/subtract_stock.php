@@ -34,10 +34,17 @@ $dataQuery = mysqli_query($check, $data);
 
 ?>
 
+<?php
+
+$outofstockcheck = " SELECT * FROM cart ";
+$outofresult = mysqli_query($check, $outofstockcheck) or die(mysqli_error());
+$countstock = mysqli_num_rows($outofresult);
+
+?>
 
 <div style="width:80%; margin:0px auto;"> 
 
-<a href="od_list.php">ออร์เดอร์สินค้า</a>
+<a href="od_list.php">ออร์เดอร์สินค้า ( <?php echo $countstock ?> รายการ )</a>
 
 
 <div class ="nav justify-content-end">
@@ -58,6 +65,7 @@ $dataQuery = mysqli_query($check, $data);
 <tr>
 <td  align="center" width="">รหัสสินค้า</td> 
 <td  align="center" width="">ชื่อสินค้า</td>
+<td  align="center" width="10%">รูปตัวอย่าง</td>
 <td  align="center" width="">ประเภทสินค้า</td>
 <td  align="center" width="">จำนวน</td>
 <td  align="center" width="">หน่วย</td>
@@ -72,6 +80,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <tr>
 <td align="center"><?php echo $dataResult["productID"]; ?></td>
 <td align="center"><?php echo $dataResult["productName"]; ?></td>
+<td><img src="Picture/<?php echo $dataResult["productPic"]; ?>" width="100%"></td>
 <td align="center"><?php echo $dataResult["productCategory"]; ?></td>
 <td align="center"><?php echo $dataResult["remainUnit"]; ?></td>
 <td align="center"><?php echo $dataResult["unit"]; ?></td>

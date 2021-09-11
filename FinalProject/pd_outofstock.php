@@ -58,6 +58,7 @@ $dataQuery = mysqli_query($check, $data);
 <tr>
 <td>รหัสสินค้า</td> 
 <td>ชื่อสินค้า</td>
+<td width="15%">รูปสินค้า</td>
 <td>ประเภทสินค้า</td>
 <td>จำนวน</td>
 <td>หน่วย</td>
@@ -72,6 +73,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <tr>
 <td><?php echo $dataResult["productID"]; ?></td>
 <td><?php echo $dataResult["productName"]; ?></td>
+<td><img src="Picture/<?php echo $dataResult["productPic"]; ?>" width="100%"></td>
 <td><?php echo $dataResult["productCategory"]; ?></td>
 <td><?php echo $dataResult["remainUnit"]; ?></td>
 <td><?php echo $dataResult["unit"]; ?></td>

@@ -35,7 +35,10 @@
 
 <body>
 
+
 <?php include 'header.php'; ?>
+
+
 
 <div class="faidpage">
 <br>
@@ -96,13 +99,18 @@ $dataQuery2 = mysqli_query($check, $data2);
       </div>
       <div class="modal-body">
 
-      <form action="pd_ins_pc.php" method="post"  >
+      <form action="pd_ins_pc.php" method="post" enctype="multipart/form-data">
 
   <div class="mb-3">
     <label for="exampleInput" class="form-label">ชื่อสินค้า</label>
     <input name="productName" type="text" class="form-control" id="" >
   </div>
 
+  <div class="mb-3">
+    <label for="exampleInput" class="form-label">รูปภาพ</label>
+    <input type="file" name="productPic" class="form-control" id="" >
+  </div>
+  
   <div class="mb-3">
     <label for="exampleInput" class="form-label">ประเภทสินค้า</label>
     
@@ -170,6 +178,7 @@ while ($dataResult2 = mysqli_fetch_assoc($dataQuery2)) {
 <tr>
 <td  align="center" width="10%">รหัสสินค้า</td> 
 <td  align="center" width="">ชื่อสินค้า</td>
+<td  align="center" width="15%">รูปตัวอย่าง</td>
 <td  align="center" width="">ประเภทสินค้า</td>
 <td  align="center" width="">จำนวน</td>
 <td  align="center" width="">หน่วย</td>
@@ -185,6 +194,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <tr>
 <td align="center"><?php echo $dataResult["productID"]; ?></td>
 <td align="center"><?php echo $dataResult["productName"]; ?></td>
+<td><img src="Picture/<?php echo $dataResult["productPic"]; ?>" width="100%"></td>
 <td align="center"><?php echo $dataResult["productCategory"]; ?></td>
 <td align="center"><?php echo $dataResult["remainUnit"]; ?></td>
 <td align="center"><?php echo $dataResult["unit"]; ?></td>

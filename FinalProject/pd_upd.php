@@ -24,6 +24,17 @@ $dataQuery = mysqli_query($check,$data);
 $dataTranfer=mysqli_fetch_assoc($dataQuery)
 
 ?>
+
+
+<?php
+
+$data2 = "SELECT *  FROM pdcategory ";
+$dataQuery2 = mysqli_query($check, $data2);
+
+?>
+
+
+
 <header class="p-3 bg-dark text-white">
     
     <center><h1>แก้ไขข้อมูลสินค้า</h1></center>
@@ -32,7 +43,7 @@ $dataTranfer=mysqli_fetch_assoc($dataQuery)
 
 
 
-<form action="pd_upd_pc.php" method="post" >
+<form action="pd_upd_pc.php" method="post" enctype="multipart/form-data">
 
 <input type="hidden"  value="<?php echo $dataTranfer["productID"];?>"name ="productID">
 <br>
@@ -45,10 +56,36 @@ $dataTranfer=mysqli_fetch_assoc($dataQuery)
     <label for="exampleInput" class="form-label">ชื่อสินค้า</label>
     <input class="form-control" type="text" name="productName" value="<?php echo $dataTranfer['productName']?>">
     </div>
+
+
+    <div class="mb-3">
+    <label for="exampleInput" class="form-label">รูปภาพ</label>
+    <div>
+    <img src="Picture/<?php echo $dataTranfer["productPic"]; ?>" width="20%">
+    </div>
+    <br>
+    <input class="form-control" type="file" name="productPic" value="<?php echo $dataTranfer['productPic']?>">
+
+    </div>
+
+
     <div class="mb-3">
     <label for="exampleInput" class="form-label">ประเภทสินค้า</label>
-    <input class="form-control" type="text" name="productCategory" value="<?php echo $dataTranfer['productCategory']?>">         
-    </div>
+    
+  <input name="productCategory" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="เลือกประเภท..." value="<?php echo $dataTranfer['productCategory']?>">
+<datalist id="datalistOptions">
+<?php
+while ($dataResult2 = mysqli_fetch_assoc($dataQuery2)) {
+?>
+  <option value="<?php echo $dataResult2["categoryName"]; ?>">
+
+<?php
+  }   
+?>
+
+</div>
+
+
     <div class="mb-3">
     <label for="exampleInput" class="form-label">จำนวนที่เหลือ</label>
     <input class="form-control" type="text" name="remainUnit" value="<?php echo $dataTranfer['remainUnit']?>">
