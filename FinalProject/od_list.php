@@ -10,7 +10,7 @@
 
    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
 
-    <title>ออร์เดอร์</title>
+    <title>ออเดอร์</title>
     </head>
 
     
@@ -69,12 +69,12 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 
     <td><input type="text" readonly="readonly" name="txtproductName<?php echo $i;?>" value="<?php echo $dataResult["productName"];?>"></td>
     <td><input type="text" readonly="readonly" name="txtproductCategory<?php echo $i;?>" value="<?php echo $dataResult["productCategory"];?>"></td>
-    <td><input type="date"  name="txtdate<?php echo $i;?>" value="<?php echo date('Y-m-d');?>"><td>
+    <td><input type="datetime"  name="txtdate<?php echo $i;?>" value="<?php echo date('Y-m-d H:i:s');?>"><td>
     
     <input type="hidden" name="txtimstatus<?php echo $i;?>" value="ส่งออก">
     <input type="hidden" name="" value="<?php echo $dataResult["remainUnit"];?>">
     ( สินค้าคงเหลือ <?php echo $dataResult["remainUnit"];?> )
-    <td><input type="number" name="txtaddunit<?php echo $i;?>" id="txtaddunit<?php echo $i;?>" onkeyup="sumunp()" min="1" max="<?php echo $dataResult["remainUnit"];?>" oninvalid="this.setCustomValidity('กรอกจำนวนไม่ถูกต้อง หรือ สินค้าไม่เพียงพอ จำนวนคงเหลือ <?php echo $dataResult['remainUnit'];?> ')" oninput="setCustomValidity('')" value="0"></td>
+    <td><input type="number" name="txtaddunit<?php echo $i;?>" id="txtaddunit<?php echo $i;?>" onkeyup="sumunp()" onclick="sumunp()" min="1" max="<?php echo $dataResult["remainUnit"];?>" oninvalid="this.setCustomValidity('กรอกจำนวนไม่ถูกต้อง หรือ สินค้าไม่เพียงพอ จำนวนคงเหลือ <?php echo $dataResult['remainUnit'];?> ')" oninput="setCustomValidity('')" value="0"></td>
     <td><input type="text" readonly="readonly" name="txtprice<?php echo $i;?>" id="txtprice<?php echo $i;?>" onkeyup="sumunp()" value="<?php echo $dataResult["price"];?>"></td>
     <td><input type="text" readonly="readonly" class="sumalltotal" name="totalunp<?php echo $i;?>" id="totalunp<?php echo $i;?>" value=""></td>
     <td><a href = "od_del_pc.php?iddel=<?php echo $dataResult["productID"];?>"><button type="button" class="btn btn-outline-danger">ลบ</button></a></td>
@@ -85,7 +85,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 ?>
 <tr>
 <td colspan="4"></td>
-<input type="hidden" readonly="readonly" name="txtorderdate" value="<?php echo date('Y-m-d');?>">
+<input type="hidden" readonly="readonly" name="txtorderdate" value="<?php echo date('Y-m-d H:i:s');?>">
 <td><input class="btn btn-primary" type="submit" name="submit" value="ยืนยัน"></td>
 <td>ราคารวมทั้งหมด </td>
 <td><input type="number" readonly="readonly" name="totalresult" id="totalresult" /> บาท </td>
@@ -100,6 +100,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 
 
 <a href ="subtract_stock.php">กลับไปหน้าเลือกสินค้า</a>
+
 
 </div> 
 

@@ -7,7 +7,7 @@ $dataQuery = mysqli_query($check,$data);
 */
 ?>
 <html>
-    <head><title>รายงานตามยอดขาย</title></head>
+    <head><title>รายงานตามประเภท</title></head>
 <body>
 
 

@@ -82,7 +82,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <td align="center"><?php echo $dataResult["productName"]; ?></td>
 <td align="center"><?php 
 
-$newdate =  date('d-m-Y', strtotime($dataResult['date']));
+$newdate =  date('d-m-Y H:i:s', strtotime($dataResult['date']));
 
 echo $newdate; ?></td>
 
@@ -136,6 +136,7 @@ if ($testtext == "นำเข้า"){
 </div>
 </div>
 <!-- body -->
+
 </body>
 
 </html>

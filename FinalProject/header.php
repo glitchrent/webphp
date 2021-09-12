@@ -44,9 +44,11 @@
             <li><a class="dropdown-item" href="report_by_excount.php">รานงานตามยอดขาย</a></li>
             <li><a class="dropdown-item" href="report_by_cate.php">รานงานตามประเภทสินค้า</a></li>
             <li><a class="dropdown-item" href="report_by_month.php">รานงานตามเดือน</a></li>
-            
+            <li><a class="dropdown-item" href="receipt.php">ตรวจสอบใบเสร็จ</a></li>
+
           </ul>
         </li>
+        
 
       </ul>
 
