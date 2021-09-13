@@ -80,7 +80,8 @@ $dataOrder = mysqli_fetch_assoc($dataQuery2)
     <td>ชื่อสินค้า</td>
     <td>จำนวน</td>
     <td>ราคา</td>
-    <td>ราคารวมต่อชิ้น</td>
+    <td >ราคารวมต่อชิ้น</td>
+    <td></td>
 </tr>
 
 <?php
@@ -95,6 +96,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <td ><?php echo $dataResult["exportunit"];?></td>
 <td ><?php echo $dataResult["totalunp"]/$dataResult["exportunit"];?></td>
 <td ><?php echo $dataResult["totalunp"];?></td>
+<td align="left">บาท</td>
 </tr>
 
 <?php } ?>
@@ -103,6 +105,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <td colspan="3"></td>
 <td>ราคารวมทั้งหมด : </td>
 <td><?php echo $dataOrder['total']?></td>
+<td >บาท</td>
 </tr>
 </table>
 

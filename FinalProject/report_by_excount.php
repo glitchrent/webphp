@@ -19,10 +19,25 @@ $dataQuery = mysqli_query($check,$data);
 
 <div style="width:80%; margin:0px auto;"> 
 <?php 
-$data = "SELECT productName,imstatus,exportunit,SUM(IF(imstatus='ส่งออก',exportunit,NULL)) AS expsumall FROM report WHERE productID GROUP BY productName ORDER BY expsumall DESC";
+
+$search=isset($_GET['search']) ? $_GET['search']:'';
+
+$data = "SELECT productName,imstatus,exportunit,SUM(IF(imstatus='ส่งออก',exportunit,NULL)) AS expsumall FROM report WHERE productName Like '%$search%' GROUP BY productName  ORDER BY expsumall DESC";
 $dataQuery = mysqli_query($check,$data);
 
 ?>
+
+<div class ="nav justify-content-end">
+<form class="d-flex" method="get" id="form" enctype="multipart/form-data" action="" >
+<div class="col-auto me-3">
+      <input class="form-control"  placeholder="พิมพ์ชื่อสินค้าที่ต้องการค้นหา" type="text" name="search" value="">
+</div>
+<div class="col-sm">
+      <input class="btn btn-success" type="submit" value="ค้นหา">
+</div>
+</form>
+</div>
+
 
 <table class="table table-striped">
 

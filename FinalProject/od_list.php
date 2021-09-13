@@ -10,7 +10,7 @@
 
    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
 
-    <title>ออเดอร์</title>
+    <title>ออร์เดอร์</title>
     </head>
 
     
@@ -69,7 +69,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 
     <td><input type="text" readonly="readonly" name="txtproductName<?php echo $i;?>" value="<?php echo $dataResult["productName"];?>"></td>
     <td><input type="text" readonly="readonly" name="txtproductCategory<?php echo $i;?>" value="<?php echo $dataResult["productCategory"];?>"></td>
-    <td><input type="datetime"  name="txtdate<?php echo $i;?>" value="<?php echo date('Y-m-d H:i:s');?>"><td>
+    <td><input type="datetime" readonly="readonly" name="txtdate<?php echo $i;?>" value="<?php echo date('Y-m-d H:i:s');?>"><td>
     
     <input type="hidden" name="txtimstatus<?php echo $i;?>" value="ส่งออก">
     <input type="hidden" name="" value="<?php echo $dataResult["remainUnit"];?>">

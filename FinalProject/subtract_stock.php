@@ -44,7 +44,7 @@ $countstock = mysqli_num_rows($outofresult);
 
 <div style="width:80%; margin:0px auto;"> 
 
-<a href="od_list.php">ออเดอร์สินค้า ( <?php echo $countstock ?> รายการ )</a>
+<a href="od_list.php">ออร์เดอร์สินค้า ( <?php echo $countstock ?> รายการ )</a>
 
 
 <div class ="nav justify-content-end">

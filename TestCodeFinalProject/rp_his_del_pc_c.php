@@ -28,7 +28,7 @@
 
 //คำสั่งกลับหน้าแรกเมื่อทำงานเสร็จ
 if($check){
-    echo  "save <script>window.location='report_history.php'</script>";
+    echo  "save <script>window.location='report_history_c.php'</script>";
     }else{
         echo "Fail";
     }

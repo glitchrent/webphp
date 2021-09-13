@@ -80,7 +80,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 
 <tr>
 
-<form name="form" method="post" action="rp_his_del_pc.php?Action=Save">
+<form name="form" method="post" action="rp_his_del_pc_c.php?Action=Save">
 
 <td align="center">
 <?php echo $dataResult["reportID"]; ?>
