@@ -91,11 +91,11 @@ while ($dataResult2 = mysqli_fetch_assoc($dataQuery2)) {
     <input class="form-control" type="text" name="remainUnit" value="<?php echo $dataTranfer['remainUnit']?>">
     </div>
     <div class="mb-3">
-    <label for="exampleInput" class="form-label">ราคาต้นทุน</label>
+    <label for="exampleInput" class="form-label">หน่วย ( เช่น กล่อง,โหล,ชิ้น )</label>
     <input class="form-control" type="text" name="unit" value="<?php echo $dataTranfer['unit']?>">
     </div>
     <div class="mb-3">
-    <label for="exampleInput" class="form-label">ราคาขาย</label>
+    <label for="exampleInput" class="form-label">ราคา</label>
     <input class="form-control" type="text" name="price" value="<?php echo $dataTranfer['price']?>">
     </div>
     <div class="mb-3" align="center">

@@ -42,8 +42,8 @@ $dataQuery = mysqli_query($check,$data);
 <table class="table table-striped">
 
 <tr>
-<td align="center">ชื่อสินค้า</td>
-<td align="center">จำนวนสั่งซื้อทั้งหมด</td>
+<td width="50%" align="center">ชื่อสินค้า</td>
+<td width="50%" align="center">จำนวนสั่งซื้อทั้งหมด</td>
 </tr>
 
 <?php

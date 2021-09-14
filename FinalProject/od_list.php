@@ -40,9 +40,9 @@ $dataQuery = mysqli_query($check, $data);
   <td>วันที่ส่งออก</td>
   <td>จำนวนที่เหลือ</td>
   <td>จำนวน</td>
+  <td></td>
   <td>ราคา</td>
-  <td>ราคารวมต่อชิ้น</td>
-      
+  <td>ราคารวมต่อชิ้น</td>  
 </tr>
 
   
