@@ -13,7 +13,7 @@ echo $_SESSION['username'];
 
 
 <a href="pd_user_detail.php">รายละเอียด</a>
-<a href="od_list.php">ซื้อ</a>
+<a href="subtract_stock.php">ซื้อ</a>
 
 
 <?php  

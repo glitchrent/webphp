@@ -2,9 +2,9 @@
 <?php require("bootstrapscrip.php");   ?> 
 <?php require("ses_start.php");   ?> 
 
+<h2>หน้าใบคำสั่งซื้อ</h2>
 
-<a href="pd_user_detail.php">รายละเอียด</a>
-<a href="od_list.php">ซื้อ</a>
+
 
 
 <?php  
