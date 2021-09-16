@@ -1,25 +1,41 @@
 <?php require("conn.php");   ?> 
 <?php require("bootstrapscrip.php");   ?> 
-<?php session_start();   ?> 
+<?php require("header.php");   ?> 
 
 
+<div class="faidpage">
 
+<center>
+<div style="width:80%">
 
-
+<br>
 จัดการใบสั่งซื้อ
 
-
+<br>
+<br>
 <?php  
 
 
-$data = "SELECT *  FROM cuspo ";
+$data = "SELECT *  FROM cuspo WHERE postatus = 'ยืนยันแล้ว'";
 $dataQuery = mysqli_query($check, $data);
 ?>
 
-<div style="width:70%">
-<table border="1" class="table">
+<div align="right"><a href="poconf_list.php">ย้อนกลับ</a></div>
+<table border="1"  class="table table-striped">
 
-<br> ใบสั่งซื้อ <br>
+<tr>
+<td align="center">รหัสใบสั่งซื้อ</td>
+<td align="center">วันที่</td>
+<td align="center">ชื่อ</td>
+<td align="center">นามสกุล</td>
+<td align="center">เบอร์โทร</td>
+<td align="center">ที่อยู่</td>
+<td align="center">สถานะ</td>
+<td align="center">รหัสลูกค้า</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
 
 <?php
 while($dataResult = mysqli_fetch_array($dataQuery))
@@ -37,7 +53,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 <td align="center"><?php echo $dataResult["cusID"]; ?></td>
 <td>
 
-<a href = "cuspo_detail.php?id=<?php echo $dataResult["poID"];?>">
+<a href = "poconf_detail.php?id=<?php echo $dataResult["poID"];?>">
     <input type="button" class="btn btn-outline-info" value="ดูคำสั่งซื้อ">
 </a>
 
@@ -46,8 +62,9 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 <td>
 
 <a href = "poconf_upd.php?id=<?php echo $dataResult["poID"];?>">
-    <input type="button" class="btn btn-outline-success" value="ยืนยันใบสั่งซื้อ">
+
 </a>
+
 
 </td>
 <tr>
@@ -57,4 +74,6 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 
 ?>
 </table>
+
+</div>
 </div>

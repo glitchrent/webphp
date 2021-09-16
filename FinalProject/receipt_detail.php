@@ -37,6 +37,7 @@
 </div>
 
 
+
 <?php 
 $id=$_GET["id"];
 $data = "SELECT orderbill.orderID, report.productName, report.totalunp, report.date, report.exportunit, orderbill.total
@@ -57,6 +58,13 @@ $dataOrder = mysqli_fetch_assoc($dataQuery2)
 <div class="faidpage">
 
 <div id="printable">
+<center>
+
+ใบเสร็จสินค้า
+
+<br>
+<br>
+
 <div style="width:80%; margin:0px auto;"> 
 
 <table border="1" align="center" class="table"> 
@@ -94,8 +102,8 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <td ><?php echo $n;?></td>
 <td ><?php echo $dataResult["productName"];?></td>
 <td ><?php echo $dataResult["exportunit"];?></td>
-<td ><?php echo $dataResult["totalunp"]/$dataResult["exportunit"];?></td>
-<td ><?php echo $dataResult["totalunp"];?></td>
+<td ><?php echo number_format($dataResult["totalunp"]/$dataResult["exportunit"],2);?></td>
+<td ><?php echo number_format($dataResult["totalunp"],2);?></td>
 <td align="left">บาท</td>
 </tr>
 
@@ -104,7 +112,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <tr>
 <td colspan="3"></td>
 <td>ราคารวมทั้งหมด : </td>
-<td><?php echo $dataOrder['total']?></td>
+<td><?php echo number_format($dataOrder['total'],2);?></td>
 <td >บาท</td>
 </tr>
 </table>

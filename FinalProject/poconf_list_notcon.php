@@ -12,15 +12,15 @@
 จัดการใบสั่งซื้อ
 
 <br>
-
+<br>
 <?php  
 
 
-$data = "SELECT *  FROM cuspo ";
+$data = "SELECT *  FROM cuspo WHERE postatus = 'รอการตรวจสอบ'";
 $dataQuery = mysqli_query($check, $data);
 ?>
 
-<div align="right"><a href="poconf_list_conf.php">ใบสั่งซื้อที่ยืนยันแล้ว</a> / <a href="poconf_list_notcon.php">ใบสั่งซื้อที่ยังไม่ตรวจสอบ</a></div>
+<div align="right"><a href="poconf_list.php">ย้อนกลับ</a></div>
 <table border="1"  class="table table-striped">
 
 <tr>

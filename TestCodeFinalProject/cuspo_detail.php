@@ -6,6 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
+
+<div style="width:80%; margin:0px auto;"> 
+
+
+<a href="customer_detail_po.php"><input type="button" class="btn btn-outline-danger" value="ย้อนกลับ"></a>
+
+</div>
+
 <center>
 <br>
   ใบยืนยันการสั่งซื้อสินค้า
@@ -20,41 +28,34 @@ $objQuery = mysqli_query($check, $strSQL)  or die(mysql_error());
 $objResult = mysqli_fetch_array($objQuery);
 ?>
 
- <table width="304" border="1">
+<div style="width:80%; margin:0px auto;"> 
+
+<table border="1" class="table"> 
+  <tr>
+    <td>รหัสใบสั่งซื้อ</td>
+    <td>ชื่อ</td>
+    <td>นามสกุล</td>
+    <td>ที่อยู่</td>
+    <td>เบอร์โทร</td>
+  </tr>
     <tr>
-      <td width="71">รหัสใบสั่งซื้อ</td>
-      <td width="217">
-	  <?php echo $objResult["poID"];?></td>
-    </tr>
-    <tr>
-      <td width="71">ชื่อ</td>
-      <td width="217">
-	  <?php echo $objResult["name"];?></td>
-    </tr>
-    <tr>
-      <td width="71">นามสกุล</td>
-      <td width="217">
-	  <?php echo $objResult["surname"];?></td>
-    </tr>
-    <tr>
-      <td>ที่อยู่</td>
-      <td><?php echo $objResult["address"];?></td>
-    </tr>
-    <tr>
-      <td>เบอร์โทร</td>
-      <td><?php echo $objResult["tel"];?></td>
+      <td ><?php echo $objResult["poID"];?></td>
+      <td ><?php echo $objResult["name"];?></td>
+      <td ><?php echo $objResult["surname"];?></td>
+      <td ><?php echo $objResult["address"];?></td>
+      <td ><?php echo $objResult["tel"];?></td>
     </tr>
   </table>
 
   <br>
 
-<table width="1000"  border="1">
+<table border="1" class="table">
   <tr>
-    <td width="101">รหัสสินค้า</td>
-    <td width="600">ชื่อ</td>
-    <td width="82">ราคา</td>
-    <td width="79">จำนวย</td>
-    <td width="79">ราคา</td>
+    <td >รหัสสินค้า</td>
+    <td >ชื่อ</td>
+    <td >ราคา</td>
+    <td >จำนวย</td>
+    <td >ราคา</td>
   </tr>
 <?php
 
@@ -75,15 +76,21 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
 	  <tr>
 		<td><?php echo $objResult2["productID"];?></td>
 		<td><?php echo $objResult3["productName"];?></td>
-		<td><?php echo $objResult3["price"];?></td>
+		<td><?php echo number_format($objResult3["price"],2);?></td>
 		<td><?php echo $objResult2["qty"];?></td>
 		<td><?php echo number_format($Total,2);?></td>
 	  </tr>
+    
 	  <?php
  }
   ?>
+  <tr>  
+    <td colspan="3"></td>
+      <td>ราคารวม</td>
+      <td><?php echo number_format($SumTotal,2);?></td>
+</tr>
 </table>
-ราคารวม <?php echo number_format($SumTotal,2);?>
+
 
 <?php
 mysqli_close($check);

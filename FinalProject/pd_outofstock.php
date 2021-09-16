@@ -56,13 +56,14 @@ $dataQuery = mysqli_query($check, $data);
 <table class="table table-striped">
 
 <tr>
-<td>รหัสสินค้า</td> 
-<td>ชื่อสินค้า</td>
-<td width="15%">รูปสินค้า</td>
-<td>ประเภทสินค้า</td>
-<td>จำนวน</td>
-<td>หน่วย</td>
-<td>ราคา</td>
+<td  align="center" width="10%">รหัสสินค้า</td> 
+<td  align="center" width="15%">รูปตัวอย่าง</td>
+<td  align="center" width="">ชื่อสินค้า</td>
+
+<td  align="center" width="">ประเภทสินค้า</td>
+<td  align="center" width="">จำนวน</td>
+<td  align="center" width="">หน่วย</td>
+<td  align="center" width="">ราคา</td>
 
 </tr>
 
@@ -71,13 +72,14 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 ?>
 
 <tr>
-<td><?php echo $dataResult["productID"]; ?></td>
-<td><?php echo $dataResult["productName"]; ?></td>
-<td><img src="Picture/<?php echo $dataResult["productPic"]; ?>" width="100%"></td>
-<td><?php echo $dataResult["productCategory"]; ?></td>
-<td><?php echo $dataResult["remainUnit"]; ?></td>
-<td><?php echo $dataResult["unit"]; ?></td>
-<td><?php echo $dataResult["price"]; ?></td>
+<td align="center"><?php echo $dataResult["productID"]; ?></td>
+<td align="center"><img src="Picture/<?php echo $dataResult["productPic"]; ?>" width="100%"></td>
+<td align="center"><?php echo $dataResult["productName"]; ?></td>
+
+<td align="center"><?php echo $dataResult["productCategory"]; ?></td>
+<td align="center"><?php echo $dataResult["remainUnit"]; ?></td>
+<td align="center"><?php echo $dataResult["unit"]; ?></td>
+<td align="center"><?php echo $dataResult["price"]; ?></td>
 
 
 

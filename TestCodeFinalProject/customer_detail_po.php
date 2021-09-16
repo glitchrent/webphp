@@ -23,6 +23,7 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 ?>
 
 <center>
+    <div style="width:75%">
 <table border="1" class="table">
 
 <br> ใบสั่งซื้อ <br>
@@ -52,4 +53,4 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 
 ?>
 </table>
-
+</div>
