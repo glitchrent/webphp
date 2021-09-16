@@ -16,18 +16,17 @@
 <?php require("cusheader.php");   ?> 
 
 
-
-
 <?php
-$strSQL = "SELECT * FROM product";
+$namecate = $_GET['namecate'];
+
+$strSQL = "SELECT * FROM product WHERE productCategory ='$namecate'";
 $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
 ?>
 
-
 <div style="width:80%; margin:0px auto;"> 
+<br><?php echo $namecate = $_GET['namecate']; ?>
 <br><a href="show.php">ตะกร้า</a><br><br>
 </div> 
-
 
 <center>
 <div style="width:80%; margin:0px auto;"> 

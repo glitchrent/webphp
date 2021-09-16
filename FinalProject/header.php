@@ -34,6 +34,8 @@
           </ul>
         </li>
 
+        
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             รายงาน
@@ -49,6 +51,15 @@
           </ul>
         </li>
         
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ใบสั่งซื้อ
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="poconf_list.php">จัดการใบสั่งซื้อ</a></li>
+          </ul>
+        </li>
 
       </ul>
 

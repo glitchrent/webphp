@@ -4,22 +4,25 @@ session_start();
 
 <?php require("conn.php");   ?> 
 <?php require("bootstrapscrip.php");   ?> 
+<?php require("cusheader.php");   ?> 
 
 <html>
 <head>
-<title>ThaiCreate.Com</title>
+<title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-
+<body>
+<br>
+<center>
   <form action="update.php" method="post">
-<table width="400"  border="1">
+<table width="1000"  border="1">
   <tr>
-    <td width="101">ProductID</td>
-    <td width="82">ProductName</td>
-    <td width="82">Price</td>
-    <td width="79">Qty</td>
-    <td width="79">Total</td>
-    <td width="10">Del</td>
+    <td width="101">รหัสสินค้า</td>
+    <td width="300">ชื่อ</td>
+    <td width="82">ราคา</td>
+    <td width="79">จำนวน</td>
+    <td width="79">ราคารวม</td>
+    <td width="10"></td>
   </tr>
   <?php
   $Total = 0;
@@ -41,7 +44,7 @@ session_start();
 		<td><?php echo $objResult["price"];?></td>
 		<td><input type="text" name="txtQty<?php echo $i;?>" value="<?php echo $_SESSION["strQty"][$i];?>" size="2"></td>
 		<td><?php echo number_format($Total,2);?></td>
-		<td><a href="delete.php?Line=<?php echo $i;?>">x</a></td>
+		<td><a href="delete.php?Line=<?php echo $i;?>"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">ลบ</button></a></td>
 	  </tr>
 	  
 	  <?php
@@ -49,29 +52,29 @@ session_start();
   }
   ?>
 </table>
-<table width="400"  border="0">
+<table width="740"  border="0">
   <tr>
-  <td><input type="submit" value="Update"></td>
-  <td align="right">Sum Total <?php echo number_format($SumTotal,2);?></td>
+  <td><br><input type="submit" value="คำนวนราคาสินค้า"></td>
+  <td align="right">ราคารวม ทั้งหมด : <?php echo number_format($SumTotal,2);?></td>
   </tr>
   </table>
 </form>
-<br><br><a href="product.php">Go to Product</a>
+
+<br><br><a href="product.php">เลือกสินค้าเพิ่มเติม</a>
 <?php
 	if($SumTotal > 0)
 	{
 ?>
-	| <a href="checkout.php">CheckOut</a>
+	| <a href="checkout.php">ยืนยัน</a>
 <?php
 	}
 ?>
 
 
-| 
+
 <?php
 mysqli_close($check);
 ?>
 </body>
 </html>
 
-<?php /* This code download from www.ThaiCreate.Com */ ?>

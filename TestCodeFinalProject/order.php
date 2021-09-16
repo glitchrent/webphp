@@ -10,7 +10,7 @@ if(!isset($_SESSION["intLine"]))
 		 $_SESSION["strproductID"][0] = $_POST["txtproductID"];
 		 $_SESSION["strQty"][0] = $_POST["txtQty"];
 
-		 header("location:show.php");
+		 header("location:javascript://history.go(-1)");
 	}
 }
 else
@@ -30,9 +30,8 @@ else
 		 $_SESSION["strQty"][$intNewLine] = $_POST["txtQty"];
 	}
 	
-	 header("location:product.php");
+	 header("location:javascript://history.go(-1)");
 
 }
 ?>
 
-<?php /* This code download from www.ThaiCreate.Com */ ?>

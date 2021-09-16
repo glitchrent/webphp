@@ -4,21 +4,24 @@ session_start();
 
 <?php require("conn.php");   ?> 
 <?php require("bootstrapscrip.php");   ?> 
-
+<?php require("cusheader.php");   ?> 
 
 <html>
 <head>
-<title>ThaiCreate.Com</title>
+<title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-
-<table width="400"  border="1">
+<body>
+<br>
+<center>
+<table width="1000"  border="1">
   <tr>
-    <td width="101">ProductID</td>
-    <td width="82">ProductName</td>
-    <td width="82">Price</td>
-    <td width="79">Qty</td>
-    <td width="79">Total</td>
+    <td width="101">รหัสสินค้า</td>
+    <td width="300">ชื่อ</td>
+    <td width="82">ราคา</td>
+    <td width="79">จำนวน</td>
+    <td width="79">ราคารวม</td>
+    <td width="10"></td>
   </tr>
   <?php
   $Total = 0;
@@ -45,9 +48,11 @@ session_start();
 	  }
   }
   ?>
+
 </table>
-Sum Total <?php echo number_format($SumTotal,2);?>
-<br><br>
+<br>
+ราคารวม ทั้งหมด : <?php echo number_format($SumTotal,2);?>
+<br>
 
 <?php
 
@@ -60,33 +65,34 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 
 
 <form name="form1" method="post" action="save_checkout.php">
-  <table width="304" border="1">
+  <table width="300" border="0" >
     <tr>
-      <td width="71">Name</td>
-      <td width="217"><input type="text" name="txtname" value="<?php echo $objResult2["name"]; ?>" ></td>
+      <td width="71"></td>
+      <td width="217"><input type="hidden" name="txtname" value="<?php echo $objResult2["name"]; ?>" ></td>
     </tr>
     <tr>
-      <td width="71">Surname</td>
-      <td width="217"><input type="text" name="txtsurname" value="<?php echo $objResult2["surname"]; ?>"></td>
+      <td width="71"></td>
+      <td width="20"><input type="hidden" name="txtsurname" value="<?php echo $objResult2["surname"]; ?>"></td>
     </tr>
     <tr>
-      <td>Address</td>
-      <td><textarea name="txtaddress"><?php echo $objResult2["address"]; ?> </textarea></td>
+      <td></td>
+      <td><input type="hidden" name="txtaddress" value="<?php echo $objResult2["address"]; ?>"></td>
     </tr>
     <tr>
-      <td>Tel</td>
-      <td><input type="text" name="txttel" value="<?php echo $objResult2["tel"]; ?>"></td>
+      <td></td>
+      <td><input type="hidden" name="txttel" value="<?php echo $objResult2["tel"]; ?>"></td>
     </tr>
     <tr>
-      <td>รหัสลูกค้า</td>
-      <td><input type="text" name="txtcusID" value="<?php echo $objResult2["cusID"]; ?>"></td>
+      <td></td>
+      <td><input type="hidden" name="txtcusID" value="<?php echo $objResult2["cusID"]; ?>"></td>
     </tr>
     <tr>
-      <td>สถานะ</td>
-      <td><input type="text" name="postatus" value="รอการตรวจสอบ"></td>
+      <td></td>
+      <td><input type="hidden" name="postatus" value="รอการตรวจสอบ"></td>
     </tr>
   </table>
-    <input type="submit" name="Submit" value="Submit">
+  <br>
+    <input type="submit" name="Submit" value="ยืนยันการสั่งซื้อ">
 </form>
 <?php
 mysqli_close($check);

@@ -14,8 +14,10 @@
       <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="รหัสผ่าน">
 
     </div>
-
+  <br>
     <button name="login_user" class="w-100 btn btn-lg btn-primary" type="submit">เข้าสู่ระบบ</button>
     <p class="mt-5 mb-3 text-muted">ยินดีต้อนรับ</p>
 
 </form>
+
+<a href="product.php">ย้อนกลับ</a>
