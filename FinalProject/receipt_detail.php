@@ -40,7 +40,7 @@
 
 <?php 
 $id=$_GET["id"];
-$data = "SELECT orderbill.orderID, report.productName, report.totalunp, report.date, report.exportunit, orderbill.total
+$data = "SELECT orderbill.orderID, report.productName, report.totalunp, report.date, report.exportunit, orderbill.total, report.productID
 FROM report 
 INNER JOIN orderbill ON orderbill.date=report.date WHERE orderID=$id";
 $dataQuery = mysqli_query($check,$data);
@@ -85,10 +85,11 @@ $dataOrder = mysqli_fetch_assoc($dataQuery2)
 
 <tr>
     <td>ลำดับ</td>
+    <td>รหัสสินค้า</td>
     <td>ชื่อสินค้า</td>
     <td>จำนวน</td>
     <td>ราคา</td>
-    <td >ราคารวมต่อชิ้น</td>
+    <td>ราคารวมต่อชิ้น</td>
     <td></td>
 </tr>
 
@@ -100,6 +101,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 
 <tr>
 <td ><?php echo $n;?></td>
+<td ><?php echo $dataResult["productID"];?></td>
 <td ><?php echo $dataResult["productName"];?></td>
 <td ><?php echo $dataResult["exportunit"];?></td>
 <td ><?php echo number_format($dataResult["totalunp"]/$dataResult["exportunit"],2);?></td>
@@ -110,7 +112,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <?php } ?>
 
 <tr>
-<td colspan="3"></td>
+<td colspan="4"></td>
 <td>ราคารวมทั้งหมด : </td>
 <td><?php echo number_format($dataOrder['total'],2);?></td>
 <td >บาท</td>

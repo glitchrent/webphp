@@ -28,7 +28,7 @@
 $search=isset($_GET['search']) ? $_GET['search']:'';
 $searchdate=isset($_GET['searchdate']) ? $_GET['searchdate']:'';
 
-$data = "SELECT * FROM report WHERE (imstatus Like 'ส่งออก') AND productName LIKE '%$search%' AND date Like '%$searchdate%' ORDER BY reportID DESC";
+$data = "SELECT * FROM report WHERE (imstatus Like 'ส่งออก') AND productName LIKE '%$search%' AND date Like '%$searchdate%'  ORDER BY reportID DESC";
 $dataQuery = mysqli_query($check, $data);
 
 
