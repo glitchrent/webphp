@@ -39,5 +39,5 @@ mysqli_close($check);
 
 
 
-header("location:product.php");
+header("location:c_product.php");
 ?>

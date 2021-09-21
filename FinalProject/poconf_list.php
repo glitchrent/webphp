@@ -61,10 +61,16 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 
 <td>
 
+<?php if($dataResult["postatus"] =='รอการตรวจสอบ')
+{
+    ?>
+
+
 <a href = "poconf_upd.php?id=<?php echo $dataResult["poID"];?>">
     <input type="button" class="btn btn-outline-success" value="ยืนยันใบสั่งซื้อ">
 </a>
 
+<?php } else {} ?> 
 
 </td>
 <tr>

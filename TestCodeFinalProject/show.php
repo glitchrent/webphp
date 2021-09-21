@@ -4,7 +4,7 @@ session_start();
 
 <?php require("conn.php");   ?> 
 <?php require("bootstrapscrip.php");   ?> 
-<?php require("cusheader.php");   ?> 
+<?php require("c_cusheader.php");   ?> 
 
 <html>
 <head>
@@ -60,7 +60,7 @@ session_start();
   </table>
 </form>
 
-<br><br><a href="product.php">เลือกสินค้าเพิ่มเติม</a>
+<br><br><a href="c_product.php">เลือกสินค้าเพิ่มเติม</a>
 <?php
 	if($SumTotal > 0)
 	{

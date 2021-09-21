@@ -60,7 +60,6 @@
 </center>
 
 <?php require("c_cusheader.php");   ?> 
-
 <br>
 
 
@@ -127,8 +126,11 @@ else{
 <?php
 }
 ?>
-      <?php
-$strSQL = "SELECT * FROM product";
+
+    <?php
+$namecate = $_GET['namecate'];
+
+$strSQL = "SELECT * FROM product WHERE productCategory ='$namecate'";
 $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
 ?>
 
@@ -137,7 +139,7 @@ $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
 
 <div style="width:88%; margin:0px auto; background-color: #E9765B;" class="fs-1 text-white"> 
 
-<p>สินค้าทั้งหมด</p>
+<p><?php echo $namecate; ?></p>
 
 </div> 
 
@@ -172,26 +174,8 @@ $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
   
   <input type="hidden" name="txtproductID" value="<?php echo $objResult["productID"];?>" size="2"> 
   <input type="hidden" name="txtQty" value="1" size="2"> 
-  <a href = "c_product_detail.php?id=<?php echo $objResult["productID"];?>"><input type="button" class="btn btn-danger" value="รายละเอียด"></a>
-
-  <?php
-
-if($_SESSION['username'] != NULL)
-{
-
-?>
-
+  <input type="submit" class="btn btn-danger" value="รายละเอียด">
   <input type="submit" class="btn btn-success" value="เพิ่ม">
-
-  <?php 
-    }
-
-else{
-?>
-
-<?php
-}
-?>
 
   <?php
 } else {echo "สินค้าหมด";}

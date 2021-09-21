@@ -23,7 +23,7 @@ if(isset($_POST['username'])){
 
               if($_SESSION["username"]!= NULL){ 
                 
-                Header("Location: product.php");
+                Header("Location: c_product.php");
 
 
               }

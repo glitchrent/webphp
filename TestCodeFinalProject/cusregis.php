@@ -1,8 +1,58 @@
+<?php require("conn.php");   ?> 
+<?php require("bootstrapscrip.php");   ?> 
+
+<!DOCTYPE html>
 <html>
 <head>
-<title>สมัครสมาชิก</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-<body>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+   
+        <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
+
+
+<!-- Custom styles for this template -->
+<link href="signin.css" rel="stylesheet">
+
+
+    <title>เข้าสู่ระบบ</title>
+
+
+    </head>
+
+    
+
+
+
+
+
+
+
+<body class="text-center">
+<main class="form-signin">
+<form action="cuslogin_pc.php" method="post" >
+
+<div class="faidpage">
+
+
 <form name="form1" method="post" action="cusregis_pc.php">
 <h1 class="h3 mb-3 fw-normal">สมัครสมาชิก</h1>
   <table width="400" border="0" style="width: 400px">
@@ -10,34 +60,34 @@
       <tr>
         <td width="125"> &nbsp;ชื่อผู้ใช้</td>
         <td width="180">
-          <input name="txtusername" type="text" id="txtusername" size="20">
+          <input name="txtusername" class="form-control" type="text" id="txtusername" size="20">
         </td>
       </tr>
       <tr>
         <td> &nbsp;รหัสผ่าน</td>
-        <td><input name="txtpassword" type="password" id="txtpassword">
+        <td><input name="txtpassword" class="form-control" type="password" id="txtpassword">
         </td>
       </tr>
       <tr>
         <td> &nbsp;ยืนยัน รหัสผ่าน</td>
-        <td><input name="txtconpassword" type="password" id="txtconpassword">
+        <td><input name="txtconpassword" class="form-control" type="password" id="txtconpassword">
         </td>
       </tr>
       <tr>
         <td>&nbsp;ชื่อจริง</td>
-        <td><input name="txtfirstname" type="text" id="txttxtfirstname size="35"></td>
+        <td><input name="txtfirstname" class="form-control" type="text" id="txttxtfirstname size="35"></td>
 </tr>
 <tr>
         <td>&nbsp;นามสกุล</td>
-        <td><input name="txtlastname" type="text" id="txtlastname" size="35"></td>
+        <td><input name="txtlastname" class="form-control" type="text" id="txtlastname" size="35"></td>
       </tr>
       <tr>
         <td>&nbsp;ที่อยู่</td>
-        <td><textarea name="txtaddress" type="text" id="txtaddress" size="35"></textarea></td>
+        <td><textarea name="txtaddress" class="form-control" type="text" id="txtaddress" size="35"></textarea></td>
       </tr>
       <tr>
         <td>&nbsp;เบอร์โทร</td>
-        <td><input name="txttel" type="text" id="txttel" size="35"></td>
+        <td><input name="txttel" type="text" class="form-control" id="txttel" size="35"></td>
       </tr>
 
 
@@ -49,6 +99,9 @@
   <input type="submit" name="Submit" value="สมัครสมาชิก">
 </form>
 
-<a href="product.php">ย้อนกลับ</a>
+<a href="c_product.php">ย้อนกลับ</a>
+</main>
+
+
 </body>
 </html>

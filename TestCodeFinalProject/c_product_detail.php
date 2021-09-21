@@ -106,30 +106,11 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 
     <div class="col-sm-7 text-center shadow p3  " style="background-color: #FFFFFF;"> 
 
-    <?php 
-
-if($_SESSION['username'] != NULL)
-{
-
-?>
-
-<div style="width:80%; margin:0px auto;"> 
-<br><a href="show.php">( ตะกร้า )</a><br><br>
-</div> 
-
-
-<?php 
-    }
-
-else{
-?>
-
-<?php
-}
-?>
       <?php
-$strSQL = "SELECT * FROM product";
+      $id = $_GET['id'];
+$strSQL = "SELECT * FROM product WHERE productID = $id";
 $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
+$objResult = mysqli_fetch_array($objQuery)
 ?>
 
 
@@ -137,7 +118,7 @@ $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
 
 <div style="width:88%; margin:0px auto; background-color: #E9765B;" class="fs-1 text-white"> 
 
-<p>สินค้าทั้งหมด</p>
+<p><?php echo $objResult["productName"];?></p>
 
 </div> 
 
@@ -145,69 +126,71 @@ $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
 
 <div style="width:88%; margin:0px auto;"> 
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-4">
+<table border="1" class="table">
+  <tr>
+<td rowspan="20" width="600px">
+<img src="Picture/<?php echo $objResult["productPic"];?>" width="100%">
+</td>
+</tr>
 
-  <?php
-
+<tr>
+<td>
   
-  while($objResult = mysqli_fetch_array($objQuery))
-  
-  {
+</td>
+</tr>
+<tr>
+<td width="150px">
+  <h4 >รหัสสินค้า </h4>
+</td>
+<td>
+<h4><?php echo $objResult["productID"];?></h4>
+</td>
+</tr>
+<tr>
+<td>
+<h4>ประเภทสินค้า </h4>
+</td>
+<td>
+<h4><?php echo $objResult["productCategory"];?></h4>
+</td>
+</tr>
+<tr>
+<td>
+<h4>ราคา </h4>
+</td>
+<td>
+<h4><?php echo $objResult["price"];?> บาท</h4>
+</td>
+</tr>
+<tr>
+<td>
+<h4>จำนวนคงเหลือ </h4>
+</td>
+<td>
+<h4><?php echo $objResult["remainUnit"];?> <?php echo $objResult["unit"];?></h4>
+</td>
+</tr>
+
+</table>
+
+<table  border="1" class="table">
+<tr>
+  <td>
+  <h3>รายละเอียดสินค้า</h3>
+</td>
+</tr>
+<tr>
+  <td>
+    
+  <?php echo $objResult["productDetail"];?>
 
 
-  ?>
 
 
-<form action="order.php" method="post">
-<div class="card border-Dark mb-1" style="max-width: 18rem;">
-  <div class="card-header bg-transparent border-light"><img src="Picture/<?php echo $objResult["productPic"];?>" width="100%"></div>
-  <div class="card-body text" >
-    <h5 class="card-title" ><?php echo $objResult["productName"];?></h5>
-    <p class="card-text"><?php echo $objResult["price"];?> บาท</p>
-  </div>
-  <div class="card-footer border-Dark" style="background-color: #FFAC8E;">
-  
-  <?php if($objResult["remainUnit"]!=0){
-?>
-  
-  <input type="hidden" name="txtproductID" value="<?php echo $objResult["productID"];?>" size="2"> 
-  <input type="hidden" name="txtQty" value="1" size="2"> 
-  <a href = "c_product_detail.php?id=<?php echo $objResult["productID"];?>"><input type="button" class="btn btn-danger" value="รายละเอียด"></a>
 
-  <?php
-
-if($_SESSION['username'] != NULL)
-{
-
-?>
-
-  <input type="submit" class="btn btn-success" value="เพิ่ม">
-
-  <?php 
-    }
-
-else{
-?>
-
-<?php
-}
-?>
-
-  <?php
-} else {echo "สินค้าหมด";}
-  ?>
-</div>
-</div>
-</form>
-  <?php
-  }
-  ?>
-
-</div>
-
-</div>
-
-
+    <td>
+</tr>
+</table>
 
     </div>
 <!-- ตารางกลาง -->

@@ -1,0 +1,38 @@
+body {
+    background-color: white;
+    font-family: 'supermarket', Courier, monospace;
+    font-size: 20px;
+
+}
+
+.modal {
+    animation: fademodal 0.75s;
+}
+
+@keyframes fademodal {
+  from {
+      opacity: 50%;
+      transform: translateY(-25px);
+  }
+  to {
+      opacity: 100%;
+      transform: translateY(0);
+  }
+}
+
+.faidpage {
+    font-family: 'supermarket', Courier, monospace;
+    font-size: 24px;
+    animation: fade 0.75s;
+}
+
+@keyframes fade {
+  from {
+      opacity: 50%;
+      transform: translateY(25px);
+  }
+  to {
+      opacity: 100%;
+      transform: translateY(0);
+  }
+}
