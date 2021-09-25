@@ -48,7 +48,7 @@
 
 <body class="text-center">
 <main class="form-signin">
-<form action="cuslogin_pc.php" method="post" >
+
 
 <div class="faidpage">
 

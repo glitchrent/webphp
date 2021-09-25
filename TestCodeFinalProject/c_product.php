@@ -158,7 +158,7 @@ $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
   ?>
 
 
-<form action="order.php" method="post">
+<form action="c_increorder_pc.php" method="post">
 <div class="card border-Dark mb-1" style="max-width: 18rem;">
   <div class="card-header bg-transparent border-light"><img src="Picture/<?php echo $objResult["productPic"];?>" width="100%"></div>
   <div class="card-body text" >

@@ -1,6 +1,6 @@
 <?php require("conn.php");   ?> 
 <?php require("bootstrapscrip.php");   ?> 
-<?php require("header.php");   ?> 
+
 
 
 <div class="faidpage">
@@ -20,7 +20,7 @@ $data = "SELECT *  FROM cuspo ";
 $dataQuery = mysqli_query($check, $data);
 ?>
 
-<div align="right"><a href="poconf_list_conf.php">ใบสั่งซื้อที่ยืนยันแล้ว</a> / <a href="poconf_list_notcon.php">ใบสั่งซื้อที่ยังไม่ตรวจสอบ</a></div>
+
 <table border="1"  class="table table-striped">
 
 <tr>
@@ -87,7 +87,11 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 <?php } else {} ?> 
 
 </td>
+<td>
+<a href = "subtaxstock.php?id=<?php echo $dataResult["poID"];?>">ตัดสต็อก</a>
+</td>
 <tr>
+
 
 <?php
 }

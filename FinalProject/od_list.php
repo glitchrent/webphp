@@ -37,10 +37,10 @@ $dataQuery = mysqli_query($check, $data);
 <tr>
   <td>รหัสสินค้า</td>
   <td>ชื่อ</td>
-  <td>วันที่ส่งออก</td>
+  
   <td>จำนวนที่เหลือ</td>
   <td>จำนวน</td>
-  <td></td>
+  
   <td>ราคา</td>
   <td>ราคารวมต่อชิ้น</td>  
 </tr>
@@ -67,9 +67,11 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 
 	</td>
 
-    <td><input type="text" readonly="readonly" name="txtproductName<?php echo $i;?>" value="<?php echo $dataResult["productName"];?>"></td>
-    <td><input type="text" readonly="readonly" name="txtproductCategory<?php echo $i;?>" value="<?php echo $dataResult["productCategory"];?>"></td>
-    <td><input type="datetime" readonly="readonly" name="txtdate<?php echo $i;?>" value="<?php echo date('Y-m-d H:i:s');?>"><td>
+    <td>
+    <?php echo $dataResult["productName"];?>
+      <input type="hidden" readonly="readonly" name="txtproductName<?php echo $i;?>" value="<?php echo $dataResult["productName"];?>">
+    <input type="hidden" readonly="readonly" name="txtproductCategory<?php echo $i;?>" value="<?php echo $dataResult["productCategory"];?>">
+    <input type="hidden" readonly="readonly" name="txtdate<?php echo $i;?>" value="<?php echo date('Y-m-d H:i:s');?>"><td>
     
     <input type="hidden" name="txtimstatus<?php echo $i;?>" value="ส่งออก">
     <input type="hidden" name="" value="<?php echo $dataResult["remainUnit"];?>">
@@ -84,7 +86,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 }
 ?>
 <tr>
-<td colspan="4"></td>
+<td colspan="3"></td>
 <input type="hidden" readonly="readonly" name="txtorderdate" value="<?php echo date('Y-m-d H:i:s');?>">
 <td><input class="btn btn-primary" type="submit" name="submit" value="ยืนยัน"></td>
 <td>ราคารวมทั้งหมด </td>

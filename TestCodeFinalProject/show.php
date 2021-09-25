@@ -14,7 +14,7 @@ session_start();
 <body>
 <br>
 <center>
-  <form action="update.php" method="post">
+  <form action="c_updateodlist_pc.php" method="post">
 <table width="1000"  border="1">
   <tr>
     <td width="101">รหัสสินค้า</td>
@@ -44,7 +44,7 @@ session_start();
 		<td><?php echo $objResult["price"];?></td>
 		<td><input type="text" name="txtQty<?php echo $i;?>" value="<?php echo $_SESSION["strQty"][$i];?>" size="2"></td>
 		<td><?php echo number_format($Total,2);?></td>
-		<td><a href="delete.php?Line=<?php echo $i;?>"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">ลบ</button></a></td>
+		<td><a href="c_listdelete_pc.php?Line=<?php echo $i;?>"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">ลบ</button></a></td>
 	  </tr>
 	  
 	  <?php
@@ -65,7 +65,7 @@ session_start();
 	if($SumTotal > 0)
 	{
 ?>
-	| <a href="checkout.php">ยืนยัน</a>
+	| <a href="c_checkout.php">ยืนยัน</a>
 <?php
 	}
 ?>

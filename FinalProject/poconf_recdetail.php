@@ -10,13 +10,13 @@
 <div style="width:80%; margin:0px auto;"> 
 
 
-<a href="c_customer_detail_po.php"><input type="button" class="btn btn-outline-danger" value="ย้อนกลับ"></a>
+<a href="poconf_list.php"><input type="button" class="btn btn-outline-danger" value="ย้อนกลับ"></a>
 
 </div>
 
 <center>
 <br>
-  ใบยืนยันการสั่งซื้อสินค้า
+ใบเสร็จสินค้า
   <br>
   <br>
 <?php
@@ -33,6 +33,7 @@ $objResult = mysqli_fetch_array($objQuery);
 <table border="1" class="table"> 
   <tr>
     <td>รหัสใบสั่งซื้อ</td>
+    <td>วันที่สั่งซื้อ</td>
     <td>ชื่อ</td>
     <td>นามสกุล</td>
     <td>ที่อยู่</td>
@@ -40,6 +41,7 @@ $objResult = mysqli_fetch_array($objQuery);
   </tr>
     <tr>
       <td ><?php echo $objResult["poID"];?></td>
+      <td ><?php echo $objResult["poDate"];?></td>
       <td ><?php echo $objResult["name"];?></td>
       <td ><?php echo $objResult["surname"];?></td>
       <td ><?php echo $objResult["address"];?></td>
@@ -47,18 +49,18 @@ $objResult = mysqli_fetch_array($objQuery);
     </tr>
   </table>
 
-  <br>
-
+  
 <table border="1" class="table">
   <tr>
+    <td >ลำดับ</td>
     <td >รหัสสินค้า</td>
-    <td >ชื่อ</td>
+    <td >ชื่อสินค้า</td>
+    <td >จำนวน</td>
     <td >ราคา</td>
-    <td >จำนวย</td>
-    <td >ราคา</td>
+    <td >ราคารวมต่อชิ้น</td>
   </tr>
 <?php
-
+$n=0;
 $Total = 0;
 $SumTotal = 0;
 
@@ -66,7 +68,7 @@ $strSQL2 = "SELECT * FROM cuspo_detail WHERE poID = $id ";
 $objQuery2 = mysqli_query($check,$strSQL2)  or die(mysql_error());
 
 while($objResult2 = mysqli_fetch_array($objQuery2))
-{
+{  $n++;
 		$strSQL3 = "SELECT * FROM product WHERE productID = '".$objResult2["productID"]."' ";
 		$objQuery3 = mysqli_query($check,$strSQL3)  or die(mysql_error());
 		$objResult3 = mysqli_fetch_array($objQuery3);
@@ -74,20 +76,24 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
 		$SumTotal = $SumTotal + $Total;
 	  ?>
 	  <tr>
+    <td><?php echo $n;?></td>
 		<td><?php echo $objResult2["productID"];?></td>
 		<td><?php echo $objResult3["productName"];?></td>
+    <td><?php echo $objResult2["qty"];?></td>
 		<td><?php echo number_format($objResult3["price"],2);?></td>
-		<td><?php echo $objResult2["qty"];?></td>
+		
 		<td><?php echo number_format($Total,2);?></td>
+    <td>บาท</td>
 	  </tr>
     
 	  <?php
  }
   ?>
   <tr>  
-    <td colspan="3"></td>
-      <td>ราคารวม</td>
+    <td colspan="4"></td>
+      <td>ราคารวมทั้งหมด : </td>
       <td><?php echo number_format($SumTotal,2);?></td>
+      <td>บาท</td>
 </tr>
 </table>
 

@@ -6,6 +6,8 @@
         echo "<script>";
         echo "alert(' โปรดใส่ชื่อ ');";
         echo "</script>";
+        echo  "<script>window.location='cusregis.php'</script>";
+        
         exit();
     }
 
@@ -14,6 +16,8 @@
         echo "<script>";
         echo "alert(' โปรดใส่รหัสผ่าน ');";
         echo "</script>";
+        echo  "<script>window.location='cusregis.php'</script>";
+
         exit();
     }
 
@@ -22,6 +26,8 @@
         echo "<script>";
         echo "alert(' รหัสผ่านไม่ตรงกัน ');";
         echo "</script>";
+        echo  "<script>window.location='cusregis.php'</script>";
+        
         exit();
     }
 
@@ -30,6 +36,8 @@
         echo "<script>";
         echo "alert(' กรุณากรอกชื่อ ');";
         echo "</script>";
+        echo  "<script>window.location='cusregis.php'</script>";
+
         exit();
     }
 

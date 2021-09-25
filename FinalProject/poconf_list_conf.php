@@ -53,8 +53,8 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 <td align="center"><?php echo $dataResult["cusID"]; ?></td>
 <td>
 
-<a href = "poconf_detail.php?id=<?php echo $dataResult["poID"];?>">
-    <input type="button" class="btn btn-outline-info" value="ดูคำสั่งซื้อ">
+<a href = "poconf_recdetail.php?id=<?php echo $dataResult["poID"];?>">
+    <input type="button" class="btn btn-outline-primary" value="ดูใบเสร็จ">
 </a>
 
 </td>

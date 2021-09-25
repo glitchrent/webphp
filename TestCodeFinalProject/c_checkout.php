@@ -64,7 +64,7 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 ?>
 
 
-<form name="form1" method="post" action="save_checkout.php">
+<form name="form1" method="post" action="c_checkout_pc.php">
   <table width="300" border="0" >
     <tr>
       <td width="71"></td>
