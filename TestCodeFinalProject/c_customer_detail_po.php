@@ -3,18 +3,6 @@
 <?php session_start();   ?> 
 
 
-<center>
-<br>
-
-<div style="width:1275px;height: 200px; background-color: #E9765B;"  class="p-1 shadow p3 ">
-<br>
-<br>
-<p class="fs-1">
-ร้านขายอุปกรณ์ ฮาร์ดแวร์ก่อสร้าง</p>
-</div>
-<br>
-
-</center>
 
 
 <?php require("c_cusheader.php");   ?> 
@@ -39,10 +27,21 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 
 <center>
     <div style="width:70%">
-<table border="1" class="table">
+<table border="1" class="table table-striped">
 
 <br> ใบสั่งซื้อ <br>
+<tr>
+<td align="center">รหัสใบสั่งซื้อ</td>
+<td align="center">วันที่</td>
+<td align="center">ชื่อ</td>
+<td align="center">นามสกุล</td>
+<td align="center">เบอร์โทร</td>
+<td align="center">ที่อยู่</td>
+<td align="center">สถานะ</td>
+<td align="center" width="8%">สลิป</td>
+<td align="center">ใบเสร็จ / ใบสั่งซื้อ</td>
 
+</tr>
 <?php
 while($dataResult = mysqli_fetch_array($dataQuery))
 {
@@ -56,10 +55,29 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 <td align="center"><?php echo $dataResult["tel"]; ?></td>
 <td align="center"><?php echo $dataResult["address"]; ?></td>
 <td align="center"><?php echo $dataResult["postatus"]; ?></td>
-<td>
+<td align="center"><a target="_blank" href="Slip/<?php echo $dataResult["slip"]; ?>"><img src="Slip/<?php echo $dataResult["slip"]; ?>" width="100%"></a></td>
+
+<td align="center">
+
+<?php if($dataResult["postatus"] =='รอการตรวจสอบ')
+{
+    ?>
+
 <a href = "cuspo_detail.php?id=<?php echo $dataResult["poID"];?>">
     <input type="button" class="btn btn-outline-info" value="ดูคำสั่งซื้อ">
 </a>
+
+<?php } else {
+?>
+
+<a href = "cusrecep_detail.php?id=<?php echo $dataResult["poID"];?>">
+    <input type="button" class="btn btn-outline-danger" value="ดูใบเสร็จ">
+</a>
+
+<?php
+} ?> 
+
+
 </td>
 <tr>
 

@@ -3,7 +3,7 @@
 <?php session_start(); ?> 
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="cuspo.css">
@@ -46,18 +46,6 @@
   </style>
 
 <body >
-<center>
-<br>
-
-<div style="width:1275px;height: 200px; background-color: #E9765B;"  class="p-1 shadow p3 ">
-<br>
-<br>
-<p class="fs-1">
-ร้านขายอุปกรณ์ ฮาร์ดแวร์ก่อสร้าง</p>
-</div>
-<br>
-
-</center>
 
 <?php require("c_cusheader.php");   ?> 
 

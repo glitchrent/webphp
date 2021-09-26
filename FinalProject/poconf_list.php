@@ -20,7 +20,7 @@ $data = "SELECT *  FROM cuspo ";
 $dataQuery = mysqli_query($check, $data);
 ?>
 
-<div align="right"><a href="poconf_list_conf.php">ใบสั่งซื้อที่ยืนยันแล้ว</a> / <a href="poconf_list_notcon.php">ใบสั่งซื้อที่ยังไม่ตรวจสอบ</a></div>
+
 <table border="1"  class="table table-striped">
 
 <tr>
@@ -32,6 +32,7 @@ $dataQuery = mysqli_query($check, $data);
 <td align="center">ที่อยู่</td>
 <td align="center">สถานะ</td>
 <td align="center">รหัสลูกค้า</td>
+<td align="center" width="8%">สลิป</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr>
@@ -51,6 +52,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 <td align="center"><?php echo $dataResult["address"]; ?></td>
 <td align="center"><?php echo $dataResult["postatus"]; ?></td>
 <td align="center"><?php echo $dataResult["cusID"]; ?></td>
+<td align="center"><a target="_blank" href="../TestCodeFinalProject/Slip/<?php echo $dataResult["slip"]; ?>"><img src="../TestCodeFinalProject/Slip/<?php echo $dataResult["slip"]; ?>" width="100%"></a></td>
 <td>
 
 <?php if($dataResult["postatus"] =='รอการตรวจสอบ')
@@ -80,14 +82,14 @@ while($dataResult = mysqli_fetch_array($dataQuery))
     ?>
 
 
-<a href = "poconf_upd.php?id=<?php echo $dataResult["poID"];?>">
-    <input type="button" class="btn btn-outline-success" value="ยืนยันใบสั่งซื้อ">
-</a>
+<a href = "subtaxstock.php?id=<?php echo $dataResult["poID"];?>"><input type="button" class="btn btn-outline-success" value="ยืนยันคำสั่งซื้อ"></a>
 
 <?php } else {} ?> 
 
 </td>
+
 <tr>
+
 
 <?php
 }

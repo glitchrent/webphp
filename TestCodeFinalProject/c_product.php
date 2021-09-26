@@ -3,7 +3,7 @@
 <?php session_start(); ?> 
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="cuspo.css">
@@ -46,18 +46,6 @@
   </style>
 
 <body >
-<center>
-<br>
-
-<div style="width:1275px;height: 200px; background-color: #E9765B;"  class="p-1 shadow p3 ">
-<br>
-<br>
-<p class="fs-1">
-ร้านขายอุปกรณ์ ฮาร์ดแวร์ก่อสร้าง</p>
-</div>
-<br>
-
-</center>
 
 <?php require("c_cusheader.php");   ?> 
 
@@ -113,9 +101,7 @@ if($_SESSION['username'] != NULL)
 
 ?>
 
-<div style="width:80%; margin:0px auto;"> 
-<br><a href="show.php">( ตะกร้า )</a><br><br>
-</div> 
+
 
 
 <?php 
@@ -127,7 +113,7 @@ else{
 <?php
 }
 ?>
-      <?php
+<?php
 $strSQL = "SELECT * FROM product";
 $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
 ?>
@@ -159,10 +145,10 @@ $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
 
 
 <form action="c_increorder_pc.php" method="post">
-<div class="card border-Dark mb-1" style="max-width: 18rem;">
+<div class="card border-Dark mb-1 h-100" >
   <div class="card-header bg-transparent border-light"><img src="Picture/<?php echo $objResult["productPic"];?>" width="100%"></div>
   <div class="card-body text" >
-    <h5 class="card-title" ><?php echo $objResult["productName"];?></h5>
+    <h6 class="card-title"  title="<?php echo $objResult["productName"];?>"><?php echo iconv_substr($objResult["productName"],0,50,'UTF-8');?>...</h5>
     <p class="card-text"><?php echo $objResult["price"];?> บาท</p>
   </div>
   <div class="card-footer border-Dark" style="background-color: #FFAC8E;">

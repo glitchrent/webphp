@@ -19,7 +19,7 @@ else
 	$key = array_search($_POST["txtproductID"], $_SESSION["strproductID"]);
 	if((string)$key != "")
 	{
-		 $_SESSION["strQty"][$key] = $_SESSION["strQty"][$key] + $_POST["txtQty"];
+		//  $_SESSION["strQty"][$key] = $_SESSION["strQty"][$key] + $_POST["txtQty"];
 	}
 	else
 	{

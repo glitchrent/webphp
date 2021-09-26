@@ -56,11 +56,12 @@ $objResult = mysqli_fetch_array($objQuery);
   <tr>
     <td >ลำดับ</td>
     <td >รหัสสินค้า</td>
-    <td >ชื่อสินค้า</td>
+    <td width="25%">ชื่อสินค้า</td>
+    <td width="100px">จำนวนคงเหลือ</td>
+    <td width="100px"></td>
     <td >จำนวน</td>
     <td >ราคา</td>
     <td >ราคารวมต่อชิ้น</td>
-    <td >สินค้าคงเหลือ</td>
   </tr>
 <?php
 
@@ -96,10 +97,11 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
         <input name="hdnproductID<?php echo $i;?>" type="hidden"  value="<?php echo $objResult2["productID"];?>">
 
         <input name="txtproductID<?php echo $i;?>" type=""      value="<?php echo $objResult2["productID"];?>"></td>
-		<td><input name="txtproductName<?php echo $i;?>" type=""      value="<?php echo $objResult3["productName"];?>"></td>
-        <td><input name="txtproductCategory<?php echo $i;?>" type=""      value="<?php echo $objResult3["productCategory"];?>"></td>
-        <td><input name="txtdate<?php echo $i;?>" type=""      value="<?php echo date('Y-m-d H:i:s');?>"></td>
-        <td><input name="txtimstatus<?php echo $i;?>" type=""      value="ส่งออก"></td>
+		    <td><?php echo $objResult3["productName"];?>
+        <input name="txtproductName<?php echo $i;?>" type="hidden"      value="<?php echo $objResult3["productName"];?>">
+        <input name="txtproductCategory<?php echo $i;?>" type="hidden"      value="<?php echo $objResult3["productCategory"];?>">
+        <input name="txtdate<?php echo $i;?>" type="hidden"      value="<?php echo date('Y-m-d H:i:s');?>">
+        <input name="txtimstatus<?php echo $i;?>" type="hidden"      value="ส่งออก"></td>
 
         <td> <?php echo $objResult3["remainUnit"];?></td>
         <td> <?php 
@@ -109,11 +111,11 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
 
         if($objResult3["remainUnit"] < $objResult2["qty"]){
             $remcheck=1;
-            echo $remcheck;
+            echo "สินค้าไม่เพียงพอ";
         }else{
             $remcheck=0;
-            echo $remcheck;
-            
+            echo "ตัดสต็อกได้";
+
         }
 
         $remsum = $remsum + $remcheck;
@@ -132,7 +134,7 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
 
   
   <tr>  
-    <td colspan="4"></td>
+    <td colspan="6"></td>
       <td>ราคารวมทั้งหมด : </td>
       <td><?php echo number_format($SumTotal,2);?></td>
       <td>บาท</td>
@@ -142,7 +144,7 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
 
 </table>
 
-<?php if($remsum != 0){ echo "สินค้าเหลือจำนวนไม่เพียงพอ ไม่สามารถตัดสต๊อกได้";
+<?php if($remsum != 0){ echo "สินค้าคงเหลือไม่เพียงพอ ไม่สามารถตัดสต็อกได้";
 } else { ?>
 
 <input type="hidden" name="txtpoid" value="<?php echo $id;?>">

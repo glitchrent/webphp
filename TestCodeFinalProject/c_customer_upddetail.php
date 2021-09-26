@@ -25,32 +25,34 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 ?>
 <center>
   
-<br> ข้อมูลลูกค้า <br>
+<br> แก้ไขข้อมูลที่อยู่ <br>
 
 <div style="width:50%">
-
+<form action="c_customer_upddetail_pc.php" method="post" >
 <table width="304" border="1" class="table">
     <tr>
+      <input type="hidden" name="txtusername" value="<?php echo $objResult2["username"]; ?>">
       <td width="71">ชื่อ</td>
-      <td width="217"><input type="hidden" name="txtname" value="<?php echo $objResult2["name"]; ?>" ><?php echo $objResult2["name"]; ?></td>
+      <td width="217"><input type="text" name="txtname" value="<?php echo $objResult2["name"]; ?>" ></td>
     </tr>
     <tr>
       <td width="71">นามสกุล</td>
-      <td width="217"><input type="hidden" name="txtsurname" value="<?php echo $objResult2["surname"]; ?>"><?php echo $objResult2["surname"]; ?></td>
+      <td width="217"><input type="text" name="txtsurname" value="<?php echo $objResult2["surname"]; ?>"></td>
     </tr>
     <tr>
       <td>ที่อยู่</td>
-      <td><?php echo $objResult2["address"]; ?></td>
+      <td><textarea name="txtaddress"><?php echo $objResult2["address"]; ?> </textarea></td>
     </tr>
     <tr>
       <td>เบอร์โทร</td>
-      <td><input type="hidden" name="txttel" value="<?php echo $objResult2["tel"]; ?>"><?php echo $objResult2["tel"]; ?></td>
+      <td><input type="text" name="txttel" value="<?php echo $objResult2["tel"]; ?>"></td>
     </tr>
-    <tr>
-      <td>รหัสลูกค้า</td>
-      <td><input type="hidden" name="txtcusID" value="<?php echo $objResult2["cusID"]; ?>"><?php echo $objResult2["cusID"]; ?></td>
-    </tr>
+
   </table>
-  <a href="c_customer_upddetail.php">แก้ไขข้อมูลที่อยู่</a>
+
+  <input type="submit" value="บันทึก">
+</form>
+  <a href ="c_customer_detail.php">ยกเลิก</a>
+
 
 </div>

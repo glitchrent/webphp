@@ -80,8 +80,8 @@
 
     </div>
     <div class="form-floating">
-    <a href="mb_index.php">
-    <button name="button" class="w-100 btn btn-lg btn-success" type="button">พนักงาน</button>
+    <a href="cus_index.php">
+    <button name="button" class="w-100 btn btn-lg btn-success" type="button">ข้อมูลลูกค้า</button>
     </a>
     <br><br>
 

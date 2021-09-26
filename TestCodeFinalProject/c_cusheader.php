@@ -1,5 +1,13 @@
 <?php require("hide_error.php");   ?> 
 <?php require("conn.php");   ?> 
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="cuspo.css">
+  <?php date_default_timezone_set('Asia/Bangkok');?>
+<style>
+    A{text-decoration:none}
+  </style>
+<?php require("banner.php");   ?> 
 <center>
 <div style="width:67%">
 <header  class="p-1 shadow p3" style="background-color: #E9765B;">
@@ -19,18 +27,25 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="c_product.php">สินค้าทั้งหมด</a>
         </li>
+
         <li class="nav-item">
-        
+        <a class="nav-link active" aria-current="page" href="c_product.php">เกี่ยวกับร้าน</a>
         </li>
+
         <li class="nav-item">
-          
+        <a class="nav-link active" aria-current="page" href="c_product.php">ติดต่อเรา</a>
         </li>
+
         <li class="nav-item">
           
         </li>
       </ul>
     </div>
     
+    <span class="navbar-text">
+    <a href="show.php"><button type="button" class="btn btn-primary">( ตะกร้า สินค้า )</button> &nbsp; </a> 
+    </span>
+
     <span class="navbar-text">
     
     
@@ -74,3 +89,4 @@ else{
   </header>
   </div>
   </center>
+  

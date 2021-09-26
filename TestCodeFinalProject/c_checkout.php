@@ -10,6 +10,7 @@ session_start();
 <head>
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 </head>
 <body>
 <br>
@@ -64,8 +65,8 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 ?>
 
 
-<form name="form1" method="post" action="c_checkout_pc.php">
-  <table width="300" border="0" >
+<form name="form1" method="post" action="c_checkout_pc.php"  enctype="multipart/form-data">
+  <table width="300" border="1" >
     <tr>
       <td width="71"></td>
       <td width="217"><input type="hidden" name="txtname" value="<?php echo $objResult2["name"]; ?>" ></td>
@@ -89,6 +90,11 @@ $objResult2 = mysqli_fetch_array($objQuery2)
     <tr>
       <td></td>
       <td><input type="hidden" name="postatus" value="รอการตรวจสอบ"></td>
+    </tr>
+    <tr>
+      <td>สลิป</td>
+      <td>เลือก</td>
+      <td><input type="file" name="txtslip" value="" oninvalid="this.setCustomValidity('โปรดใส่หลักฐานการโอนก่อน ')" oninput="setCustomValidity('')" required></td>
     </tr>
   </table>
   <br>

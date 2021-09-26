@@ -4,25 +4,40 @@ session_start();
 
 <?php require("conn.php");   ?> 
 <?php require("bootstrapscrip.php");   ?> 
-<?php require("c_cusheader.php");   ?> 
+
 
 <html>
 <head>
 <title></title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="cuspo.css">
+  <?php date_default_timezone_set('Asia/Bangkok');?>
+
+<style>
+input[type='number']{
+    width: 50px;
+} 
+	</style>
+
 </head>
 <body>
+
+<?php require("c_cusheader.php");   ?> 
+
 <br>
 <center>
   <form action="c_updateodlist_pc.php" method="post">
-<table width="1000"  border="1">
+<table width="65%"  border="1">
   <tr>
-    <td width="101">รหัสสินค้า</td>
-    <td width="300">ชื่อ</td>
-    <td width="82">ราคา</td>
-    <td width="79">จำนวน</td>
-    <td width="79">ราคารวม</td>
-    <td width="10"></td>
+    <td width="">รหัสสินค้า</td>
+    <td width="">ชื่อ</td>
+    <td width="">ราคา</td>
+    <td width="">จำนวน</td>
+	<td width=""></td>
+    <td width="">ราคารวม</td>
+	
+    <td width=""></td>
   </tr>
   <?php
   $Total = 0;
@@ -42,7 +57,9 @@ session_start();
 		<td><?php echo $_SESSION["strproductID"][$i];?><input type="hidden" name="txtproductID<?php echo $i;?>" value="<?php echo $_SESSION["strproductID"][$i];?>"></td>
 		<td><?php echo $objResult["productName"];?></td>
 		<td><?php echo $objResult["price"];?></td>
-		<td><input type="text" name="txtQty<?php echo $i;?>" value="<?php echo $_SESSION["strQty"][$i];?>" size="2"></td>
+		
+		<td ><input type="number" name="txtQty<?php echo $i;?>" value="<?php echo $_SESSION["strQty"][$i];?>" size="2" min="1" max="<?php echo $objResult["remainUnit"];?>"  oninvalid="this.setCustomValidity('กรอกจำนวนไม่ถูกต้อง หรือ สินค้าไม่เพียงพอ')" oninput="setCustomValidity('')"> </td>
+		<td>(สินค้าคงเหลือ <?php echo $objResult["remainUnit"];?>)</td>
 		<td><?php echo number_format($Total,2);?></td>
 		<td><a href="c_listdelete_pc.php?Line=<?php echo $i;?>"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">ลบ</button></a></td>
 	  </tr>
