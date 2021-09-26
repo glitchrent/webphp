@@ -47,7 +47,14 @@
 
 <body >
 
-<?php require("c_cusheader.php");   ?> 
+
+<center>
+  <br>
+<a href = "c_product_list_edit.php">
+<button type="button" class="btn btn-danger">ย้อนกลับ</button></a>
+  </center>
+
+
 
 <br>
 
@@ -172,8 +179,9 @@ $objResult = mysqli_fetch_array($objQuery)
     
  
 <script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
-<form action="testdecrip_pc.php" method="post" >
-
+<form action="c_product_detail_edit_pc.php" method="post" >
+<input type="submit" value="บันทึก"> <a href="c_product_detail.php?id=<?php echo $objResult["productID"];?>" target="_blank">ดูตัวอย่าง</a><br><br>
+<input type="hidden" name="productID" value="<?php echo $objResult["productID"];?>">
 <textarea name="detail" id="editor1" rows="120px"> <?php echo $objResult["productDetail"];?></textarea>
 <script>
 // Replace the <textarea id="editor1"> with a CKEditor
@@ -187,7 +195,7 @@ CKEDITOR.instances[instance].updateElement();
 }
 </script>
 
-<input type="submit" value="save">
+
 
 </form>
 
