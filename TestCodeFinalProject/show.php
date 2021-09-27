@@ -27,8 +27,10 @@ input[type='number']{
 
 <br>
 <center>
+  รายการสินค้า
   <form action="c_updateodlist_pc.php" method="post">
-<table width="65%"  border="1">
+    <div style="width:60%">
+<table   border="2" class="table table-striped">
   <tr>
     <td width="">รหัสสินค้า</td>
     <td width="">ชื่อ</td>
@@ -63,21 +65,27 @@ input[type='number']{
 		<td><?php echo number_format($Total,2);?></td>
 		<td><a href="c_listdelete_pc.php?Line=<?php echo $i;?>"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">ลบ</button></a></td>
 	  </tr>
+
+  
 	  
 	  <?php
 	  }
   }
   ?>
+    <tr>
+      <td colspan="1"></td>
+      <td><p color>กรอกจำนวนแล้วกดคำนวณราคา --></td>
+      <td colspan="1"></td>
+      <td><input class="btn btn-success" type="submit" value="คำนวณราคาสินค้า"></td>
+      
+      <td >ราคารวม ทั้งหมด : </td>
+      <td><?php echo number_format($SumTotal,2);?></td>
+    </tr>
 </table>
-<table width="740"  border="0">
-  <tr>
-  <td><br><input type="submit" value="คำนวนราคาสินค้า"></td>
-  <td align="right">ราคารวม ทั้งหมด : <?php echo number_format($SumTotal,2);?></td>
-  </tr>
-  </table>
+
 </form>
 
-<br><br><a href="c_product.php">เลือกสินค้าเพิ่มเติม</a>
+<br><a href="c_product.php">เลือกสินค้าเพิ่มเติม</a>
 <?php
 	if($SumTotal > 0)
 	{

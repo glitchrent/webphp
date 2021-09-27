@@ -12,17 +12,19 @@ session_start();
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 </head>
-<body>
+<body bgcolor="red">
 <br>
 <center>
-<table width="1000"  border="1">
+  <div style="width:60%">
+  รายการสินค้า
+<table width="1000"  border="2" class="table table-striped">
   <tr>
     <td width="101">รหัสสินค้า</td>
     <td width="300">ชื่อ</td>
     <td width="82">ราคา</td>
     <td width="79">จำนวน</td>
     <td width="79">ราคารวม</td>
-    <td width="10"></td>
+    
   </tr>
   <?php
   $Total = 0;
@@ -49,11 +51,14 @@ session_start();
 	  }
   }
   ?>
-
+  <tr>
+    <td colspan="3"></td>
+    <td>ราคารวม ทั้งหมด : </td>
+    <td><?php echo number_format($SumTotal,2);?></td>
+</tr>
 </table>
-<br>
-ราคารวม ทั้งหมด : <?php echo number_format($SumTotal,2);?>
-<br>
+
+
 
 <?php
 
@@ -64,42 +69,50 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 
 ?>
 
-
+<div style="width:70%">
+ข้อมูลที่อยู่การจัดส่ง
 <form name="form1" method="post" action="c_checkout_pc.php"  enctype="multipart/form-data">
-  <table width="300" border="1" >
+  <table  border="2" class="table table-striped">
     <tr>
-      <td width="71"></td>
-      <td width="217"><input type="hidden" name="txtname" value="<?php echo $objResult2["name"]; ?>" ></td>
+    <td  rowspan="8"><img src ="ธนาคาร2.jpg" width="100%"></td>
+      <td >ชื่อ</td>
+      
+      <td ><input type="text" name="txtname" value="<?php echo $objResult2["name"]; ?>" ></td>
+      
     </tr>
     <tr>
-      <td width="71"></td>
-      <td width="20"><input type="hidden" name="txtsurname" value="<?php echo $objResult2["surname"]; ?>"></td>
+      <td >นามสกุล</td>
+      <td ><input type="text" name="txtsurname" value="<?php echo $objResult2["surname"]; ?>"></td>
+    </tr>
+    <tr>
+      <td>ที่อยู่</td>
+      <td><input type="text" name="txtaddress" value="<?php echo $objResult2["address"]; ?>"></td>
+    </tr>
+    <tr>
+      <td>เบอร์โทร</td>
+      <td><input type="text" name="txttel" value="<?php echo $objResult2["tel"]; ?>"></td>
+    </tr>
+    <tr>
+      <td width="20%">เลือก หลักฐานการโอน</td>
+      <td><input type="file" name="txtslip" value="" oninvalid="this.setCustomValidity('โปรดใส่หลักฐานการโอนก่อน ')" oninput="setCustomValidity('')" required></td>
     </tr>
     <tr>
       <td></td>
-      <td><input type="hidden" name="txtaddress" value="<?php echo $objResult2["address"]; ?>"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td><input type="hidden" name="txttel" value="<?php echo $objResult2["tel"]; ?>"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td><input type="hidden" name="txtcusID" value="<?php echo $objResult2["cusID"]; ?>"></td>
+      <td><input type="submit" name="Submit" class="btn btn-outline-danger" value="ยืนยันการสั่งซื้อ"><input type="hidden" name="txtcusID" value="<?php echo $objResult2["cusID"]; ?>"></td>
     </tr>
     <tr>
       <td></td>
       <td><input type="hidden" name="postatus" value="รอการตรวจสอบ"></td>
     </tr>
-    <tr>
-      <td>สลิป</td>
-      <td>เลือก</td>
-      <td><input type="file" name="txtslip" value="" oninvalid="this.setCustomValidity('โปรดใส่หลักฐานการโอนก่อน ')" oninput="setCustomValidity('')" required></td>
-    </tr>
+    
+
   </table>
   <br>
-    <input type="submit" name="Submit" value="ยืนยันการสั่งซื้อ">
+  
 </form>
+</div>
+
+</div>
 <?php
 mysqli_close($check);
 ?>
