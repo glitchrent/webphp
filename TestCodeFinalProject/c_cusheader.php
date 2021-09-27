@@ -10,10 +10,10 @@
 <?php require("banner.php");   ?> 
 <center>
 <div style="width:67%">
-<header  class="p-1 shadow p3" style="background-color: #E9765B;">
+<header  class="p-1 shadow p3" style="background-color: #FF7E00;">
 
 <div style="width:98%">
-<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #E9765B;">
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #FF7E00;">
 
 
 

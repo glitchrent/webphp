@@ -63,7 +63,7 @@
 
 
     
-    <p style="background-color: #E9765B;" class="text-white text-center ">
+    <p style="background-color: #FF7E00;" class="text-white text-center ">
     หมวดหมู่สินค้า
 
   </p>
@@ -121,7 +121,7 @@ $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
 
 <p>
 
-<div style="width:88%; margin:0px auto; background-color: #E9765B;" class="fs-1 text-white"> 
+<div style="width:88%; margin:0px auto; background-color: #FF7E00;" class="fs-1 text-white"> 
 
 <p>สินค้าทั้งหมด</p>
 
@@ -151,7 +151,7 @@ $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
     <h6 class="card-title"  title="<?php echo $objResult["productName"];?>"><?php echo iconv_substr($objResult["productName"],0,50,'UTF-8');?>...</h5>
     <p class="card-text"><?php echo $objResult["price"];?> บาท</p>
   </div>
-  <div class="card-footer border-Dark" style="background-color: #FFAC8E;">
+  <div class="card-footer border-Dark" style="background-color: #FFC58C;">
   
   <?php if($objResult["remainUnit"]!=0){
 ?>

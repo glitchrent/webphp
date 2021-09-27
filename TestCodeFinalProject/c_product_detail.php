@@ -63,7 +63,7 @@
 
 
     
-    <p style="background-color: #E9765B;" class="text-white text-center ">
+    <p style="background-color: #FF7E00;" class="text-white text-center ">
     หมวดหมู่สินค้า
 
   </p>
@@ -104,7 +104,7 @@ $objResult = mysqli_fetch_array($objQuery)
 
 <p>
 
-<div style="width:88%; margin:0px auto; background-color: #E9765B;" class="fs-1 text-white"> 
+<div style="width:88%; margin:0px auto; background-color: #FF7E00;" class="fs-1 text-white"> 
 
 <p><?php echo $objResult["productName"];?></p>
 
