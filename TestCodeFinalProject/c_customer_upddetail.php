@@ -25,11 +25,12 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 ?>
 <center>
   
-<br> แก้ไขข้อมูลที่อยู่ <br>
+
 
 <div style="width:50%">
+<br><p style="background-color: #FFFFFF;"> แก้ไขข้อมูลที่อยู่ </p> 
 <form action="c_customer_upddetail_pc.php" method="post" >
-<table width="304" border="1" class="table">
+<table width="304" border="1" class="table" style="background-color: #FFFFFF;">
     <tr>
       <input type="hidden" name="txtusername" value="<?php echo $objResult2["username"]; ?>">
       <td width="71">ชื่อ</td>

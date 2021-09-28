@@ -15,9 +15,9 @@ session_start();
 <body bgcolor="red">
 <br>
 <center>
-  <div style="width:60%">
-  รายการสินค้า
-<table width="1000"  border="2" class="table table-striped">
+  <div style="width:60%" >
+  <p style="background-color: #FFFFFF;">รายการสินค้า</p>
+<table width="1000"  border="2" class="table table-striped" style="background-color: #FFFFFF;">
   <tr>
     <td width="101">รหัสสินค้า</td>
     <td width="300">ชื่อ</td>
@@ -70,9 +70,9 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 ?>
 
 <div style="width:70%">
-ข้อมูลที่อยู่การจัดส่ง
+<p style="background-color: #FFFFFF;">ข้อมูลที่อยู่การจัดส่ง</p>
 <form name="form1" method="post" action="c_checkout_pc.php"  enctype="multipart/form-data">
-  <table  border="2" class="table table-striped">
+  <table  border="2" class="table table-striped" style="background-color: #FFFFFF;">
     <tr>
     <td  rowspan="8"><img src ="ธนาคาร2.jpg" width="100%"></td>
       <td >ชื่อ</td>

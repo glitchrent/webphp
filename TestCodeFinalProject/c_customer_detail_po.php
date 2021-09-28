@@ -27,9 +27,9 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 
 <center>
     <div style="width:70%">
-<table border="1" class="table table-striped">
+<table border="1" class="table table-striped" style="background-color: #FFFFFF;">
 
-<br> ใบสั่งซื้อ <br>
+<br> <p style="background-color: #FFFFFF;">ใบสั่งซื้อ</p> 
 <tr>
 <td align="center">รหัสใบสั่งซื้อ</td>
 <td align="center">วันที่</td>

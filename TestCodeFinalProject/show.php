@@ -27,10 +27,12 @@ input[type='number']{
 
 <br>
 <center>
-  รายการสินค้า
+<div style="width:60%">
+  <p  style="background-color: #FFFFFF;">รายการสินค้า</p>
+
   <form action="c_updateodlist_pc.php" method="post">
-    <div style="width:60%">
-<table   border="2" class="table table-striped">
+    
+<table   border="2" class="table table-striped"  style="background-color: #FFFFFF;">
   <tr>
     <td width="">รหัสสินค้า</td>
     <td width="">ชื่อ</td>
@@ -85,12 +87,12 @@ input[type='number']{
 
 </form>
 
-<br><a href="c_product.php">เลือกสินค้าเพิ่มเติม</a>
+<p style="background-color: #FFFFFF;"><a href="c_product.php" >เลือกสินค้าเพิ่มเติม</a>
 <?php
 	if($SumTotal > 0)
 	{
 ?>
-	| <a href="c_checkout.php">ยืนยัน</a>
+	/ <a href="c_checkout.php" >ยืนยัน</a></p>
 <?php
 	}
 ?>

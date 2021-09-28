@@ -2,7 +2,7 @@
 <?php require("conn.php");   ?> 
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="cuspo.css">
+  <link rel="stylesheet" type="text/css" href="cuspo1.css">
   <?php date_default_timezone_set('Asia/Bangkok');?>
 <style>
     A{text-decoration:none}

@@ -25,11 +25,13 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 ?>
 <center>
   
-<br> ข้อมูลลูกค้า <br>
+
 
 <div style="width:50%">
 
-<table width="304" border="1" class="table">
+<br> <p style="background-color: #FFFFFF;">ข้อมูลลูกค้า</p>
+
+<table width="304" border="1" class="table table-strip" style="background-color: #FFFFFF;">
     <tr>
       <td width="71">ชื่อ</td>
       <td width="217"><input type="hidden" name="txtname" value="<?php echo $objResult2["name"]; ?>" ><?php echo $objResult2["name"]; ?></td>
@@ -51,6 +53,6 @@ $objResult2 = mysqli_fetch_array($objQuery2)
       <td><input type="hidden" name="txtcusID" value="<?php echo $objResult2["cusID"]; ?>"><?php echo $objResult2["cusID"]; ?></td>
     </tr>
   </table>
-  <a href="c_customer_upddetail.php">แก้ไขข้อมูลที่อยู่</a>
+  <p style="background-color: #FFFFFF;"><a href="c_customer_upddetail.php">แก้ไขข้อมูลที่อยู่</a></p>
 
 </div>

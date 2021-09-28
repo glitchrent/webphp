@@ -23,7 +23,7 @@
     .sidenav {
       padding-top: 16px;
       background-color: #FFFFFF;
-      height: 100%;
+      height: auto;
     }
     
     /* Set black background color, white text and some padding */
@@ -59,7 +59,7 @@
 
   <!-- ตางรางซ้าย -->
   
-    <div class="col-sm-1 sidenav shadow p3" style="text">
+    <div class="col-sm-1 sidenav shadow p3" style="text ">
 
 
     
@@ -92,7 +92,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 
 <!-- ตารางกลาง -->
 
-    <div class="col-sm-7 text-center shadow p3  " style="background-color: #FFFFFF;"> 
+    <div class="col-sm-7 text-center shadow p3 " style="background-color: #FFFFFF;"> 
 
     <?php 
 
