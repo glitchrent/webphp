@@ -58,35 +58,35 @@
   <table width="400" border="0" style="width: 400px">
     <tbody>
       <tr>
-        <td width="125"> &nbsp;ชื่อผู้ใช้</td>
+        <td width="125"> &nbsp;ชื่อผู้ใช้ <l style="color:red">*</l></td>
         <td width="180">
           <input name="txtusername" class="form-control" type="text" id="txtusername" size="20">
         </td>
       </tr>
       <tr>
-        <td> &nbsp;รหัสผ่าน</td>
+        <td> &nbsp;รหัสผ่าน <l style="color:red">*</l></td>
         <td><input name="txtpassword" class="form-control" type="password" id="txtpassword">
         </td>
       </tr>
       <tr>
-        <td> &nbsp;ยืนยัน รหัสผ่าน</td>
+        <td> &nbsp;ยืนยัน รหัสผ่าน <l style="color:red">*</l></td>
         <td><input name="txtconpassword" class="form-control" type="password" id="txtconpassword">
         </td>
       </tr>
       <tr>
-        <td>&nbsp;ชื่อจริง</td>
+        <td>&nbsp;ชื่อจริง <l style="color:red">*</l></td>
         <td><input name="txtfirstname" class="form-control" type="text" id="txttxtfirstname size="35"></td>
 </tr>
 <tr>
-        <td>&nbsp;นามสกุล</td>
+        <td>&nbsp;นามสกุล <l style="color:red">*</l></td>
         <td><input name="txtlastname" class="form-control" type="text" id="txtlastname" size="35"></td>
       </tr>
       <tr>
-        <td>&nbsp;ที่อยู่</td>
+        <td>&nbsp;ที่อยู่ <l style="color:red">*</l></td>
         <td><textarea name="txtaddress" class="form-control" type="text" id="txtaddress" size="35"></textarea></td>
       </tr>
       <tr>
-        <td>&nbsp;เบอร์โทร</td>
+        <td>&nbsp;เบอร์โทร <l style="color:red">*</l></td>
         <td><input name="txttel" type="text" class="form-control" id="txttel" size="35"></td>
       </tr>
 

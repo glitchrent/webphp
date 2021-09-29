@@ -30,23 +30,50 @@ $objResult = mysqli_fetch_array($objQuery);
 
 <div style="width:80%; margin:0px auto;"> 
 
+
+
+ 
+<table border="1" class="table"> 
+<tr>
+  
+    <td >ที่อยู่ 3 ซ.อนามัยงามเจริญ 33 แยก 2 <br>
+ แขวงท่าข้าม เขตบางขุนเทียน กรุงเทพมหานคร 10600</td>
+    </tr>
+  </table>
+
+
+
 <table border="1" class="table"> 
   <tr>
-    <td>รหัสใบสั่งซื้อ</td>
-    <td>วันที่สั่งซื้อ</td>
-    <td>ชื่อ</td>
-    <td>นามสกุล</td>
-    <td>ที่อยู่</td>
-    <td>เบอร์โทร</td>
-  </tr>
-    <tr>
-      <td ><?php echo $objResult["poID"];?></td>
-      <td ><?php echo $objResult["poDate"];?></td>
-      <td ><?php echo $objResult["name"];?></td>
-      <td ><?php echo $objResult["surname"];?></td>
-      <td ><?php echo $objResult["address"];?></td>
-      <td ><?php echo $objResult["tel"];?></td>
+
+
+    <td width="10%">รหัสใบสั่งซื้อ</td> <td><?php echo $objResult["poID"];?></td>
     </tr>
+
+    <tr>
+    <td>วันที่สั่งซื้อ</td> <td><?php echo $objResult["poDate"];?></td>
+    </tr>
+
+    <tr>
+    <td>ชื่อ</td> <td><?php echo $objResult["name"];?></td>
+    </tr>
+
+    <tr>
+    <td>นามสกุล</td> <td><?php echo $objResult["surname"];?></td>
+    </tr>
+
+    <tr>
+    <td>ที่อยู่</td> <td><?php echo $objResult["address"];?></td>
+    </tr>
+
+    <tr>
+    <td>เบอร์โทร</td> <td><?php echo $objResult["tel"];?></td>
+    </tr>
+
+    <tr>
+    <td>วันที่พิมพ์</td> <td><?php echo date("Y.m.d");?></td>
+    </tr>
+
   </table>
 
   
@@ -55,9 +82,9 @@ $objResult = mysqli_fetch_array($objQuery);
     <td >ลำดับ</td>
     <td >รหัสสินค้า</td>
     <td >ชื่อสินค้า</td>
-    <td >จำนวน</td>
-    <td >ราคา</td>
-    <td >ราคารวมต่อชิ้น</td>
+    <td >จำนวน (ชิ้น)</td>
+    <td >ราคา (บาท)</td>
+    <td >ราคารวมต่อชิ้น (บาท)</td>
   </tr>
 <?php
 $n=0;
