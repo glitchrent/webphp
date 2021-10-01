@@ -84,16 +84,34 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 
 <a href = "subtaxstock.php?id=<?php echo $dataResult["poID"];?>"><input type="button" class="btn btn-outline-success" value="ยืนยันคำสั่งซื้อ"></a>
 
-<?php } else {} ?> 
+<?php } else if($dataResult["postatus"] =='ยืนยันแล้ว') {
+?>
 
+<a href = "preparedeliv_pc.php?id=<?php echo $dataResult["poID"];?>"><input type="button" class="btn btn-outline-success" value="เตรียมการจัดส่ง"></a>
+
+
+
+<?php
+} else if($dataResult["postatus"] =='กำลังเตรียมการจัดส่ง') { ?> 
+
+<a href = "completedeliv_pc.php?id=<?php echo $dataResult["poID"];?>"><input type="button" class="btn btn-outline-success" value="จัดส่งเสร็จสิ้น"></a>
+
+<?php
+} else {}
+?>
 </td>
+
+
 
 <tr>
 
 
+
+
+
+
 <?php
 }
-
 ?>
 </table>
 
