@@ -146,7 +146,7 @@ $objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
 
 <form action="c_increorder_pc.php" method="post">
 <div class="card border-Dark mb-1 h-100" >
-  <div class="card-header bg-transparent border-light"><img src="Picture/<?php echo $objResult["productPic"];?>" width="100%"></div>
+  <div class="card-header bg-transparent border-light"><img src="../FinalProject/Picture/<?php echo $objResult["productPic"];?>" width="100%"></div>
   <div class="card-body text" >
     <h6 class="card-title"  title="<?php echo $objResult["productName"];?>"><?php echo iconv_substr($objResult["productName"],0,50,'UTF-8');?>...</h5>
     <p class="card-text"><?php echo $objResult["price"];?> บาท</p>

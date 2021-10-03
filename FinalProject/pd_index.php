@@ -133,8 +133,8 @@ while ($dataResult2 = mysqli_fetch_assoc($dataQuery2)) {
 
 
   <div class="mb-3">
-    <label for="exampleInput" class="form-label">จำนวน</label>
-    <input name="remainUnit" readonly="readonly"  type="text" class="form-control" id="" value="0">
+    
+    <input name="remainUnit" readonly="readonly"  type="hidden" class="form-control" id="" value="0">
   </div>
 
   <div class="mb-3">
@@ -144,7 +144,7 @@ while ($dataResult2 = mysqli_fetch_assoc($dataQuery2)) {
 
   <div class="mb-3">
     <label for="exampleInput" class="form-label">ราคา</label>
-    <input name="price" type="text" class="form-control" id="">
+    <input name="price" type="number" class="form-control" id="">
   </div>
       </div>
 

@@ -48,7 +48,7 @@ h5 {
 <body>   
  
 
-<a href="poconf_list.php"><input type="button" class="btn btn-outline-danger" value="ย้อนกลับ"></a>
+<a href="receipt.php"><input type="button" class="btn btn-outline-danger" value="ย้อนกลับ"></a>
 <input type="button" class="btn btn-outline-info" value="ปริ้นใบเสร็จ" onclick="window.print()">
 <?php 
 $id=$_GET["id"];

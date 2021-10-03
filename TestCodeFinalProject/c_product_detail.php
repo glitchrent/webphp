@@ -117,7 +117,7 @@ $objResult = mysqli_fetch_array($objQuery)
 <table border="1" class="table">
   <tr>
 <td rowspan="20" width="600px">
-<img src="Picture/<?php echo $objResult["productPic"];?>" width="100%">
+<img src="../FinalProject/Picture/<?php echo $objResult["productPic"];?>" width="100%">
 </td>
 </tr>
 

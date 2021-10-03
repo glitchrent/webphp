@@ -11,6 +11,11 @@
    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
 
     <title>ออร์เดอร์</title>
+    <style>
+input[type='number']{
+    width: 50px;
+} 
+	</style>
     </head>
 
     
@@ -39,7 +44,7 @@ $dataQuery = mysqli_query($check, $data);
   <td>ชื่อ</td>
   
   <td>จำนวนที่เหลือ</td>
-  <td>จำนวน</td>
+  <td width="">จำนวน</td>
   
   <td>ราคา</td>
   <td>ราคารวมต่อชิ้น</td>  
@@ -62,8 +67,8 @@ while($dataResult = mysqli_fetch_array($dataQuery))
   <td>
 
 	<input type="hidden" name="hdnproductID<?php echo $i;?>"  value="<?php echo $dataResult["productID"];?>">
-
-	<input type="text" readonly="readonly" name="txtproductID<?php echo $i;?>" value="<?php echo $dataResult["productID"];?>">
+  <?php echo $dataResult["productID"];?>
+	<input type="hidden" readonly="readonly" name="txtproductID<?php echo $i;?>" value="<?php echo $dataResult["productID"];?>">
 
 	</td>
 
@@ -76,7 +81,11 @@ while($dataResult = mysqli_fetch_array($dataQuery))
     <input type="hidden" name="txtimstatus<?php echo $i;?>" value="ส่งออก">
     <input type="hidden" name="" value="<?php echo $dataResult["remainUnit"];?>">
     ( สินค้าคงเหลือ <?php echo $dataResult["remainUnit"];?> )
-    <td><input type="number" name="txtaddunit<?php echo $i;?>" id="txtaddunit<?php echo $i;?>" onkeyup="sumunp()" onclick="sumunp()" min="1" max="<?php echo $dataResult["remainUnit"];?>" oninvalid="this.setCustomValidity('กรอกจำนวนไม่ถูกต้อง หรือ สินค้าไม่เพียงพอ จำนวนคงเหลือ <?php echo $dataResult['remainUnit'];?> ')" oninput="setCustomValidity('')" value="0"></td>
+
+    <td>
+ 
+      <input type="number" name="txtaddunit<?php echo $i;?>" id="txtaddunit<?php echo $i;?>"  onkeyup="sumunp()" onclick="sumunp()" min="1" max="<?php echo $dataResult["remainUnit"];?>" oninvalid="this.setCustomValidity('กรอกจำนวนไม่ถูกต้อง หรือ สินค้าไม่เพียงพอ จำนวนคงเหลือ <?php echo $dataResult['remainUnit'];?> ')" oninput="setCustomValidity('')" value="0"></td>
+    
     <td><input type="text" readonly="readonly" name="txtprice<?php echo $i;?>" id="txtprice<?php echo $i;?>" onkeyup="sumunp()" value="<?php echo $dataResult["price"];?>"></td>
     <td><input type="text" readonly="readonly" class="sumalltotal" name="totalunp<?php echo $i;?>" id="totalunp<?php echo $i;?>" value=""></td>
     <td><a href = "od_del_pc.php?iddel=<?php echo $dataResult["productID"];?>"><button type="button" class="btn btn-outline-danger">ลบ</button></a></td>
@@ -90,7 +99,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 <input type="hidden" readonly="readonly" name="txtorderdate" value="<?php echo date('Y-m-d H:i:s');?>">
 <td><input class="btn btn-primary" type="submit" name="submit" value="ยืนยัน"></td>
 <td>ราคารวมทั้งหมด </td>
-<td><input type="number" readonly="readonly" name="totalresult" id="totalresult" /> บาท </td>
+<td><input type="text" readonly="readonly" name="totalresult" id="totalresult" /> บาท </td>
 <td></td>
 </tr>
 </table>

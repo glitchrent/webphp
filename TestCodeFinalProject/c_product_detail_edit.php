@@ -65,34 +65,7 @@
 
 
   <!-- ตางรางซ้าย -->
-  
-    <div class="col-sm-1 sidenav shadow p3" style="text">
-
-
-    
-    <p style="background-color: #E9765B;" class="text-white text-center ">
-    หมวดหมู่สินค้า
-
-  </p>
-        
-<?php  
-$data = "SELECT *  FROM pdcategory";
-$dataQuery = mysqli_query($check, $data);
-?>
-        
-
-
-<?php
-while($dataResult = mysqli_fetch_array($dataQuery))
-{ 
-?>
-
-<p class="fs-6"><a class="text-black" href="c_product_catelist.php?namecate=<?php echo $dataResult["categoryName"];  ?>">○ <?php echo $dataResult["categoryName"];  ?></a></p>
-
-            <?php } ?>
-
-           
-</div>
+ 
 <!-- ตางรางซ้าย -->
 
 
@@ -124,7 +97,7 @@ $objResult = mysqli_fetch_array($objQuery)
 <table border="1" class="table">
   <tr>
 <td rowspan="20" width="600px">
-<img src="Picture/<?php echo $objResult["productPic"];?>" width="100%">
+<img src="../FinalProject/Picture/<?php echo $objResult["productPic"];?>" width="100%">
 </td>
 </tr>
 

@@ -47,8 +47,8 @@
 
 <body >
 
-
 <?php require("c_cusheader.php");   ?> 
+
 <br>
 
 
@@ -59,7 +59,7 @@
 
   <!-- ตางรางซ้าย -->
   
-    <div class="col-sm-1 sidenav shadow p3" style="text">
+    <div class="col-sm-1 sidenav shadow p3" style="text ">
 
 
     
@@ -92,111 +92,28 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 
 <!-- ตารางกลาง -->
 
-    <div class="col-sm-7 text-center shadow p3  " style="background-color: #FFFFFF;"> 
-
-    <?php 
-
-if($_SESSION['username'] != NULL)
-{
-
-?>
-
-
-
-
-<?php 
-    }
-
-else{
-?>
-
-<?php
-}
-?>
-
-<?php
-$namecate = $_GET['namecate'];
-
-$strSQL = "SELECT * FROM product WHERE productCategory ='$namecate'";
-$objQuery = mysqli_query($check, $strSQL) or die(mysql_error());
-?>
-
+<div class="col-sm-7 text-center shadow p3 " style="background-color: #FFFFFF;"> 
 
 <p>
 
 <div style="width:88%; margin:0px auto; background-color: #FF7E00;" class="fs-1 text-white"> 
 
-<p><?php echo $namecate; ?></p>
+<p>ติดต่อเรา</p>
 
 </div> 
 
-
-
 <div style="width:88%; margin:0px auto;"> 
+<h4 align="left"> <br> โทรศัพท์ 02-117-3375 <br>
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-4">
+ที่อยู่ 3 ซ.อนามัยงามเจริญ 33 แยก 2
+แขวงท่าข้าม เขตบางขุนเทียน กรุงเทพมหานคร 10600 <br> <br></h> 
 
-  <?php
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31019.23198692297!2d100.44200502611159!3d13.633171544097488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a3996785d14d%3A0x170ac34dfe03309d!2z4Lih4Lix4LmI4LiZ4LiE4LiH4LiI4LiH4LmA4LiI4Lij4Li04LiN!5e0!3m2!1sth!2sth!4v1633273403168!5m2!1sth!2sth" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
-  
-  while($objResult = mysqli_fetch_array($objQuery))
-  
-  {
-
-
-  ?>
-
-
-<form action="c_increorder_pc.php" method="post">
-<div class="card border-Dark mb-1 h-100" >
-  <div class="card-header bg-transparent border-light"><img src="../FinalProject/Picture/<?php echo $objResult["productPic"];?>" width="100%"></div>
-  <div class="card-body text" >
-    <h6 class="card-title"  title="<?php echo $objResult["productName"];?>"><?php echo iconv_substr($objResult["productName"],0,50,'UTF-8');?>...</h5>
-    <p class="card-text"><?php echo $objResult["price"];?> บาท</p>
-  </div>
-  <div class="card-footer border-Dark" style="background-color: #FFC58C;">
-  
-  <?php if($objResult["remainUnit"]!=0){
-?>
-  
-  <input type="hidden" name="txtproductID" value="<?php echo $objResult["productID"];?>" size="2"> 
-  <input type="hidden" name="txtQty" value="1" size="2"> 
-  <a href = "c_product_detail.php?id=<?php echo $objResult["productID"];?>"><input type="button" class="btn btn-danger" value="รายละเอียด"></a>
-
-  <?php
-
-if($_SESSION['username'] != NULL)
-{
-
-?>
-
-  <input type="submit" class="btn btn-success" value="เพิ่ม">
-
-  <?php 
-    }
-
-else{
-?>
-
-<?php
-}
-?>
-
-  <?php
-} else {echo "สินค้าหมด";}
-  ?>
-</div>
-</div>
-</form>
-  <?php
-  }
-  ?>
+<br>
+<br>
 
 </div>
-
-</div>
-
-
 
     </div>
 <!-- ตารางกลาง -->

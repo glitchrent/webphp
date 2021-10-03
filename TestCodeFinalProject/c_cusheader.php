@@ -28,12 +28,10 @@
           <a class="nav-link active" aria-current="page" href="c_product.php">สินค้าทั้งหมด</a>
         </li>
 
-        <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="c_product.php">เกี่ยวกับร้าน</a>
-        </li>
+        
 
         <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="c_product.php">ติดต่อเรา</a>
+        <a class="nav-link active" aria-current="page" href="c_contactus.php">ติดต่อเรา</a>
         </li>
 
         <li class="nav-item">
@@ -42,9 +40,20 @@
       </ul>
     </div>
     
+      
+<?php 
+
+if($_SESSION['username'] != NULL)
+{
+
+?>
     <span class="navbar-text">
     <a href="show.php"><button type="button" class="btn btn-primary">( ตะกร้า สินค้า )</button> &nbsp; </a> 
     </span>
+
+<?php 
+    }
+?>
 
     <span class="navbar-text">
     

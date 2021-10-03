@@ -38,7 +38,7 @@ input[type='number']{
     <td width="">ชื่อ</td>
     <td width="">ราคา</td>
     <td width="">จำนวน</td>
-	<td width=""></td>
+	  <td width=""></td>
     <td width="">ราคารวม</td>
 	
     <td width=""></td>

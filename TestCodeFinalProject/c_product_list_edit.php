@@ -73,7 +73,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 
 <tr>
 <td align="center"><?php echo $dataResult["productID"]; ?></td>
-<td><img src="Picture/<?php echo $dataResult["productPic"]; ?>" width="100%"></td>
+<td><img src="../FinalProject/Picture/<?php echo $dataResult["productPic"]; ?>" width="100%"></td>
 <td align="center"><?php echo $dataResult["productName"]; ?></td>
 
 <td align="center"><?php echo $dataResult["productCategory"]; ?></td>
