@@ -162,6 +162,9 @@ while ($dataResult2 = mysqli_fetch_assoc($dataQuery2)) {
 
 <a href="pd_outofstock.php"><button type="button" class="btn btn-danger">สินค้าใกล้หมด ( <?php echo $leavestock; ?> รายการ )</button></a>
 
+<a href="c_product_list_edit.php"><button type="button" class="btn btn-warning">แก้ไขข้อมูลรายละเอียดสินค้า</button></a> 
+
+
 <div class ="nav justify-content-end">
 <form class="d-flex" method="get" id="form" enctype="multipart/form-data" action="" >
 <div class="col-auto me-3">

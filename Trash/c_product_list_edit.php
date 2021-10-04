@@ -51,6 +51,17 @@ $dataQuery2 = mysqli_query($check, $data2);
 <div style="width:80%; margin:0px auto;"> 
 
 
+<div class ="nav justify-content-end">
+<form class="d-flex" method="get" id="form" enctype="multipart/form-data" action="" >
+<div class="col-auto me-3">
+      <input class="form-control"  placeholder="พิมพ์ชื่อสินค้าที่ต้องการค้นหา" type="text" name="search" value="">
+</div>
+<div class="col-sm">
+      <input class="btn btn-success" type="submit" value="ค้นหา">
+</div>
+</form>
+</div>
+
 
 
 

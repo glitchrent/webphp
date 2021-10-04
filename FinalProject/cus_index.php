@@ -104,7 +104,7 @@ while ($dataResult = mysqli_fetch_assoc($dataQuery)) {
 <td align="center"> <?php echo $dataResult["tel"]; ?> </td>
 <td align="center"> <?php echo $dataResult["address"]; ?> </td>
 
-<td align="center"><a href = "mb_del_pc.php?iddel=<?php echo $dataResult["username"];?>"><button type="button" class="btn btn-outline-danger">ลบ</button></a></a></td>
+<td align="center"><a href = "cus_del_pc.php?iddel=<?php echo $dataResult["cusID"];?>"><button type="button" class="btn btn-outline-danger">ลบ</button></a></a></td>
 
 
 </tr>

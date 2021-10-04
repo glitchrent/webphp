@@ -4,6 +4,11 @@
 <head>
   
 <style>
+@media print 
+{ 
+#non-printable { display: none; } 
+#printable { display: block; } 
+} 
 
 body {
     background-color: #fff
@@ -47,9 +52,11 @@ h5 {
 
 <body>   
  
-
+<div id="non-printable">
 <a href="poconf_list.php"><input type="button" class="btn btn-outline-danger" value="ย้อนกลับ"></a>
 <input type="button" class="btn btn-outline-info" value="ปริ้นใบเสร็จ" onclick="window.print()">
+</div>
+
 <?php
 
 $id=$_GET['id'];

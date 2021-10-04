@@ -60,34 +60,34 @@
       <tr>
         <td width="125"> &nbsp;ชื่อผู้ใช้ <l style="color:red">*</l></td>
         <td width="180">
-          <input name="txtusername" class="form-control" type="text" id="txtusername" size="20">
+          <input name="txtusername"  class="form-control" type="text" id="txtusername" size="20" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')" oninput="setCustomValidity('')" required>
         </td>
       </tr>
       <tr>
         <td> &nbsp;รหัสผ่าน <l style="color:red">*</l></td>
-        <td><input name="txtpassword" class="form-control" type="password" id="txtpassword">
+        <td><input name="txtpassword" class="form-control" type="password" id="txtpassword" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')" oninput="setCustomValidity('')" required>
         </td>
       </tr>
       <tr>
         <td> &nbsp;ยืนยัน รหัสผ่าน <l style="color:red">*</l></td>
-        <td><input name="txtconpassword" class="form-control" type="password" id="txtconpassword">
+        <td><input name="txtconpassword" class="form-control" type="password" id="txtconpassword" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')" oninput="setCustomValidity('')" required>
         </td>
       </tr>
       <tr>
         <td>&nbsp;ชื่อจริง <l style="color:red">*</l></td>
-        <td><input name="txtfirstname" class="form-control" type="text" id="txttxtfirstname size="35"></td>
+        <td><input name="txtfirstname" class="form-control" type="text" id="txttxtfirstname" size="35" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')" oninput="setCustomValidity('')" required></td>
 </tr>
 <tr>
         <td>&nbsp;นามสกุล <l style="color:red">*</l></td>
-        <td><input name="txtlastname" class="form-control" type="text" id="txtlastname" size="35"></td>
+        <td><input name="txtlastname" class="form-control" type="text" id="txtlastname" size="35"  oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')" oninput="setCustomValidity('')" required></td>
       </tr>
       <tr>
         <td>&nbsp;ที่อยู่ <l style="color:red">*</l></td>
-        <td><textarea name="txtaddress" class="form-control" type="text" id="txtaddress" size="35"></textarea></td>
+        <td><textarea name="txtaddress" class="form-control" type="text" id="txtaddress" size="35" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')" oninput="setCustomValidity('')" required></textarea></td>
       </tr>
       <tr>
         <td>&nbsp;เบอร์โทร <l style="color:red">*</l></td>
-        <td><input name="txttel" type="text" class="form-control" id="txttel" size="35"></td>
+        <td><input name="txttel" type="text" pattern="[0-9]{10}"  class="form-control" id="txttel" size="35" oninvalid="this.setCustomValidity('กรอกข้อมูลไม่ถูกต้อง ตัวเลข 0-9 เท่านั้น')" onchange="try{setCustomValidity('')}catch(e){}" required></td>
       </tr>
 
 
