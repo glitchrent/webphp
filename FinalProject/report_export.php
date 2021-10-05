@@ -10,6 +10,13 @@
 
 
     <title>รายงานการนำเข้า-ส่งออก</title>
+    <style>
+          @media print 
+{ 
+#non-printable { display: none; } 
+#printable { display: block; } 
+} 
+</style>
 </head>
 
 <body>
@@ -38,8 +45,8 @@ $dataQuery = mysqli_query($check, $data);
 
 
 <div style="width:80%; margin:0px auto;"> 
-
-
+<div id="non-printable">
+<input type="button" class="btn btn-outline-info" value="ปริ้นใบเสร็จ" onclick="window.print()">
 
 
 <div class ="nav justify-content-end">
@@ -56,6 +63,7 @@ $dataQuery = mysqli_query($check, $data);
       <input class="btn btn-success" type="submit" value="ค้นหา">
 </div>
 </form>
+</div>
 </div>
 
 

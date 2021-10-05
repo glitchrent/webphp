@@ -87,14 +87,14 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 <?php } else if($dataResult["postatus"] =='ยืนยันแล้ว') {
 ?>
 
-<a href = "preparedeliv_pc.php?id=<?php echo $dataResult["poID"];?>"><input type="button" class="btn btn-outline-success" value="เตรียมการจัดส่ง"></a>
+<a href = "preparedeliv_pc.php?id=<?php echo $dataResult["poID"];?>"><input type="button" class="btn btn-outline-primary" value="เตรียมการจัดส่ง"></a>
 
 
 
 <?php
 } else if($dataResult["postatus"] =='กำลังเตรียมการจัดส่ง') { ?> 
 
-<a href = "completedeliv_pc.php?id=<?php echo $dataResult["poID"];?>"><input type="button" class="btn btn-outline-success" value="จัดส่งเสร็จสิ้น"></a>
+<a href = "completedeliv_pc.php?id=<?php echo $dataResult["poID"];?>"><input type="button" class="btn btn-outline-danger" value="จัดส่งเสร็จสิ้น"></a>
 
 <?php
 } else {}
