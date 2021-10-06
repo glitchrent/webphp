@@ -51,9 +51,9 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 
   </table>
 
-  <input type="submit" value="บันทึก">
+  <input class="btn btn-success" type="submit" value="บันทึก">
 </form>
-  <a href ="c_customer_detail.php">ยกเลิก</a>
+  <a href ="c_customer_detail.php"><input  class="btn btn-danger" type="submit" value="ยกเลิก"></a>
 
 
 </div>

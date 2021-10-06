@@ -69,7 +69,7 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 
 ?>
 
-<div style="width:70%">
+<div style="width:45%">
 <p style="background-color: #FFFFFF;">ข้อมูลที่อยู่การจัดส่ง</p>
 <form name="form1" method="post" action="c_checkout_pc.php"  enctype="multipart/form-data">
   <table  border="2" class="table table-striped" style="background-color: #FFFFFF;">
@@ -86,7 +86,7 @@ $objResult2 = mysqli_fetch_array($objQuery2)
     </tr>
     <tr>
       <td>ที่อยู่</td>
-      <td><input type="text" name="txtaddress" value="<?php echo $objResult2["address"]; ?>"></td>
+      <td><textarea type="text" name="txtaddress" ><?php echo $objResult2["address"]; ?></textarea></td>
     </tr>
     <tr>
       <td>เบอร์โทร</td>

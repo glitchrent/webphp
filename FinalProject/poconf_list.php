@@ -74,6 +74,11 @@ while($dataResult = mysqli_fetch_array($dataQuery))
     <input type="button" class="btn btn-outline-info" value="ดูคำสั่งซื้อ">
 </a>
 
+<?php } else if ($dataResult["postatus"] =='ยกเลิกคำสั่งซื้อ'){
+?>
+
+ยกเลิกคำสั่งซื้อแล้ว
+
 <?php
 } else { ?>
 

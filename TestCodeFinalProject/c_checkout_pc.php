@@ -37,11 +37,14 @@ session_start();
 
 			$_SESSION["strproductID"][$i] = "";
 			$_SESSION["strQty"][$i] = "";
+
+
 	  }
   }
-
+  
 
 mysqli_close($check);
+
 
 
 
