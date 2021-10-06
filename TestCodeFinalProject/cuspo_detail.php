@@ -191,7 +191,8 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
              </div>
 
 
-             
+
+             ช่องทางการชําระเงิน : <br> <img src="kbblogo.jpg" width="4%"> ธนาคารกสิกรไทย เลขที่บัญชี : 711-2-377-618 / ชื่อเจ้าของบัญชี : นายธนทัต ศรีธนาธิปานนท์
          </div>
 
      </div>
