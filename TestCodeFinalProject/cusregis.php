@@ -96,7 +96,7 @@
     </tbody>
   </table>
   <br>
-  <input type="submit" name="Submit" value="สมัครสมาชิก">
+  <input type="submit" class="w-50 btn btn-lg btn-primary"  name="Submit" value="สมัครสมาชิก">
 </form>
 
 <a href="c_product.php">ย้อนกลับ</a>

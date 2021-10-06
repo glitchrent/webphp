@@ -47,9 +47,15 @@ if($_SESSION['username'] != NULL)
 {
 
 ?>
+ <span class="navbar-text">
+    <a href="c_customer_detail_tranfer.php"><button type="button" class="btn btn-primary">( สินค้า กำลังเตรียมการจัดส่ง )</button> &nbsp; </a> 
+    </span>
+
     <span class="navbar-text">
     <a href="show.php"><button type="button" class="btn btn-primary">( ตะกร้า สินค้า )</button> &nbsp; </a> 
     </span>
+
+   
 
 <?php 
     }

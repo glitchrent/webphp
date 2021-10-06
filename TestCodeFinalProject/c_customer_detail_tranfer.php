@@ -12,8 +12,22 @@
 <?php  
 
 $id = $_SESSION['cusID']; 
-$data = "SELECT *  FROM cuspo WHERE cusID = $id";
+$data = "SELECT *  FROM cuspo WHERE (postatus Like 'กำลังเตรียมการจัดส่ง') AND cusID = $id";
 $dataQuery = mysqli_query($check, $data);
+
+?>
+
+<?php
+
+$outofstockcheck = " SELECT postatus FROM cuspo WHERE postatus = 'กำลังเตรียมการจัดส่ง' AND cusID = $id ";
+$outofresult = mysqli_query($check, $outofstockcheck) or die(mysqli_error());
+$leavestock = mysqli_num_rows($outofresult);
+
+if($leavestock > 0){
+
+    
+}
+
 ?>
 
 <?php

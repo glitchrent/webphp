@@ -49,6 +49,7 @@
 
 <?php require("c_cusheader.php");   ?> 
 
+
 <br>
 
 
@@ -202,6 +203,21 @@ else{
 
   </div>
 
+<?php
+
+$id = $_SESSION['cusID']; 
+$outofstockcheck = " SELECT postatus FROM cuspo WHERE postatus = 'กำลังเตรียมการจัดส่ง' AND cusID = $id ";
+$outofresult = mysqli_query($check, $outofstockcheck) or die(mysqli_error());
+$leavestock = mysqli_num_rows($outofresult);
+
+if($leavestock > 0){
+    echo "<script>";
+    echo "alert(' มีสินค้ากำลังเตรีมการจัดส่ง');";
+    echo "</script>";
+    
+}
+
+?>
 
 
 </div>
