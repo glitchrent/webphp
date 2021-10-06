@@ -55,7 +55,11 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 <td align="center"><a target="_blank" href="../TestCodeFinalProject/Slip/<?php echo $dataResult["slip"]; ?>"><?php if($dataResult["slip"] == NULL){ }else { ?> <img src="../TestCodeFinalProject/Slip/<?php echo $dataResult["slip"]; ?>" width="100%"> <?php } ?></a></td>
 <td>
 
-<?php if($dataResult["postatus"] =='รอการตรวจสอบ')
+
+
+
+
+<?php if($dataResult["postatus"] =='ยังไม่ชำระเงิน')
 {
     ?>
 
@@ -63,15 +67,23 @@ while($dataResult = mysqli_fetch_array($dataQuery))
     <input type="button" class="btn btn-outline-info" value="ดูคำสั่งซื้อ">
 </a>
 
-<?php } else {
+<?php } else if ($dataResult["postatus"] =='รอการตรวจสอบ'){
 ?>
+
+<a href = "poconf_detail.php?id=<?php echo $dataResult["poID"];?>">
+    <input type="button" class="btn btn-outline-info" value="ดูคำสั่งซื้อ">
+</a>
+
+<?php
+} else { ?>
 
 <a href = "poconf_recdetail.php?id=<?php echo $dataResult["poID"];?>">
     <input type="button" class="btn btn-outline-primary" value="ดูใบเสร็จ">
 </a>
 
-<?php
-} 
+<?php 
+
+}
 ?> 
 
 </td>
