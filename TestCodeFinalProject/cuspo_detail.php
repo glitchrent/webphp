@@ -54,7 +54,7 @@ h5 {
  
 <div id="non-printable"> 
 <a href="c_customer_detail_po.php"><input type="button" class="btn btn-outline-danger" value="ย้อนกลับ"></a>
-<input type="button" class="btn btn-outline-info" value="ปริ้นใบเสร็จ" onclick="window.print()">
+<input type="button" class="btn btn-outline-info" value="ปริ้น" onclick="window.print()">
 </div> 
 
 <?php
