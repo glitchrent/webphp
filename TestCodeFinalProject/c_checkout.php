@@ -74,7 +74,7 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 <form name="form1" method="post" action="c_checkout_pc.php"  enctype="multipart/form-data">
   <table  border="2" class="table table-striped" style="background-color: #FFFFFF;">
     <tr>
-    <td  rowspan="8"><img src ="ธนาคาร2.jpg" width="100%"></td>
+
       <td >ชื่อ</td>
       
       <td ><input type="text" name="txtname" value="<?php echo $objResult2["name"]; ?>" ></td>
@@ -90,19 +90,16 @@ $objResult2 = mysqli_fetch_array($objQuery2)
     </tr>
     <tr>
       <td>เบอร์โทร</td>
-      <td><input type="text" name="txttel" value="<?php echo $objResult2["tel"]; ?>"></td>
+      <td><input type="text" name="txttel" pattern="[0-9]{10}" value="<?php echo $objResult2["tel"]; ?>"  oninvalid="this.setCustomValidity('กรอกข้อมูลไม่ถูกต้อง ตัวเลข 0-9 จำนวน 10 ตัว เท่านั้น')" onchange="try{setCustomValidity('')}catch(e){}" required></td>
     </tr>
-    <tr>
-      <td width="20%">เลือก หลักฐานการโอน</td>
-      <td><input type="file" name="txtslip" value="" oninvalid="this.setCustomValidity('โปรดใส่หลักฐานการโอนก่อน ')" oninput="setCustomValidity('')" required></td>
-    </tr>
+  
     <tr>
       <td></td>
       <td><input type="submit" name="Submit" class="btn btn-outline-danger" value="ยืนยันการสั่งซื้อ"><input type="hidden" name="txtcusID" value="<?php echo $objResult2["cusID"]; ?>"></td>
     </tr>
     <tr>
       <td></td>
-      <td><input type="hidden" name="postatus" value="รอการตรวจสอบ"></td>
+      <td><input type="hidden" name="postatus" value="ยังไม่ชำระเงิน"></td>
     </tr>
     
 

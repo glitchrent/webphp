@@ -12,7 +12,7 @@
 <?php  
 
 $id = $_SESSION['cusID']; 
-$data = "SELECT *  FROM cuspo WHERE cusID = $id";
+$data = "SELECT *  FROM cuspo WHERE cusID = $id ORDER BY poID DESC ";
 $dataQuery = mysqli_query($check, $data);
 ?>
 
@@ -40,6 +40,7 @@ $objResult2 = mysqli_fetch_array($objQuery2)
 <td align="center">สถานะ</td>
 <td align="center" width="8%">สลิป</td>
 <td align="center">ใบเสร็จ / ใบสั่งซื้อ</td>
+<td align="center"></td>
 
 </tr>
 <?php
@@ -55,11 +56,11 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 <td align="center"><?php echo $dataResult["tel"]; ?></td>
 <td align="center"><?php echo $dataResult["address"]; ?></td>
 <td align="center"><?php echo $dataResult["postatus"]; ?></td>
-<td align="center"><a target="_blank" href="Slip/<?php echo $dataResult["slip"]; ?>"><img src="Slip/<?php echo $dataResult["slip"]; ?>" width="100%"></a></td>
+<td align="center"><a target="_blank" href="Slip/<?php echo $dataResult["slip"]; ?>"><?php if($dataResult["slip"] == NULL){ }else { ?> <img src="Slip/<?php echo $dataResult["slip"]; ?>" width="100%"> <?php } ?></a></td>
 
 <td align="center">
 
-<?php if($dataResult["postatus"] =='รอการตรวจสอบ')
+<?php if($dataResult["postatus"] =='ยังไม่ชำระเงิน')
 {
     ?>
 
@@ -67,16 +68,48 @@ while($dataResult = mysqli_fetch_array($dataQuery))
     <input type="button" class="btn btn-outline-info" value="ดูคำสั่งซื้อ">
 </a>
 
-<?php } else {
+
+
+<?php } else if($dataResult["postatus"] =='ยกเลิกคำสั่งซื้อ'){
+?>
+
+ยกเลิกคำสั่งซื้อแล้ว
+
+<?php } else if($dataResult["postatus"] ==''){
+?>
+
+<a href = "cuspo_detail.php?id=<?php echo $dataResult["poID"];?>">
+    <input type="button" class="btn btn-outline-info" value="ดูคำสั่งซื้อ">
+
+</a>
+
+
+<?php
+} else { 
 ?>
 
 <a href = "cusrecep_detail.php?id=<?php echo $dataResult["poID"];?>">
     <input type="button" class="btn btn-outline-danger" value="ดูใบเสร็จ">
-</a>
 
 <?php
-} ?> 
 
+}?> 
+
+
+</td>
+
+<td>
+
+<?php if($dataResult["postatus"] =='ยังไม่ชำระเงิน')
+{
+    ?>
+
+<a href = "c_customer_detail_paybil.php?poid=<?php echo $dataResult["poID"];?>">
+    <input type="button" class="btn btn-outline-info" value="ชำระเงิน">
+</a>
+
+<?php } else { }
+?>
 
 </td>
 <tr>

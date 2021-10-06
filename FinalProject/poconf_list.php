@@ -16,7 +16,7 @@
 <?php  
 
 
-$data = "SELECT *  FROM cuspo ";
+$data = "SELECT *  FROM cuspo ORDER BY poID DESC ";
 $dataQuery = mysqli_query($check, $data);
 ?>
 
@@ -52,7 +52,7 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 <td align="center"><?php echo $dataResult["address"]; ?></td>
 <td align="center"><?php echo $dataResult["postatus"]; ?></td>
 <td align="center"><?php echo $dataResult["cusID"]; ?></td>
-<td align="center"><a target="_blank" href="../TestCodeFinalProject/Slip/<?php echo $dataResult["slip"]; ?>"><img src="../TestCodeFinalProject/Slip/<?php echo $dataResult["slip"]; ?>" width="100%"></a></td>
+<td align="center"><a target="_blank" href="../TestCodeFinalProject/Slip/<?php echo $dataResult["slip"]; ?>"><?php if($dataResult["slip"] == NULL){ }else { ?> <img src="../TestCodeFinalProject/Slip/<?php echo $dataResult["slip"]; ?>" width="100%"> <?php } ?></a></td>
 <td>
 
 <?php if($dataResult["postatus"] =='รอการตรวจสอบ')
@@ -71,34 +71,44 @@ while($dataResult = mysqli_fetch_array($dataQuery))
 </a>
 
 <?php
-} ?> 
+} 
+?> 
 
 </td>
 
 <td>
 
-<?php if($dataResult["postatus"] =='รอการตรวจสอบ')
+
+
+<?php if($dataResult["postatus"] =='ยังไม่ชำระเงิน')
 {
-    ?>
+?>
+<a href = "returnstock.php?id=<?php echo $dataResult["poID"];?>"><input type="button" class="btn btn-outline-danger" value="ยกเลิกคำสั่งซื้อ"></a>
+
+
+<?php } else if($dataResult["postatus"] =='รอการตรวจสอบ')
+{
+?>
 
 
 <a href = "subtaxstock.php?id=<?php echo $dataResult["poID"];?>"><input type="button" class="btn btn-outline-success" value="ยืนยันคำสั่งซื้อ"></a>
 
-<?php } else if($dataResult["postatus"] =='ยืนยันแล้ว') {
+<?php } else if($dataResult["postatus"] =='ยืนยันแล้ว') 
+{
 ?>
 
 <a href = "preparedeliv_pc.php?id=<?php echo $dataResult["poID"];?>"><input type="button" class="btn btn-outline-primary" value="เตรียมการจัดส่ง"></a>
 
 
-
-<?php
-} else if($dataResult["postatus"] =='กำลังเตรียมการจัดส่ง') { ?> 
+<?php } else if($dataResult["postatus"] =='กำลังเตรียมการจัดส่ง') 
+{ 
+?> 
 
 <a href = "completedeliv_pc.php?id=<?php echo $dataResult["poID"];?>"><input type="button" class="btn btn-outline-danger" value="จัดส่งเสร็จสิ้น"></a>
 
-<?php
-} else {}
+<?php } else {}
 ?>
+
 </td>
 
 
