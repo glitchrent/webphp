@@ -138,7 +138,7 @@ while ($dataResult2 = mysqli_fetch_assoc($dataQuery2)) {
   </div>
 
   <div class="mb-3">
-    <label for="exampleInput" class="form-label">หน่วย ( เช่น กล่อง,โหล,ชิ้น )</label>
+    <label for="exampleInput" class="form-label">หน่วย ( เช่น กล่อง,โหล,ชิ้น,อัน )</label>
     <input name="unit" type="text" class="form-control" id="" >
   </div>
 
