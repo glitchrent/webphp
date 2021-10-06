@@ -56,7 +56,6 @@ h5 {
 <a href="poconf_list.php"><input type="button" class="btn btn-outline-danger" value="ย้อนกลับ"></a>
 <input type="button" class="btn btn-outline-info" value="ปริ้นใบเสร็จ" onclick="window.print()">
 </div>
-
 <?php
 
 $id=$_GET['id'];
@@ -70,45 +69,60 @@ $objResult = mysqli_fetch_array($objQuery);
 
 <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
      <div class="card">
-         <div class="card-header p-4">
-             <center><h2>ใบสั่งซื้อสินค้า</h2></center>
-             <div class="float-right">
-                 <h3 class="mb-0">เลขที่ใบเสร็จ #<?php echo $objResult["poID"];?></h3>
-                 <h3 class="mb-0">
-                 วันที่สั่งซื้อ: 
-                 <?php 
-                 
-$newdate =  date('d/m/Y เวลา H:i:s น.', strtotime($objResult["poDate"]));
 
-echo $newdate; 
-                 
-                 ?>
-                 <br>
-                 วันที่พิมพ์: <?php echo date("d/m/Y เวลา H:i:s น.");?>
-                 </h3>
-             </div>
-         </div>
-         <div class="card-body">
+         <div class="card-header p-4">
+
+             <center><h2>ใบสั่งซื้อสินค้า</h2></center>
+
              <div class="row mb-4">
-                 <div class="col-sm-6">
-                     <h3 class="mb-1">จาก :</h3>
+
+             <div class="col-sm-6">
+                     
+                     
                      <h3 class="text-dark mb-1">ร้านมั่นคง จงเจริญ</h3>
                      <div><h3 class="text-dark mb-1">ที่อยู่ 3 ซ.อนามัยงามเจริญ 33 แยก 2</h3></div>
                      <div><h3 class="text-dark mb-1">แขวงท่าข้าม เขตบางขุนเทียน กรุงเทพมหานคร 10600</h3></div>
                      
                      <div><h3 class="text-dark mb-1">เบอร์โทร : 02-117-3375</h3></div>
                  </div>
+                 
+                 <div class="col-sm-6 ">
+                 <h3 class="mb-1">เลขที่ใบสั่งซื้อสินค้า #<?php echo $objResult["poID"];?></h3>
+                 <h3 class="mb-0">
+                 วันที่สั่งซื้อ : 
+
+                <?php $newdate =  date('d/m/Y เวลา H:i:s น.', strtotime($objResult["poDate"]));
+                echo $newdate; ?>
+                 <br>
+                 วันที่พิมพ์ : <?php echo date("d/m/Y เวลา H:i:s น.");?>
+                 </h3>
+                 </div>
+
+
+            
+             
+             </div>
+             
+         </div>
+         <div class="card-body">
+
+             <div class="row mb-4">
+                 
+          
 
                  <div class="col-sm-6 ">
-                     <h3 class="mb-1">ถึง :</h3>
-                     <h3 class="text-dark mb-1"><?php echo $objResult["name"];?> <?php echo $objResult["surname"];?></h3>
-                     <div><h3 class="text-dark mb-1"><?php echo $objResult["address"];?></h3></div>
-                     <div><h3 class="text-dark mb-1">&nbsp;</h3></div>
+                     <h3 class="mb-1">ข้อมูลลูกค้า :</h3>
+                     <h3 class="text-dark mb-1">ชื่อ <?php echo $objResult["name"];?> <?php echo $objResult["surname"];?></h3>
+                     <div><h3 class="text-dark mb-1">ที่อยู่ 3 ซ.อนามัยงามเจริญ 33 แยก 2</h3></div>
+                     <div><h3 class="text-dark mb-1">แขวงท่าข้าม เขตบางขุนเทียน กรุงเทพมหานคร 10600</h3></div>
+                     
                      
                      <div><h3 class="text-dark mb-1">เบอร์โทร : <?php echo $objResult["tel"];?></h3></div>
                  </div>
 
              </div>
+
+             
              <div class="table-responsive-sm">
                  <table class="table table-striped">
                      <thead>
